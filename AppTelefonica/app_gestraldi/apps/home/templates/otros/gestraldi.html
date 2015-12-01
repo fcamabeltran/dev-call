@@ -1,0 +1,67 @@
+{% extends 'base_page.html' %}
+    {% block extra_head  %}         
+        <title>{% block titulo %}GESTRALDI {% endblock  %}</title>
+            {%load staticfiles %}
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">        
+               <link href="{% static 'css/otros.css' %}"  rel="stylesheet">    
+                <!-- Optional theme -->
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                <!-- Latest compiled and minified JavaScript -->
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    {% endblock %} 
+{% block body_block %} 
+
+
+    <div class="container-fluid">
+        {% include "otros/cabecera.html" %}
+        </br>
+        </br>
+
+        
+        <div class="row-fluid row"> 
+            <div class="span2 article-tree">
+                <!-- navigation column -->
+            </div>
+            <div class="span10 content-area" style="width: 960px; margin-left: auto; margin-right: auto;">
+                <!-- content column -->
+              <div class="row">
+                  <div class="col-md-12">
+                            <H3><strong>
+                           <p class="text-center">GESTRALDI-LATAM</p>
+                           </strong> </H3>
+                    </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                   <p class="text-justify">La plataforma virtual denominada <strong>GESTRALDI-LATAM</strong> en alusión al nombre usado en la Antigua Grecia para designar al jefe supremo de un cuerpo militar terrestre, es un Sistema de Información desarrollado por Telefonica Global Solutions para encontrar anomalías, fraudes.</p>
+                    <p class="text-justify">A continuación se muestra un esquema donde se explica su funcionalidad del Sistema.</p>
+
+                </div>           
+            </div>
+
+            </div>
+                           <div class="col-md-4 col-md-offset-4  ">
+                    <a href="/">
+                        <img src="http://www.strategos.ocaacu.com/img/home.png">
+                            Volver a la Página Principal
+                    </a>
+                </div>
+        </div>
+         
+
+        <div class="footer" style="font-size: 14px;color:#767676;  position:relative; align=center , width:100%;}">    
+          <div id="header-border-div"> </div>      
+             
+                <div class="span12">
+                <p class="text-center">TELEFONICA GLOBAL SOLUTIONS</p> 
+                <p class="text-center">&copy;GESTRALDI LATAM - GESTIÓN DE TRÁFICO INTERNACIONAL </p> 
+                <p class="text-center">LIMA - PERÚ</p> 
+                </div>                  
+            
+        </div>
+    </div>
+
+
+
+{% endblock  %}

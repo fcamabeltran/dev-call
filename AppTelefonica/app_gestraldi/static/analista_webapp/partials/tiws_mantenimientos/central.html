@@ -1,0 +1,248 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <main id="content" class="content" role="main">
+  <div class="row">
+    <div class="col-md-6">
+        <section class="widget">
+            <header>
+                  <h4>
+                      Mantenimiento
+                      <small>CENTRAL</small>
+                  </h4>
+                        <div class="widget-controls">
+                            <a href="#" title="Expand" data-widgster="expand" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                            <a href="#" title="Collapse" data-widgster="collapse"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            <a href="#" title="Close" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+              </header>
+                <input type="text" ng-model="search" class="search-query pull-left" placeholder="Search">
+                
+            <div class="widget-body">
+          {% verbatim %}
+              <div ng-controller="centralList">
+               <table class="table table-hover" >
+                <thead>
+                <tr>
+                    <td><strong>Items</strong></td>
+                    <td><strong>Codigo</strong></td>
+                    <td><strong>Ubicación</strong></td>
+                    <td><strong>Fecha de Creación</strong></td>
+  
+                  </tr>
+                  </thead>
+                 <tbody>        
+
+                 <tr ng-repeat="central in names">         
+                      <td>{{ $index + 1 }}</td>
+                      <td>{{ central.Codigo }}</td>
+                      <td>{{ central.Descripcion }}</td>
+                      <td>{{ central.Ubicacion }}</td>
+                      <td>{{ central.FechaCreacion }}</td>
+
+                      <td><button type="button" class="btn btn-primary"><i class="glyphicon glyphicon-edit"></i> </button></td>
+                      <td><button type="button" class="btn btn-danger"><i class=" glyphicon glyphicon-remove"></i> </button> </td>
+                  </td>
+                 </tr>
+
+                </tbody>               
+              </table>
+               </div>
+              </div> 
+              </section>
+    </div>
+
+{% endverbatim %}
+    <div class="col-md-6">
+        <section class="widget">
+            <header>
+                       <h5>
+                           Entrada
+                       </h5>
+                       <div class="widget-controls">
+                           <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                           <a href="#"><i class="fa fa-refresh"></i></a>
+                           <a data-widgster="close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+                       </div>
+            </header>
+            <div class="widget-body">
+                <form novalidate="" data-parsley-priority-enabled="false" method="post" class="form-horizontal form-label-left" id="validation-form">
+                <fieldset>
+                <div class="form-group">
+                    <label class="control-label col-xs-3">Codigo</label>
+                            <div class="col-xs-3">
+                              <input type="text" required="required" data-parsley-type="number" class="form-control" name="number" id="number" data-parsley-id="1540"><ul class="parsley-errors-list" id="parsley-id-1540"></ul>
+                            </div>
+                    <label class="control-label col-xs-3">Sigla</label>
+                            <div class="col-xs-3">
+                              <input type="text" required="required" data-parsley-type="number" class="form-control" name="number" id="number" data-parsley-id="1540"><ul class="parsley-errors-list" id="parsley-id-1540"></ul>
+                            </div>
+
+                </div>
+
+
+
+
+
+                   <div class="row">
+                    <div class="form-group" class="col-md-6">
+                      <label for="email" class="control-label col-sm-3">
+                        Codigo
+                      </label>
+                            <div class="col-sm-4">
+                              <input type="text" required="required" data-parsley-type="number" class="form-control" name="number" id="number" data-parsley-id="1540"><ul class="parsley-errors-list" id="parsley-id-1540"></ul>
+                            </div>
+                    </div>
+                    <div class="form-group" class="col-md-6">
+                        <label for="number" class="control-label col-sm-3">
+                        Sigla
+                        </label>
+                            <div class="col-sm-4">
+                              <input type="text" required="required" data-parsley-type="number" class="form-control" name="number" id="number" data-parsley-id="1540"><ul class="parsley-errors-list" id="parsley-id-1540"></ul>
+                            </div>
+                    </div>
+                    </div>
+                                    <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                            Ubicación
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                            Persona Contacto
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                           Telefono Contacto
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                           Ruta Recepción
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                           Ruta Procesado
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                     <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                           Ruta Backup
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                           Ruta Prefijo
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                           Sufijo
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                     <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                           Sencuencia Inicial
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                     <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                           Sencuencia Final
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                     <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                           Creacion Usuario
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                           Fecha Creacion
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                       <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                           Modifica Usr
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                       <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                         Fecha Modifica
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                       <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                         Estado
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+                                      <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                       Grupo Central
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="text" required="required" data-parsley-validation-threshold="1" data-parsley-trigger="change" data-parsley-range="[10, 100]" name="range" id="range" class="form-control" data-parsley-id="9806"><ul class="parsley-errors-list" id="parsley-id-9806"></ul>
+                                        </div>
+                                    </div>
+
+
+
+                            </fieldset>
+
+                            <div class="form-actions">
+                                <button class="btn btn-danger btn-rounded pull-right" type="submit">Guardar </button>
+                                <button class="btn btn-default btn-rounded" type="button">Limpiar</button>
+                            </div>
+                        </form>
+            </div>
+        </section>
+    </div>
+  </div>
+  </main>
+{% endblock %}  

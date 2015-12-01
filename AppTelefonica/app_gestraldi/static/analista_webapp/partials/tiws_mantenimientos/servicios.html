@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% verbatim %}
+  <main id="content" class="content" role="main">
+  <div class="row">
+      <div class="col-md-6">
+        <section class="widget">
+            <header>
+                  <h4>
+                      Mantenimiento
+                      <small>Servicio</small>
+                  </h4>
+                        <div class="widget-controls">
+                            <a href="#" title="Expand" data-widgster="expand" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                            <a href="#" title="Collapse" data-widgster="collapse"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            <a href="#" title="Close" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+              </header>
+            <div class="widget-body">
+              <div ng-controller="servicioList">
+               <table class="table table-hover" >
+                <thead>
+                <tr>
+                    <td><strong>Items</strong></td>
+                    <td><strong>Codigo</strong></td>
+                    <td><strong>Descripción</strong></td>
+                    <td><strong>Sigla</strong></td>
+                  </tr>
+                  </thead>
+                 <tbody>        
+                 <tr ng-repeat="servicios in names">         
+                      <td>{{ $index + 1 }}</td>
+                      <td>{{ servicios.Codigo }}</td>
+                      <td>{{ servicios.Descripcion }}</td>
+                      <td>{{ servicios.Sigla }}</td>
+                      <td><a type="button" class="btn btn-primary" ng-click=="update(servicios.Codigo)"><i class="glyphicon glyphicon-edit"></i> </a></td>
+                      <td><a type="button" class="btn btn-danger" ng-click="delete(servicios.Codigo)"><i class=" glyphicon glyphicon-remove"></i> </a> </td>
+                  </td>
+                 </tr>
+                </tbody>               
+              </table>
+               </div>
+              </div> 
+              </section>
+      </div>
+
+
+      <div class="col-md-6" ng-controller="servicio">
+                <section class="widget">
+                  <header>
+                        <h5>
+                            Entrada
+                        </h5>
+                        <div class="widget-controls">
+                            <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+                            <a href="#"><i class="fa fa-refresh"></i></a>
+                            <a data-widgster="close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+                    </header>
+                   <form class="form-horizontal" role="form" data-parsley-priority-enabled="false"  class="form-horizontal form-label-left">
+                    <div class="widget-body">
+                           <fieldset>
+                                    <div class="form-group">
+                                        <label for="email" class="control-label col-sm-3">
+                                            Codigo
+                                        </label>
+                                            <div class="col-sm-9">
+                                              <input type="text" required="required" class="form-control" id="Descripcion" ng-model="servicio.Codigo">
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="number" class="control-label col-sm-3">
+                                            Descripción
+                                        </label>
+                                            <div class="col-sm-9">
+                                              <input type="text" required="required" class="form-control" id="Descripcion" ng-model="servicio.Descripcion">
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="range" class="control-label col-sm-3">
+                                            Sigla
+                                        </label>
+                                            <div class="col-sm-9">
+                                              <input type="text" required="required" class="form-control" id="Descripcion" ng-model="servicio.Sigla">
+                                            </div>
+                                    </div>
+
+                                    </div>
+                            </fieldset>
+
+                            <div class="form-actions">
+                                 <a ng-click="new()" class="btn btn-small btn-primary">Nuevo</a>
+                                <button class="btn btn-danger btn-rounded pull-right" type="submit" ng-click="new()">Guardar </button>
+                                <button class="btn btn-default btn-rounded" type="button">Limpiar</button>
+                            </div>
+                    </div>
+                  </section>
+                </form>
+      </div>
+  </div>
+    {% endverbatim %}   
+  </main>
+  {% endblock %}  

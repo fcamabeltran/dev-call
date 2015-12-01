@@ -1,0 +1,97 @@
+    <!-- need this .js class to initiate slimscroll -->
+    <div class="js-sidebar-content">
+        <header class="logo hidden-xs">
+            <a href="index.html">GESTRALDI-LATAM</a>
+        </header>
+        <!-- seems like lots of recent admin template have this feature of user info in the sidebar.
+             looks good, so adding it and enhancing with notifications -->
+        <div class="sidebar-status visible-xs">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="thumb-sm avatar pull-right">
+                    <img class="img-circle" src="" alt="...">
+                </span>
+                <!-- .circle is a pretty cool way to add a bit of beauty to raw data.
+                     should be used with bg-* and text-* classes for colors -->
+                <span class="circle bg-warning fw-bold text-gray-dark">
+                    13
+                </span>
+                &nbsp;
+                {{ user.first_name}} <strong>{{ user.last_name}}</strong>
+                <b class="caret"></b>
+            </a>
+            <!-- #notifications-dropdown-menu goes here when screen collapsed to xs or sm -->
+        </div>
+        <!-- main notification links are placed inside of .sidebar-nav -->
+        <ul class="sidebar-nav">
+            <li class="active">
+                <!-- an example of nested submenu. basic bootstrap collapse component -->
+                <a href="#sidebar-dashboard" data-toggle="collapse" data-parent="#sidebar">
+                    <span class="icon">
+                        <i class="fa fa-desktop"></i>
+                    </span>
+                    Principal
+                    <i class="toggle fa fa-angle-down"></i>
+                </a>
+                <ul id="sidebar-dashboard" class="collapse in">
+                    <li class="active"><a href="index.html">Fraudes</a></li>
+                    <li><a href="widgets.html">Widgets</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="inbox.html">
+                    <span class="icon">
+                        <i class="fa fa-envelope"></i>
+                    </span>
+                    Bandeja de Entrada
+                    <span class="label label-danger">
+                        9
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="charts.html">
+                    <span class="icon">
+                        <i class="glyphicon glyphicon-stats"></i>
+                    </span>
+                    Estadisticas
+                </a>
+            </li>
+            <li>
+                <a href="profile.html">
+                    <span class="icon">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    Mi Perfil
+                    <sup class="text-warning fw-semi-bold">
+                      Dats
+                    </sup>
+                </a>
+            </li>
+        </ul>
+        <!-- every .sidebar-nav may have a title -->
+        <h5 class="sidebar-nav-title">Componentes <a class="action-link" href="#"><i class="glyphicon glyphicon-refresh"></i></a></h5>
+        <ul class="sidebar-nav">
+
+            <li>
+                <a class="collapsed" href="#sidebar-ui" data-toggle="collapse" data-parent="#sidebar">
+                    <span class="icon">
+                        <i class="glyphicon glyphicon-tree-conifer"></i>
+                    </span>
+                    Reportes
+                    <i class="toggle fa fa-angle-down"></i>
+                </a>
+                <ul id="sidebar-ui" class="collapse">
+                    <li><a href="ui_components.html">Analizador Online</a></li>
+                    <li><a href="ui_notifications.html">Reportes de Telefonos Origen y Destino</a></li>
+                    <li><a href="ui_icons.html">Detalle de Llamadas</a></li>
+                    <li><a href="ui_buttons.html">Trafico Anomalo</a></li>
+                    <li><a href="ui_tabs_accordion.html">Vista Comercial</a></li>
+                </ul>
+            </li>
+         
+
+        </ul>
+x
+    </div>
+
+
