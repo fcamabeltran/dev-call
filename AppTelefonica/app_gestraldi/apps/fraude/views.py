@@ -8,16 +8,32 @@ from datetime import date
 from django.db.models import Max
 from django.contrib.auth.models import User
 
-#from django.contrib.auth.models import User#
-#from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-#from rest_frawork.permissions import IsAuthenticated
-#from rest_framework.response import Response
-#from rest_framework.views import APIView
-#asdfas
 class TasacionSolohoyList(generics.ListCreateAPIView):
-    model = TasacionSolohoy
-    queryset = TasacionSolohoy.objects.order_by('Secuenciaproceso')[:10]
+    models = TasacionSolohoy
     serializer_class = TasacionSolohoySerializer
+    def get_queryset(self):
+      #numera = self.request.query_params.get('numera')
+      #numerb = self.request.query_params.get('numerb')
+      #query = TasacionSolohoy.objects.filter(Numeroorigen=numera,Numerodestino=numerb).order_by('Secuenciaproceso')[:10]
+      query = TasacionSolohoy.objects.filter().order_by('Secuenciaproceso')[:10]
+      return query
+ 
+ class consultaLlamada(generics.ListAPIView):
+    model = TasacionSolohoy
+    serializer_class = TasacionSolohoySerializer
+    def get_queryset(self,):
+      numera = self.request.query_params.get('numera')
+      numerb = self.request.query_params.get('numerb')
+      query = TasacionSolohoy.objects.filter(Numeroorigen=numera,Numerodestino=numerb).order_by('Secuenciaproceso')[:10]
+      #query = TasacionSolohoy.objects.filter().order_by('Secuenciaproceso')[:10]
+      return query
+
+class tasacionsolohoyList(generics.ListAPIView):
+    model = TasacionSolohoy
+    def get_queryset(self):
+      query = TasacionSolohoy.objects.filter().order_by('secuenciaproceso')[:10]
+      return query
+    
 
 class PaisesList(generics.ListCreateAPIView):
     model = Paises
@@ -29,20 +45,6 @@ class PaisesDetail(generics.RetrieveUpdateDestroyAPIView):
     model = Paises
     queryset = Paises.objects.all()
     serializer_class = PaisesSerializer
-
-class PaisesPruebaList(generics.ListCreateAPIView):
-    model = PaisesPrueba
-    queryset = PaisesPrueba.objects.all()     
-    serializer_class = PaisesPruebaSerializer
- #   def list(self, request, *args, **kwargs):
-#        print request.User
-#        return super(PaisesPruebaList, self).list(request,*args, *kwargs)
-
-class PaisesPruebaDetail(generics.RetrieveUpdateDestroyAPIView):
-    model = PaisesPrueba
-    queryset = PaisesPrueba.objects.all()
-    serializer_class = PaisesPruebaSerializer
-
 
 class ServiciosList(generics.ListCreateAPIView):
     model = Servicio
@@ -152,8 +154,6 @@ class RiskRatiosHoyDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = RiskRatiosHoy.objects.all()
     serializer_class = RiskRatiosHoySerializer
 
-
-
 class RiskTraficoCabList(generics.ListAPIView):
     model = RiskTraficoCab
 
@@ -165,16 +165,20 @@ class RiskTraficoCabList(generics.ListAPIView):
 #-- #   print(op)
 #--    queryset = op
       #queryset=Paises.objects.filter(FechaFinal__exact=datetime.date.today())
-
     #datetime(2005, 1, 30)
-
-
     #queryset=RiskTraficoCab.objects.values('Proceso','Cod_dato','Dia_llamadas','Dia_minutos','Ind_aye_minutos','Ind_avg_xda_minutos','Ind_avg_xdp_minutos','Dia_minutos','Ind_avg_hoy_minutos')
-    queryset = RiskTraficoCab.objects.all()
+    queryset = RiskTraficoCab.objects.all()[:20]
     serializer_class = RiskTraficoCabSerializer
+
+
+
+
+
+
+
 class RiskTraficoCabDetail(generics.RetrieveUpdateDestroyAPIView):
     model = RiskTraficoCab
-    queryset = RiskTraficoCab.objects.all()
+    queryset = RiskTraficoCab.objects.all()[:20]
     serializer_class = RiskTraficoCabSerializer
 
 class RiskTraficoDetList(generics.ListAPIView):

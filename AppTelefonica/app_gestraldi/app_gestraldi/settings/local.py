@@ -5,8 +5,8 @@ DATABASES = {
         'NAME': 'oragestr',
         'USER': 'gestraldi',
         'PASSWORD': 'gestraldi',
-        'HOST': '',
-        'PORT': '',
+        'HOST': '1521',
+        'PORT': '10.224.20.50',
     }
 }
 

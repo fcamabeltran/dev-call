@@ -3,51 +3,19 @@
   <head>
     <meta charset="UTF-8">
     <title>Cliente-Gestraldi</title>
-        <link href="{{ STATIC_URL }}analista_webapp/bower_components/css/application.min.css" rel="stylesheet">
-        <!--Agregado dis main-->
-        <script src="{{ STATIC_URL }}cliente_webapp/js/dist/main.min.js"></script>
-       <!-- Temas opcionales -->
-        <link href="{{ STATIC_URL }}analista_webapp/bower_components/bootstrap/dist/css/bootstrap.min.css"  rel="stylesheet">
-        <link href="{{ STATIC_URL }}analista_webapp/bower_components/bootstrap/dist/css/bootstrap-theme.min.css"  rel="stylesheet">
-        <!-- common libraries. required for ev'%}"ry page-->
+        <!-- Temas opcionales -->
+        <link href="{{ STATIC_URL }}cliente_webapp/bower_components/bootstrap/dist/css/bootstrap.min.css"  rel="stylesheet">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet">
-        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet">        
         <!-- CSS-->
-        <link href="{{ STATIC_URL }}analista_webapp/bower_components/css/application.min.css"  rel="stylesheet">        
-        
+        <link href="{{ STATIC_URL }}cliente_webapp/bower_components/css/application.min.css"  rel="stylesheet">
         <!--Librerias externas-->
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/jquery-pjax/jquery.pjax.js"></script>
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/slimScroll/jquery.slimscroll.min.js"></script>
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/widgster/widgster.js"></script>
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/pace.js/pace.min.js"></script>
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/jquery-touchswipe/jquery.touchSwipe.js"></script>
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/jquery-touchswipe/jquery.touchSwipe.js"></script>
-
-        <!-- javascript delicacion -->
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/js/settings.js"></script>
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/js/app.js"></script>
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/app/app.js"></script>     
-        <!-- librerÃ­as especificas -->
-      
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/jQuery-Mapael/js/jquery.mapael.js"></script> 
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>    
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/jquery-animateNumber/jquery.animateNumber.min.js"></script>                 
-        <!-- page specific js -->
-        <script src="{{ STATIC_URL }}analista_webapp/bower_components/js/index.js"></script>
-        <!-- Flag sprites service provided by Martijn Lafeber, https://github.com/lafeber/world-flags-sprite/blob/master/LICENSE -->
-        <link rel="stylesheet" type="text/css" href="http://cloud.github.com/downloads/lafeber/world-flags-sprite/flags32.css" />
-        <!-- Flag sprites service provided by Martijn Lafeber, https://github.com/lafeber/world-flags-sprite/blob/master/LICENSE  -->
-        <link rel="stylesheet" type="text/css" href="http://cloud.github.com/downloads/lafeber/world-flags-sprite/flags32.css" />
-
+        <script src="{{ STATIC_URL }}cliente_webapp/js/dist/main.min.js"></script>
+         <script src="{{ STATIC_URL }}cliente_webapp/bower_components/jquery-pjax/jquery.pjax.js"></script>            
+        <!-- javascripts delicación -->
+        <script src="{{ STATIC_URL }}cliente_webapp/bower_components/js/settings.js"></script>
+        <script src="{{ STATIC_URL }}cliente_webapp/bower_components/js/app.js"></script>
+ 
   </head>
 
   <body>
@@ -136,11 +104,11 @@
                             <i class="toggle fa fa-angle-down"></i>
                         </a>
                         <ul id="sidebar-ui" class="collapse">
-                            <li><a href="ui_components.html">Analizador Online</a></li>
-                            <li><a href="ui_notifications.html">Reportes de Telefonos Origen y Destino</a></li>
-                            <li><a href="ui_icons.html">Detalle de Llamadas</a></li>
-                            <li><a href="ui_buttons.html">Trafico Anomalo</a></li>
-                            <li><a href="ui_tabs_accordion.html">Vista Comercial</a></li>
+                            <li><a href="/#/reporte/consulta/">Consulta de Llamadas</a></li>
+                            <li><a href="/#/reporte/consulta/detalle/"></a></li>
+                            <li><a href="">Consulta de Número</a></li>
+                            <li><a href="">Consulta de Trafico</a></li>
+                            <li><a href=""></a></li>
                         </ul>
                     </li>
                 </ul>

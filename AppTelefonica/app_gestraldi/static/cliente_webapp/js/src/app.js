@@ -1,25 +1,36 @@
 'use strict';
-var App = angular.module("cliente_webapp", ['ngRoute']);
+var App = angular.module("cliente_webapp", ['ngRoute','controllerCliente','controllerUtiles']); 
+
 
 App.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
 
-    
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';
-
     $httpProvider.defaults.useXDomain = true;
     $httpProvider.defaults.withCredentials = true;
 
     $routeProvider
-        .when('/', {
+
+    //Routers 
+    $routeProvider
+        .when('/home/', {
             templateUrl: "/static/cliente_webapp/partials/index.html",
-            controller: "indexCtrl"
+            controller: "controllers"
         })
-        .when('/reporte/detalleLlamadas/', {
-            templateUrl: "/static/analista_webapp/partials/reportes/detalleLlamadas.html",
-            controller: "indexCtrl"
+        .when('/reporte/consulta/', {
+            templateUrl: "/static/cliente_webapp/partials/reportes/consulta.html",
+            controller: ""
+        })
+        .when('/reporte/consulta/detalle/', {
+            templateUrl: "/static/cliente_webapp/partials/reportes/detalleReporte.html",
+            controller: ""
         })
         .otherwise({
             redirectTo: '/'
         });
+
 }]);
+
+
+
+

@@ -1,4 +1,4 @@
-var App = angular.module("analista_webapp", ['ngRoute','controllerAnalista','controllerUtiles']); 
+var App = angular.module("analista_webapp", ['ngRoute','datatables','datatables.tabletools','controllerAnalista','controllerUtiles']); 
 
 App.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
 
@@ -8,7 +8,7 @@ App.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpPr
     $httpProvider.defaults.useXDomain = true;
     $httpProvider.defaults.withCredentials = true;
 
-    //Routers
+    //Routers 
     $routeProvider
         .when('/home/', {
             templateUrl: "/static/analista_webapp/partials/index.html",

@@ -1,5 +1,4 @@
-var app =angular.module('controllerAnalista', []);
-
+var app =angular.module('controllerAnalista', ['datatables']);
   app.controller("ctrlIndex", function ($scope, $http) {
       $http.get('/api/me/').success(function (data) {
         $scope.names = data;
@@ -12,10 +11,16 @@ var app =angular.module('controllerAnalista', []);
       });
   });
 
-  app.controller("ctrlControlCarga", function ($scope, $http) {
+  app.controller("ctrlControlCarga", function ($scope, $http , DTOptionsBuilder) {
+       // DataTables configurable options
+      $scope.dtOptions = DTOptionsBuilder.newOptions()
+        .withDisplayLength(10)
+        .withOption('bLengthChange', true);
+        
       $http.get('/fraude/control/carga/').success(function (data) {
         $scope.names = data;
       });
+
   });
 
   app.controller('riskcabLists', function($scope, $http) {
@@ -25,9 +30,3 @@ var app =angular.module('controllerAnalista', []);
       });
     });
 
-
-  app.controller('DateController', ['$scope', function($scope) {
-tasacion       $scope.example = {
-         value: new Date(2013, 9, 22)
-       };
-  }]);

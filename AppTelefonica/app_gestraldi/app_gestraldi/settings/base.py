@@ -44,6 +44,12 @@ DJANGO_APPS = (
 LOCAL_APPS = (
     'apps.home',
     'apps.fraude',
+    'apps.catlogs',
+    'apps.control',
+    'apps.production',
+    'apps.security',
+    'apps.store',
+    'apps.today',
 )
 # App Terceros
 THIRDS_APPS = (

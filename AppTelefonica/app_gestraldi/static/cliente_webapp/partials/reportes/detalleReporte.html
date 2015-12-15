@@ -1,0 +1,514 @@
+   <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+   <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+   <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
+   <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}"></script>
+  <!--LIBRER?A HICHCART -->    
+
+    <script src='https://dl.dropbox.com/s/uixflvk8tcuh30e/highcharts.js?dl=0'></script>
+    <script src="http://code.highcharts.com/highcharts-more.js"></script>
+    
+
+    <script type="text/javascript">$(function () {
+    $('#EVOL_15DI').highcharts({
+        title: {
+            text: 'Evolucion de trafico (15 dias) - ARGELIA_D_BRA90',
+            style : { "color": "#333333", "fontSize": "12px" }
+            },
+        xAxis: {
+            categories: ['2015-11-03','2015-11-04','2015-11-05','2015-11-06','2015-11-07','2015-11-08','2015-11-09','2015-11-10','2015-11-11','2015-11-12','2015-11-13','2015-11-14','2015-11-15','2015-11-16','2015-11-17','2015-11-18'],
+            style : { "color": "#333333", "fontSize": "7px" }
+        },
+        yAxis: {
+            title: {
+                text: 'Lla. / Min.'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '--'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Llamadas',
+            data: [11.0,18.0,43.0,27.0,2.0,10.0,9.0,9.0,10.0,7.0,124.0,3.0,2.0,39.0,30.0, 115]
+        }, {
+            name: 'Minutos',
+            data: [39.9,34.0,38.8,49.5,8.6,2.9,28.7,34.3,34.7,16.7,707.5,1.0,5.9,133.9,49.8, 841.5]
+        }]
+    });
+    });
+    </script >
+
+    <script type="text/javascript">$(function () {
+        $('#EVOL_24HO').highcharts({
+            title: {
+                text: 'Evolucion Horaria (24 Horas) - ARGELIA_D_BRA90',
+                style : { "color": "#333333", "fontSize": "12px" }
+            },
+            xAxis: {
+                categories: ['00', '01', '10', '11', '12', '13', '14', '15', '16', '17'],
+                style : { "color": "#333333", "fontSize": "10px" }
+            },
+            yAxis: {
+                title: {
+                    text: 'Lla. / Min.'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '--'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: 'Llamadas',
+                data: [2, 6, 3, 2, 1, 16, 10, 29, 43, 5]
+            }, {
+                name: 'Minutos',
+                data: [2, 6, 5, 3, 1, 3, 8, 280, 523, 41]
+            }, {
+                name: 'Lla. Acumulados',
+                data: [2, 8, 11, 13, 14, 30, 40, 69, 112, 117]
+            }, {
+                name: 'Min. Acumulados',
+                data: [2, 8, 13, 16, 17, 20, 28, 308, 831, 872]
+            }]
+        });
+        });
+    </script >
+
+<script>        
+
+     var dataDISP_OCARR= [
+          ['Numeros Origen', 'Minutos'],
+          ['5531934599919191',     11],
+          ['99919191',      2],
+          ['34534535345',  2],
+          ['Otros 24 numeros origen TV', 26]
+        ]</script>
+
+<script type="text/javascript">
+  
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable(dataDISP_OCARR);
+
+        var options = {
+          title: 'Carrier de Origen',
+             pieStartAngle: 100,
+            pieSliceText: 'value',
+           legend: {position: 'right', textStyle: {color: 'blue', fontSize: 8}}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('DISP_OCARR'));
+
+        chart.draw(data, options);
+      }
+
+</script>
+
+<script type="text/javascript">
+  
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Numeros Origen', 'Minutos'],
+          ['5531934599919191',     11],
+          ['99919191',      2],
+          ['34534535345',  2],
+          ['Otros 24 numeros origen TV', 26]
+        ]);
+
+        var options = {
+          title: 'Carrier de Origen',
+             pieStartAngle: 100,
+            pieSliceText: 'value',
+           legend: {position: 'right', textStyle: {color: 'blue', fontSize: 8}}
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('DISP_DCARR'));
+
+        chart.draw(data, options);
+      }
+
+</script>
+
+<script type="text/javascript">
+  
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Numeros Origen', 'Minutos'],
+          ['5531999919191',     421.6],
+          ['5531983719932',      43.8],
+          ['Otros 24 Numeros Origen',  26.1],
+          ['351963230125', 5.3]
+        ]);
+
+        var options = {
+          title: 'Origen Numero A',
+             pieStartAngle: 100,
+            pieSliceText: 'value',
+            legend: {position: 'right', textStyle: {color: 'blue', fontSize: 8}}
+
+            
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('DISP_ONUMA'));
+
+        chart.draw(data, options);
+      }
+
+</script>
+
+
+<script type="text/javascript">
+  
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Numeros Origen', 'Minutos'],
+          ['5531999919191',     421.6],
+          ['5531983719932',      43.8],
+          ['Otros 24 Numeros Origen',  26.1],
+          ['351963230125', 5.3]
+        ]);
+
+        var options = {
+          title: 'Origen Numero A',
+             pieStartAngle: 100,
+            pieSliceText: 'value',
+            legend: {position: 'right', textStyle: {color: 'blue', fontSize: 8}}
+
+            
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('DISP_ONUMA'));
+
+        chart.draw(data, options);
+      }
+
+</script>
+
+
+<script type="text/javascript">
+  
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Numeros Origen', 'Minutos'],
+          ['213770799132',     796.6],
+          ['213770799134',      49.4],
+          ['Otros 27 Numeros Origen',  15.9],
+          ['213777058429', 5.3],
+          ['213778359906', 4.9]         
+        ]);
+              
+       var options = {
+          title: 'Origen Numero B',
+             pieStartAngle: 100,
+            pieSliceText: 'value',
+            legend: {position: 'right', textStyle: {color: 'blue', fontSize: 8}}
+
+            
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('DISP_DNUMB'));
+
+        chart.draw(data, options);
+      }
+
+</script>
+
+<script type="text/javascript">
+  
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Numeros Origen', 'Minutos'],
+          ['Brazil - Claro Mobile',     422.1 ],
+          ['Brazil - Mobile',      398.0],
+          ['5 Areas',  8.7],
+          ['Brazil - Vivo Mobile', 6.3],
+          ['Portugal - TMN Mobile', 5.3]         
+        ]);
+
+       var options = {
+          title: 'Telefono Origen',
+             pieStartAngle: 100,
+            pieSliceText: 'value',
+            legend: {position: 'right', textStyle: {color: 'blue', fontSize: 8}}
+
+            
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('DISP_OAREA'));
+        chart.draw(data, options);
+      }
+
+</script>
+<script type="text/javascript">
+  
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Numeros Origen', 'Minutos'],
+          ['Brazil - Claro Mobile',     422.1 ],
+          ['Brazil - Mobile',      398.0],
+          ['5 Areas',  8.7],
+          ['Brazil - Vivo Mobile', 6.3],
+          ['Portugal - TMN Mobile', 5.3]         
+        ]);
+
+       var options = {
+          title: 'Tefono de Destino',
+             pieStartAngle: 100,
+            pieSliceText: 'value',
+           legend: {position: 'right', textStyle: {color: 'blue', fontSize: 8}}
+
+            
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('DISP_ONUMB'));
+        chart.draw(data, options);
+      }
+
+</script>
+
+<script type="text/javascript">
+  
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Numeros Origen', 'Minutos'],
+          ['Algeria - Orascom Mobile',     4833.0],
+          ['Algeria - Wataniya Mobile',       7.5],
+          ['Algeria',   1.0]      
+        ]);
+
+       var options = {
+          title: 'Area Origen ',
+             pieStartAngle: 100,
+            pieSliceText: 'value',
+           legend: {position: 'right', textStyle: {color: 'blue', fontSize: 8}}
+
+            
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('DISP_DAREA'));
+        chart.draw(data, options);
+      }
+
+</script>
+
+<script type="text/javascript">
+  
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Numeros Origen', 'Minutos'],
+          ['BRASIL',     833.9],
+          ['PORTUGAL',       5.3],
+          ['ARGELIA',   2.3]      
+        ]);
+
+       var options = {
+          title: 'Area de Destino',
+             pieStartAngle: 100,
+            pieSliceText: 'value',
+          legend: {position: 'right', textStyle: {color: 'blue', fontSize: 8}}
+
+            
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('DISP_APAIS'));
+        chart.draw(data, options);
+      }
+
+</script>
+
+      <script type="text/javascript"> 
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Numeros Origen', 'Minutos'],
+          ['BRASIL',     833.9],
+          ['PORTUGAL',       5.3],
+          ['ARGELIA',   2.3]      
+        ]);
+       var options = {
+          title: 'Paises Origen ',
+             pieStartAngle: 100,
+            pieSliceText: 'value',
+          legend: {position: 'right', textStyle: {color: 'blue', fontSize: 8}}            
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('DISP_OPAIS'));
+        chart.draw(data, options);
+        }
+</script>
+  
+
+  <main id="content" class="content" role="main">
+
+    <!--HEADER-->
+    <div class='container' class='Spadding-top: 0px;background-color: #eee;overflow:hidden;'>
+    </div>
+
+    <!--GRAFICAS DE ESTILOS -->
+        <div class="row">
+            <div class="col-md-5 col-lg-4">
+                <section class="widget">
+                    <div class="widget-body clearfix">
+                        <div class="text-align-center">
+                        </div>
+                          <p class="fs-mini text-muted">
+                <strong>  INFORME DESTINO  </strong>
+                    <p class='text-justify;'>  <strong>CODIGO  : </strong>763/BRA90 <BR>
+
+                
+                    <strong> DEST/ORIG:</strong> ARGELIA_D_TELECOM SAO PAULO-TELESP <BR>
+                    <strong> LLAMADAS : </strong>115 <BR>               
+                    <strong>MINUTOS  :</strong> 841.5 <BR>                
+                    <strong>AVG..... :</strong> 7.3 <BR>
+              </p>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-7 col-lg-8">
+                <section class="widget">
+                    <div class="widget-body clearfix">
+                        <div class="text-align-center">
+                    <div id='EVOL_24HO' style=' min-width: 600px; height: 200px; max-width: 600px; margin: 0 auto'></div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+
+       <div class="row">
+              <div class="col-md-5 col-lg-4">
+                  <section class="widget">
+                      <div class="widget-body clearfix">
+                          <p class="fs-mini text-muted">
+                <strong>  DIAGNOSTICO  </strong>
+                <p class='text-justify;'> 
+                <strong> TIPO : </strong>TRAFICO ATIPICO <BR> 
+                <strong> PAIS : </strong>LISTA BLANCA <BR>  
+
+                <strong> INDCREXDP</strong>-(25.3) ---.---.---.---.---. * Extremo<BR>
+
+                <strong> INDCREAYE-</strong>(15.9) ---.---.---.---.---. * Extremo<BR>
+                <strong> INDCREXDA-</strong>(4.5) ---.---.---.---.---. * Extremo<BR>
+                <strong> IND___AVG-</strong>(7.3) ---.---. * Normal<BR> 
+
+                </p> 
+                          </p>
+                      </div>
+                  </section>
+              </div>
+              <div class="col-md-7 col-lg-8">
+                  <section class="widget">  
+
+                      <div class="widget-body clearfix">
+                          <div class="text-align-center">
+                <div id='EVOL_15DI' style='min-width: 600px; height: 200px; max-width: 600px; margin: 0 auto'></div>
+                          </div>
+                      </div>
+                  </section>
+              </div>
+          </div>
+
+       <div class="row">
+                 <div class="col-md-4 col-lg-4">
+                     <section class="widget">
+                         <div class="widget-body clearfix">
+                             <div class="text-align-center">
+                                <div id="DISP_OCARR" style='min-width: 350px; height: 200px; max-width: 350px; margin: 0 auto' ></div>
+                             </div>
+                         </div>     
+                     </section>
+                 </div>
+                 <div class="col-md-4 col-lg-4">
+                     <section class="widget">
+                         <div class="widget-body clearfix">
+                             <div class="text-align-center">
+                                 <div id='DISP_DCARR' style='min-width: 350px; height: 200px; max-width: 350px; margin: 0 auto' >
+                             </div>
+                     </section>
+                 </div>
+                 <div class="col-md-4 col-lg-4">
+                     <section class="widget">
+                         <div class="widget-body clearfix">
+                             <div class="text-align-center">
+                                 <div id='DISP_ONUMA' style='min-width: 350px; height: 200px; max-width: 350px; margin: 0 auto' ></div>
+                             </div>
+                         </div>
+                     </section>
+                 </div>
+         </div>
+          <div class="row">
+                 <div class="col-md-4 col-lg-4">
+                     <section class="widget">
+                         <div class="widget-body clearfix">
+                             <div class="text-align-center">
+                                <div id="DISP_DNUMB" style='min-width: 350px; height: 200px; max-width: 350px; margin: 0 auto' ></div>
+                             </div>
+                         </div>     
+                     </section>
+                 </div>
+                 <div class="col-md-4 col-lg-4">
+                     <section class="widget">
+                         <div class="widget-body clearfix">
+                             <div class="text-align-center">
+                                 <div id='DISP_OAREA' style='min-width: 350px; height: 200px; max-width: 350px; margin: 0 auto' ></div>
+                             </div>
+                     </section>
+                 </div>
+                 <div class="col-md-4 col-lg-4">
+                     <section class="widget">
+                         <div class="widget-body clearfix">
+                             <div class="text-align-center">
+                                 <div id='DISP_DAREA' style='min-width: 350px; height: 200px; max-width: 350px; margin: 0 auto' ></div>
+                             </div>
+                         </div>
+                     </section>
+                 </div>
+         </div>
+
+         <div class="row">
+                 <div class="col-md-4 col-lg-4">
+                     <section class="widget">
+                         <div class="widget-body clearfix">
+                             <div class="text-align-center">
+                                <div id="DISP_OPAIS"  style='min-width: 350px; height: 200px; max-width: 350px; margin: 0 auto' ></div>
+                             </div>
+                         </div>     
+                     </section>
+                 </div>
+
+         </div>
+
+</main>

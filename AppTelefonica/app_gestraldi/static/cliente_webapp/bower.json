@@ -1,8 +1,8 @@
 {
-  "name": "analista_webapp",
+  "name": "cliente_webapp",
   "version": "0.0.0",
   "authors": [
-    "Eysenck Gómez <eyscode@gmail.com>"
+    "Felix Cama  <fcamabeltran@gmail.com>"
   ],
   "description": "webapp para analistas",
   "license": "MIT",
@@ -14,8 +14,38 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.4.7",
+    "angular": "1.4.1",
+    "angular-animate": "1.4.0",
+    "angular-touch": "1.3.4",
+    "angular-sanitize": "1.3.4",
+    "ngstorage": "0.3.7",
+    "jquery": "2.1.3",
     "angular-route": "~1.4.7",
-    "angular-daterangepicker": "~0.2.0"
+    "bootstrap-sass": "3.3.4",
+    "angular-bootstrap": "0.12.0",
+    "font-awesome": "4.3.0",
+    "awesome-bootstrap-checkbox": "0.3.4",
+    "open-sans-fontface": "1.4.0",
+    "animate.css": "3.3.0",
+    "slimScroll": "1.3.6",
+    "widgster": "0.0.2",
+    "pace.js": "git://github.com/HubSpot/pace.git#v0.7.1"
+  },
+  "overrides": {
+    "pace.js": {
+      "main": [
+        "./pace.js",
+        "./themes/pace-theme-flash.css"
+      ]
+    }
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.0"
+  },
+  "resolutions": {
+    "jquery": "2.1.3",
+    "angular": "1.4.1"
   }
 }
+
+

@@ -4,11 +4,22 @@ var gulp = require('gulp'),
 var paths = {
     scripts: [
         'bower_components/angular/angular.js',
-        'bower_components/angular-route/angular-route.js',
-        'js/src/app.js',
+        'bower_components/angular-route/angular-route.js',   
+        'bower_components/jquery/dist/jquery.min.js',
+        'bower_components/angular-animate/angular-animate.min.js',
+        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
+        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
+        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js',
+        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js',
+        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
+        'bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js',
+        'bower_components/slimScroll/jquery.slimscroll.min.js',
+        'bower_components/widgster/widgster.js',
+        'bower_components/pace.js/pace.js',
+        'bower_components/angular-touch/angular-touch.min.js',
+        'js/src/app.js'     ,
         'js/src/controllers.js',
         'js/src/utiles.js',
-        
     ]
 };
 
@@ -26,4 +37,8 @@ gulp.task('watch', function () {
     gulp.watch(paths.scripts, ['scripts']);
 });
 
+
 gulp.task('default', ['scripts']);
+
+
+
