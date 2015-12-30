@@ -1,36 +1,39 @@
 'use strict';
-var App = angular.module("cliente_webapp", ['ngRoute','controllerCliente','controllerUtiles']); 
+var App = angular.module("cliente_webapp", ['ui.router','controllerCliente','controllerUtiles']); 
 
-
-App.config(['$routeProvider', '$httpProvider', function ($routeProvider, $httpProvider) {
-
+App.config(['$stateProvider','$httpProvider',  function ($stateProvider, $httpProvider) {
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';
     $httpProvider.defaults.useXDomain = true;
     $httpProvider.defaults.withCredentials = true;
 
-    $routeProvider
+$stateProvider.state('root', {
+  abstract: true,
+  views: {
+    '@': {   },
+    'sidebar@': { templateUrl: "/static/cliente_webapp/partials/sidebar_cliente.html" }
+  }
+})
 
-    //Routers 
-    $routeProvider
-        .when('/home/', {
-            templateUrl: "/static/cliente_webapp/partials/index.html",
-            controller: "controllers"
-        })
-        .when('/reporte/consulta/', {
-            templateUrl: "/static/cliente_webapp/partials/reportes/consulta.html",
-            controller: ""
-        })
-        .when('/reporte/consulta/detalle/', {
-            templateUrl: "/static/cliente_webapp/partials/reportes/detalleReporte.html",
-            controller: ""
-        })
-        .otherwise({
-            redirectTo: '/'
-        });
+$stateProvider.state('home', {
+  url: '',
+  parent: 'root',
+  views: {
+    '@': { templateUrl: '/static/cliente_webapp/partials/reportes/consulta.html', controller: 'controllers' }
+  }
+})
+
+
+$stateProvider.state('reporte', {
+      url: '/reporte/telefonoOrigenDestino/',
+      parent: 'root',
+      views: {
+        '@': {templateUrl: "/static/analista_webapp/partials/reportes/detalleLlamadas.html",controller: ""}
+      }
+    })
+
 
 }]);
-
 
 
 

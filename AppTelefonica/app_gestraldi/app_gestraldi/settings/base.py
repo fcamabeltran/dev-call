@@ -43,7 +43,6 @@ DJANGO_APPS = (
 # App Locales
 LOCAL_APPS = (
     'apps.home',
-    'apps.fraude',
     'apps.catlogs',
     'apps.control',
     'apps.production',

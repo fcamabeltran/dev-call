@@ -16,259 +16,59 @@
         <!-- javascripts delicación -->
         <script src="{{ STATIC_URL }}cliente_webapp/bower_components/js/settings.js"></script>
         <script src="{{ STATIC_URL }}cliente_webapp/bower_components/js/app.js"></script>
-
-
   </head>
 
-
   <body>
-      <!-- Agrupar los enlaces de navegaciÃ³n, los formularios y cualquierotro elemento que se pueda ocultar al minimizar la barra -->
     <nav id="sidebar" class="sidebar" role="navigation">
-
-   <!-- need this .js class to initiate slimscroll -->
-    <div class="js-sidebar-content">
-        <header class="logo hidden-xs">
-            <a href="index.html">GESTRALDI-LATAM</a>
-        </header>
-        <!-- seems like lots of recent admin template have this feature of user info in the sidebar.
-             looks good, so adding it and enhancing with notifications -->
-        <div class="sidebar-status visible-xs">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <span class="thumb-sm avatar pull-right">
-                    <img class="img-circle" src="" alt="...">
-                </span>
-                <!-- .circle is a pretty cool way to add a bit of beauty to raw data.
-                     should be used with bg-* and text-* classes for colors -->
-                <span class="circle bg-warning fw-bold text-gray-dark">
-                    13
-                </span>
-                &nbsp;                
-                {{ user.first_name}} <strong>{{ user.last_name}}</strong>
-                <b class="caret"></b>
-            </a>
-            <!-- #notifications-dropdown-menu goes here when screen collapsed to xs or sm -->
-        </div>
-        <!-- main notification links are placed inside of .sidebar-nav -->
-        <ul class="sidebar-nav">
-            <li class="active">
-                <!-- an example of nested submenu. basic bootstrap collapse component -->
-                <a href="#sidebar-dashboard" data-toggle="collapse" data-parent="#sidebar">
-                    <span class="icon">
-                        <i class="fa fa-desktop"></i>
-                    </span>
-                    Principal
-                    <i class="toggle fa fa-angle-down"></i>
-                </a>
-                <ul id="sidebar-dashboard" class="collapse in">
-                    <li class="active"><a href="index.html">Fraudes</a></li>
-                    <li><a href="widgets.html">Widgets</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="inbox.html">
-                    <span class="icon">
-                        <i class="fa fa-envelope"></i>
-                    </span>
-                    Bandeja de Entrada
-                    <span class="label label-danger">
-                        9
-                    </span>
-                </a>
-            </li>
-            <li>
-                <a href="charts.html">
-                    <span class="icon">
-                        <i class="glyphicon glyphicon-stats"></i>
-                    </span>
-                    Estadisticas
-                </a>
-            </li>
-            <li>
-                <a href="profile.html">
-                    <span class="icon">
-                        <i class="glyphicon glyphicon-user"></i>
-                    </span>
-                    Mi Perfil
-                    <sup class="text-warning fw-semi-bold">
-                      Dats
-                    </sup>
-                </a>
-            </li>
-        </ul>
-        <!-- every .sidebar-nav may have a title -->
-        <h5 class="sidebar-nav-title">Componentes <a class="action-link" href="#"><i class="glyphicon glyphicon-refresh"></i></a></h5>
-        <ul class="sidebar-nav">
-            <li>
-                <!-- an example of nested submenu. basic bootstrap collapse component -->
-                <a class="collapsed" href="#sidebar-forms" data-toggle="collapse" data-parent="#sidebar">
-                    <span class="icon">
-                        <i class="glyphicon glyphicon-align-right"></i>
-                    </span>
-                    Modulo Base
-                    <i class="toggle fa fa-angle-down"></i>
-                </a>
-                <ul id="sidebar-forms" class="collapse">
-                    <li><a href="/#/control/controlCarga/">Control de Carga</a></li>
-                    <li><a href="">Analisis de Rechazo</a></li>
-                    <li><a href="">Prueba</a></li>
-                </ul>
-            </li>
-            <li>
-                <a class="collapsed" href="#sidebar-ui" data-toggle="collapse" data-parent="#sidebar">
-                    <span class="icon">
-                        <i class="glyphicon glyphicon-tree-conifer"></i>
-                    </span>
-                    Reportes
-                    <i class="toggle fa fa-angle-down"></i>
-                </a>
-                <ul id="sidebar-ui" class="collapse">
-                    <li><a href="/#/reporte/analizador/">Analizador Online</a></li>
-                    <li><a href="/#/reporte/telefonoOrigenDestino/">Reportes de Telefonos Origen y Destino</a></li>
-                    <li><a href="/#/reporte/detalleLlamadas/">Detalle de Llamadas</a></li>
-                    <li><a href="/#/reporte/traficoAnomalo/">Trafico Anomalo</a></li>
-                    <li><a href="/#/reporte/vistaComercial/">Vista Comercial</a></li>
-                </ul>
-            </li>
-            <li>
-                <a class="collapsed" href="#sidebar-extra" data-toggle="collapse" data-parent="#sidebar">
-                    <span class="icon">
-                        <i class="fa fa-leaf"></i>
-                    </span>
-                    Configuracion
-                    <i class="toggle fa fa-angle-down"></i>
-                </a>
-                <ul id="sidebar-extra" class="collapse">
-                    <li><a href="calendar.html">Riesgos</a></li>
-                    <li><a href="invoice.html">Destinos de Riesgo</a></li>
-                    <li><a href="login.html" target="_blank" data-no-pjax>Umbrales</a></li>
-                    <li><a href="error.html" target="_blank" data-no-pjax>Listas</a></li>
-
-                </ul>
-            </li>
-
-        </ul>
-        <h5 class="sidebar-nav-title">Labels <a class="action-link" href="#"><i class="glyphicon glyphicon-plus"></i></a></h5>
-        <!-- some styled links in sidebar. ready to use as links to email folders, projects, groups, etc -->
-        <ul class="sidebar-labels">
-            <li>
-                <a href="#">
-                    <!-- yep, .circle again -->
-                    <i class="fa fa-circle text-warning mr-xs"></i>
-                    <span class="label-name">Espera</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-circle text-gray mr-xs"></i>
-                    <span class="label-name">Terminado</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-circle text-danger mr-xs"></i>
-                    <span class="label-name">Alerta</span>
-                </a>
-            </li>
-        </ul>
-        <h5 class="sidebar-nav-title">Recientes
-
-        </h5>
-        <!-- A place for sidebar notifications & alerts -->
-        <div class="sidebar-alerts">
-            <div class="alert fade in">
-                <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
-                <span class="text-white fw-semi-bold">Sales Report</span> <br>
-                <div class="progress progress-xs mt-xs mb-0">
-                    <div class="progress-bar progress-bar-gray-light" style="width: 16%"></div>
-                </div>
-                <small>Calculating x-axis bias... 65%</small>
-            </div>
-            <div class="alert fade in">
-                <a href="#" class="close" data-dismiss="alert" aria-hidden="true">&times;</a>
-                <span class="text-white fw-semi-bold">Personal Responsibility</span> <br>
-                <div class="progress progress-xs mt-xs mb-0">
-                    <div class="progress-bar progress-bar-danger" style="width: 23%"></div>
-                </div>
-                <small>Provide required notes</small>
-            </div>
-        </div>
-    </div>
-
-
-
-
+        <div  ui-view="sidebar"></div>  
     </nav>  
+
     <nav class="page-controls navbar navbar-default">
-
-
-    <div class="container-fluid">
-        <!-- .navbar-header contains links seen on xs & sm screens -->
-        <div class="navbar-header">
-            <ul class="nav navbar-nav">
-                <li>
-                    <!-- whether to automatically collapse sidebar on mouseleave. If activated acts more like usual admin templates -->
-                    <a data-placement="bottom" title="" href="" id="nav-state-toggle" class="hidden-sm hidden-xs" data-original-title="Habilitar/Desabilitar Barra Lateral">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a data-placement="bottom" title="" href="" id="nav-state-toggle" class="hidden-sm hidden-xs" data-original-title="Habilitar/Desabilitar Barra Lateral">
                         <i class="fa fa-bars fa-lg"></i>
-                    </a>
-                    <!-- shown on xs & sm screen. collapses and expands navigation -->
-                    <a data-placement="bottom" title="" href="#" id="nav-collapse-toggle" class="visible-sm visible-xs" data-original-title="Show/hide sidebar">
+                        </a>
+                    
+                        <a data-placement="bottom" title="" href="#" id="nav-collapse-toggle" class="visible-sm visible-xs" data-original-title="Show/hide sidebar">
                         <span class="rounded rounded-lg bg-gray text-white visible-xs"><i class="fa fa-bars fa-lg"></i></span>
                         <i class="fa fa-bars fa-lg hidden-xs"></i>
-                    </a>
-                </li>
-                <li class="ml-sm mr-n-xs hidden-xs"><a href="#"><i class="fa fa-refresh fa-lg"></i></a></li>
-                <li class="ml-n-xs hidden-xs"><a href="#"><i class="fa fa-times fa-lg"></i></a></li>
-            </ul>
-             <!-- MODIFICACION CHAT13-05-2015-->
-          <!--  <ul class="nav navbar-nav navbar-right visible-xs">
-                <li> -->
-                    <!-- toggles chat -->
-                 <!--   <a data-toggle="chat-sidebar" href="#">
-                        <span class="rounded rounded-lg bg-gray text-white"><i class="fa fa-globe fa-lg"></i></span>
-                    </a>
-                </li>
-            </ul>-->
-            <!-- xs & sm screen logo -->
-            <a href="index.html" class="navbar-brand visible-xs">
-                <i class="fa fa-circle text-gray mr-n-sm"></i>
-                <i class="fa fa-circle text-warning"></i>
-                &nbsp;
-                GESTRALDI-LATAM
-                &nbsp;
-                <i class="fa fa-circle text-warning mr-n-sm"></i>
-                <i class="fa fa-circle text-gray"></i>
-            </a>
-        </div>
-
-        <!-- this part is hidden for xs screens -->
-        <div class="collapse navbar-collapse">
-            <!-- search form! link it to your search server -->
-            <form role="search" class="navbar-form navbar-left">
-                <div class="form-group">
-                    <div class="input-group input-group-no-border">
-                    <span class="input-group-addon">
-                        <i class="fa fa-search"></i>
-                    </span>
-                        <input type="text" placeholder="Buscar" class="form-control">
+                        </a>
+                    </li>
+                    <li class="ml-sm mr-n-xs hidden-xs"><a href="#"><i class="fa fa-refresh fa-lg"></i></a></li>
+                    <li class="ml-n-xs hidden-xs"><a href="#"><i class="fa fa-times fa-lg"></i></a></li>
+                </ul>
+                <a href="index.html" class="navbar-brand visible-xs">
+                    <i class="fa fa-circle text-gray mr-n-sm"></i>
+                    <i class="fa fa-circle text-warning"></i>
+                        &nbsp; GESTRALDI-LATAM &nbsp;
+                    <i class="fa fa-circle text-warning mr-n-sm"></i>
+                    <i class="fa fa-circle text-gray"></i>
+                </a>
+            </div>
+        
+            <div class="collapse navbar-collapse">
+                <form role="search" class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <div class="input-group input-group-no-border">
+                            <span class="input-group-addon">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            <input type="text" placeholder="Buscar" class="form-control">
+                        </div>
                     </div>
-                </div>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a data-toggle="dropdown" id="notifications-dropdown-toggle" class="dropdown-toggle dropdown-toggle-notifications" href="">
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" id="notifications-dropdown-toggle" class="dropdown-toggle dropdown-toggle-notifications" href="">
                         <span class="thumb-sm avatar pull-left">
                             <img alt="..." src="" class="img-circle">
                         </span>
-                        &nbsp;
-                        {{ user.first_name}} <strong>{{ user.last_name}}</strong>&nbsp;
-                        <span class="circle bg-warning fw-bold">
-                            13
-                        </span>
+                            &nbsp;{{ user.first_name}} <strong>{{ user.last_name}}</strong>&nbsp;
+                        <span class="circle bg-warning fw-bold"> 13</span>
                         <b class="caret"></b></a>
-                    <!-- ready to use notifications dropdown.  inspired by smartadmin template.
-                         consists of three components:
-                         notifications, messages, progress. leave or add what's important for you.
-                         uses Sing's ajax-load plugin for async content loading. See #load-notifications-btn -->
                     <div id="notifications-dropdown-menu" class="dropdown-menu animated fadeInUp">
                         <section class="panel notifications">
                             <header class="panel-heading">
@@ -407,9 +207,6 @@
                     </ul>
                 </li>
                 <li>
-                   <!-- <a data-toggle="chat-sidebar" href="#">
-                        <i class="fa fa-globe fa-lg"></i>
-                    <i class="chat-notification-sing animated bounceIn"></i></a>-->
                     <div class="chat-notification" id="chat-notification">
                         <div class="chat-notification-inner">
                             <h6 class="title">
@@ -425,19 +222,19 @@
                 </li>
             </ul>
         </div>
-    </div>
-
-
-
-    </nav>
-    <div class="content-wrap">
-        <div ng-view>
-        
         </div>
-    </div>  
-    <!-- The Loader. Is shown when pjax happens -->
+    </nav>
+
+    <div class="content-wrap">
+        <div ui-view=""></div>
+    </div>
+  
     <div class="loader-wrap hiding hide">
         <i class="fa fa-circle-o-notch fa-spin-fast"></i>
     </div>
   </body>
+  
+
+
+
   

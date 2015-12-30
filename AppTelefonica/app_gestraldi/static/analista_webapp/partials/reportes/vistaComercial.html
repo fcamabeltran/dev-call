@@ -1,0 +1,144 @@
+  <main id="content" class="content" role="main">
+  <div class="row">
+  <div class="col-md-12">
+        <section class="widget">
+            <header>
+                  <h4>
+                      CONSULTA DE :
+                      <small>Llamadas</small>
+                  </h4>
+                        <div class="widget-controls">
+                            <a href="#" title="Expand" data-widgster="expand" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
+                            <a href="#" title="Collapse" data-widgster="collapse"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                            <a href="#" title="Close" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+                        </div>
+              </header>
+              <div class="widget-body">
+                 <div class="row"> 
+                         <div class="col-md-4">
+                           <div class="form-group">
+                               <label for="email" class="control-label col-sm-3">
+                                   Fecha Inicio
+                               </label>
+                                     <div class="container">
+                                         <div class='col-md-2'>
+                                             <div class="form-group">
+                                                <!-- <div ng-controller="DateController as dateCtrl">-->
+                                                 <div>
+                                                  <input type="date" id="exampleInput" name="input" ng-model="example.value"
+                                                      placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
+                                                 </div>
+                                            </div>
+                                         </div>
+                                    </div>
+                            </div>
+                         </div>
+                         <div class="col-md-4">
+                           <div class="form-group">
+                               <label for="email" class="control-label col-sm-3">
+                                   Fecha Final
+                               </label>
+                                  <div class="container">
+                                         <div class='col-md-2'>
+                                             <div class="form-group">
+                                                <!-- <div ng-controller="DateController as dateCtrl">-->
+                                                 <div>
+                                                  <input type="date" id="exampleInput2" name="input2" ng-model="example.value2"
+                                                      placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
+                                                 </div>
+                                            </div>
+                                         </div>
+                                    </div>
+                            </div>
+                         </div>
+                     </div>                   
+                     <div class="row">
+                         <div class="col-md-4">
+                           <div class="form-group">
+                               <label for="number" class="control-label col-sm-3">
+                                   Número Origen
+                               </label>
+                               <div class="col-sm-9">
+                                   <input type="text" required="required" ng-model="searchText"></ul>
+                               </div>
+                           </div>
+                         </div>
+                         <div class="col-md-4">
+                           <div class="form-group">
+                               <label for="range" class="control-label col-sm-3">
+                                   Número Destino
+                               </label>
+                               <div class="col-sm-9">
+                                    <input type="text" required="required" ng-model="searchText"></ul>
+                               </div>
+                           </div>                    
+                         </div>
+                         <div class="col-md-4">
+                          <button type="button" class="btn btn-primary">Buscar</button>
+                          <button type="button" class="btn btn-danger">Exportar xls </button> 
+                         </div>
+                     </div>
+           
+                     <div ng-controller="ctrlTasacion">
+                          <table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
+                           <thead>
+                           <tr>
+                               <td><strong>Items</strong></td>
+                               <td><strong>Orig.Telefono</strong></td>
+                               <td><strong>Dest.Telefono</strong></td>
+                               <td><strong>Orig.Ruta</strong></td>
+                               <td><strong>Orig.Carrier</strong></td>
+                               <td><strong>Orig.Pais</strong></td>
+                               <td><strong>Dest.Ruta</strong></td>
+                               <td><strong>Dest.Carrier</strong></td>
+                               <td><strong>Dest.Pais</strong></td>
+                               <td><strong>Orig.Area</strong></td>
+                               <td><strong>Dest.Area</strong></td>
+                               <td><strong>Segundos</strong></td>
+                             </tr>
+                             </thead>
+                            <tbody>      
+                            <!-- -->       
+                            <tr ng-repeat="tasacion in names  | filter:searchText">         
+                                 <td>{{ $index + 1 }}</td>
+                                 <td>{{ tasacion.Numeroorigen }}</td>
+                                 <td>{{ tasacion.Numerodestino }}</td>
+                                 <td>{{ tasacion.Rutaentradaa }}</td>
+                                 <td>{{ tasacion.Ruen_operadoraa }}</td>
+                                 <td>{{ tasacion.Nuor_paisa }}</td>
+                                 <td>{{ tasacion.Rutasalidaa }}</td>
+                                 <td>{{ tasacion.Ruta_operadoraa }}</td>
+                                 <td>{{ tasacion.Nude_paisa }}</td>
+                                 <td>{{ tasacion.Nude_ciudada }}</td>
+                                 <td>{{ tasacion.Nude_ciudada }}</td>                             
+                                 <td>{{ tasacion.Segundos }}</td>                   
+                             </td>
+                            </tr>       
+                            </tbody>               
+                          </table>
+                    </div>
+              </div>
+            <div class="align-center">
+            <nav>
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+                </li>
+              </ul>
+            </nav>    
+      </div>
+    </section>
+  </div>
+</div>
+</main>

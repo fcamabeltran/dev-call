@@ -1,4 +1,4 @@
-   var app =angular.module('controllerUtiles', []);
+	   var app =angular.module('controllerUtiles', []);
 
 
    app.controller('DateController', ['$scope', function($scope) {
@@ -6,5 +6,3 @@
          value: new Date(2013, 9, 22)
        };
      }]);
-
-   

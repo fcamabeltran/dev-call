@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Central,Servicio,Pais,Carrier,Destino,Ruta,ServiciosEspeciales,DestinoRiesgo
+from .models import Central,Servicio,Paises,Carrier,Destino,Ruta,ServiciosEspeciales,DestinoRiesgo,RiskUmbrales
 
 
 class CentralSerializer(serializers.ModelSerializer):

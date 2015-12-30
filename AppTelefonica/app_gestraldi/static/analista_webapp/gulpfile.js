@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 var paths = {
     scripts: [
         'bower_components/angular/angular.js',
-        'bower_components/angular-route/angular-route.js',   
+        'bower_components/angular-ui-router/release/angular-ui-router.js',        
         'bower_components/jquery/dist/jquery.min.js',
         'bower_components/angular-animate/angular-animate.min.js',
         'bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',

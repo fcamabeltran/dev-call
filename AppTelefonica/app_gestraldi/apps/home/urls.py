@@ -10,6 +10,3 @@ urlpatterns = [
     url(r'^otros/gestraldi/$', 'apps.home.views.panelGestraldi',name="panel-gestraldi"),
    	url(r'^otros/documentos/$', 'apps.home.views.panelDocumentos',name="panel-documentos"),
 ]
-
-
-

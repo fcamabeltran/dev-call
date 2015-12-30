@@ -1,74 +1,789 @@
- <!--Librerias anexadas -->
   <main id="content" class="content" role="main">
+      <script>
+        $(function() {
+        var stock= [ { date: '2015-10-14', adj_close: 468},{ date: '2015-10-15', adj_close: 171},{ date: '2015-10-16', adj_close: 139},{ date: '2015-10-17', adj_close: 239},{ date: '2015-10-18', adj_close: 246},{ date: '2015-10-19', adj_close: 133},{ date: '2015-10-20', adj_close: 149},{ date: '2015-10-21', adj_close: 290},{ date: '2015-10-22', adj_close: 108},{ date: '2015-10-23', adj_close: 246},{ date: '2015-10-24', adj_close: 105},{ date: '2015-10-25', adj_close: 182},{ date: '2015-10-26', adj_close: 264},{ date: '2015-10-27', adj_close: 167},{ date: '2015-10-28', adj_close: 297},{ date: '2015-10-29', adj_close: 412},];
+     
+      $('#stock .chart_EVOL15_ALASKA').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#bf0000',
+    fillColor: '#ffd4aa',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL15_ALASKA').html(
+                  ' : ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min. :' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL15_ALASKA').html('&nbsp;');
+            });
+  });
+    </script>
+
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '00', adj_close: 22},{ date: '01', adj_close: 1},{ date: '03', adj_close: 328},{ date: '04', adj_close: 0},{ date: '05', adj_close: 4},{ date: '06', adj_close: 3},{ date: '07', adj_close: 1},{ date: '12', adj_close: 0},{ date: '14', adj_close: 5},{ date: '15', adj_close: 35},{ date: '16', adj_close: 7},{ date: '17', adj_close: 7},{ date: '18', adj_close: 0},{ date: '19', adj_close: 1},];
+     
+      $('#stock .chart_EVOL24_ALASKA').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#0000f0',
+    fillColor: '#c0d0f0',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL24_ALASKA').html(
+                  'Hora: ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min.:' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL24_ALASKA').html('&nbsp;');
+            });
+  });
+    </script>
+
+  <script> $(function() {
+$('#PIE_ALASKA').sparkline([303.2,44.3,41.4,14.9,8.5], {type: 'pie',height: '50px',width : '50px',tooltipFormat: '{{offset:offset}} ({{percent.1}}%)',tooltipValueLookups: {'offset': {0 :'USA-IT VOCAL',1 :'PER-TELEFONICA DEL PERU',2 :'ECU-OTECEL, S.A.- MOVISTAR',3 :'TELECOM SAO PAULO-TELESP',4 :'4 Carriers'}}});
+}); </script> 
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '2015-10-14', adj_close: 16965},{ date: '2015-10-15', adj_close: 1254},{ date: '2015-10-17', adj_close: 0},{ date: '2015-10-18', adj_close: 1},{ date: '2015-10-19', adj_close: 25},{ date: '2015-10-20', adj_close: 1881},{ date: '2015-10-21', adj_close: 10646},{ date: '2015-10-27', adj_close: 1},{ date: '2015-10-28', adj_close: 2624},{ date: '2015-10-29', adj_close: 2127},];
+     
+      $('#stock .chart_EVOL15_COREA_REP_POP_DEM').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#bf0000',
+    fillColor: '#ffd4aa',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL15_COREA_REP_POP_DEM').html(
+                  ' : ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min. :' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL15_COREA_REP_POP_DEM').html('&nbsp;');
+            });
+  });
+    </script>
+
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '17', adj_close: 931},{ date: '18', adj_close: 1085},{ date: '19', adj_close: 111},];
+     
+      $('#stock .chart_EVOL24_COREA_REP_POP_DEM').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#0000f0',
+    fillColor: '#c0d0f0',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL24_COREA_REP_POP_DEM').html(
+                  'Hora: ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min.:' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL24_COREA_REP_POP_DEM').html('&nbsp;');
+            });
+  });
+    </script>
+
+  <script> $(function() {
+$('#PIE_COREA_REP_POP_DEM').sparkline([2126.8], {type: 'pie',height: '50px',width : '50px',tooltipFormat: '{{offset:offset}} ({{percent.1}}%)',tooltipValueLookups: {'offset': {0 :'TELECOM SAO PAULO-TELESP'}}});
+}); </script> 
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '2015-10-14', adj_close: 59},{ date: '2015-10-15', adj_close: 673},{ date: '2015-10-16', adj_close: 79},{ date: '2015-10-17', adj_close: 84},{ date: '2015-10-18', adj_close: 90},{ date: '2015-10-19', adj_close: 246},{ date: '2015-10-20', adj_close: 732},{ date: '2015-10-21', adj_close: 111},{ date: '2015-10-22', adj_close: 170},{ date: '2015-10-23', adj_close: 70},{ date: '2015-10-24', adj_close: 49},{ date: '2015-10-25', adj_close: 41},{ date: '2015-10-26', adj_close: 89},{ date: '2015-10-27', adj_close: 3713},{ date: '2015-10-28', adj_close: 20629},{ date: '2015-10-29', adj_close: 8870},];
+     
+      $('#stock .chart_EVOL15_ARMENIA').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#bf0000',
+    fillColor: '#ffd4aa',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL15_ARMENIA').html(
+                  ' : ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min. :' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL15_ARMENIA').html('&nbsp;');
+            });
+  });
+    </script>
+
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '00', adj_close: 509},{ date: '01', adj_close: 739},{ date: '02', adj_close: 726},{ date: '03', adj_close: 352},{ date: '04', adj_close: 374},{ date: '05', adj_close: 848},{ date: '06', adj_close: 948},{ date: '07', adj_close: 1269},{ date: '08', adj_close: 607},{ date: '09', adj_close: 797},{ date: '10', adj_close: 741},{ date: '11', adj_close: 578},{ date: '12', adj_close: 337},{ date: '13', adj_close: 14},{ date: '14', adj_close: 3},{ date: '15', adj_close: 7},{ date: '16', adj_close: 4},{ date: '17', adj_close: 5},{ date: '18', adj_close: 3},{ date: '19', adj_close: 8},];
+     
+      $('#stock .chart_EVOL24_ARMENIA').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#0000f0',
+    fillColor: '#c0d0f0',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL24_ARMENIA').html(
+                  'Hora: ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min.:' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL24_ARMENIA').html('&nbsp;');
+            });
+  });
+    </script>
+
+  <script> $(function() {
+$('#PIE_ARMENIA').sparkline([8767.6,65.5,27.0,5.1,4.7], {type: 'pie',height: '50px',width : '50px',tooltipFormat: '{{offset:offset}} ({{percent.1}}%)',tooltipValueLookups: {'offset': {0 :'TELECOM SAO PAULO-TELESP',1 :'USA- BTS',2 :'TELEFONICA ARGENTINA SA',3 :'2 Carriers',4 :'TIWS SIP TRUNK'}}});
+}); </script> 
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '2015-10-14', adj_close: 2580},{ date: '2015-10-15', adj_close: 2460},{ date: '2015-10-16', adj_close: 2428},{ date: '2015-10-17', adj_close: 1343},{ date: '2015-10-18', adj_close: 1262},{ date: '2015-10-19', adj_close: 2129},{ date: '2015-10-20', adj_close: 9111},{ date: '2015-10-21', adj_close: 3883},{ date: '2015-10-22', adj_close: 5526},{ date: '2015-10-23', adj_close: 2794},{ date: '2015-10-24', adj_close: 1760},{ date: '2015-10-25', adj_close: 1778},{ date: '2015-10-26', adj_close: 2420},{ date: '2015-10-27', adj_close: 2500},{ date: '2015-10-28', adj_close: 2486},{ date: '2015-10-29', adj_close: 4242},];
+     
+      $('#stock .chart_EVOL15_TURQUIA').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#bf0000',
+    fillColor: '#ffd4aa',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL15_TURQUIA').html(
+                  ' : ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min. :' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL15_TURQUIA').html('&nbsp;');
+            });
+  });
+    </script>
+
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '00', adj_close: 4},{ date: '01', adj_close: 3},{ date: '02', adj_close: 7},{ date: '03', adj_close: 65},{ date: '04', adj_close: 333},{ date: '05', adj_close: 423},{ date: '06', adj_close: 131},{ date: '07', adj_close: 62},{ date: '08', adj_close: 51},{ date: '09', adj_close: 176},{ date: '10', adj_close: 450},{ date: '11', adj_close: 465},{ date: '12', adj_close: 351},{ date: '13', adj_close: 420},{ date: '14', adj_close: 195},{ date: '15', adj_close: 366},{ date: '16', adj_close: 128},{ date: '17', adj_close: 486},{ date: '18', adj_close: 77},{ date: '19', adj_close: 50},{ date: '20', adj_close: 0},];
+     
+      $('#stock .chart_EVOL24_TURQUIA').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#0000f0',
+    fillColor: '#c0d0f0',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL24_TURQUIA').html(
+                  'Hora: ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min.:' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL24_TURQUIA').html('&nbsp;');
+            });
+  });
+    </script>
+
+  <script> $(function() {
+$('#PIE_TURQUIA').sparkline([3475.5,263.1,236.1,157.6,109.4], {type: 'pie',height: '50px',width : '50px',tooltipFormat: '{{offset:offset}} ({{percent.1}}%)',tooltipValueLookups: {'offset': {0 :'TELECOM SAO PAULO-TELESP',1 :'6 Carriers',2 :'CYP-Primetel',3 :'TIWS SIP TRUNK',4 :'USA-CenturyLink'}}});
+}); </script> 
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '2015-10-14', adj_close: 6029},{ date: '2015-10-15', adj_close: 14223},{ date: '2015-10-16', adj_close: 24197},{ date: '2015-10-17', adj_close: 13974},{ date: '2015-10-18', adj_close: 13864},{ date: '2015-10-19', adj_close: 2069},{ date: '2015-10-20', adj_close: 260},{ date: '2015-10-21', adj_close: 321},{ date: '2015-10-22', adj_close: 40},{ date: '2015-10-23', adj_close: 7048},{ date: '2015-10-24', adj_close: 16381},{ date: '2015-10-25', adj_close: 17883},{ date: '2015-10-26', adj_close: 16251},{ date: '2015-10-27', adj_close: 60488},{ date: '2015-10-28', adj_close: 66553},{ date: '2015-10-29', adj_close: 58906},];
+     
+      $('#stock .chart_EVOL15_ZIMBABWE').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#bf0000',
+    fillColor: '#ffd4aa',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL15_ZIMBABWE').html(
+                  ' : ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min. :' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL15_ZIMBABWE').html('&nbsp;');
+            });
+  });
+    </script>
+
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '00', adj_close: 64},{ date: '03', adj_close: 31},{ date: '04', adj_close: 101},{ date: '05', adj_close: 108},{ date: '06', adj_close: 260},{ date: '07', adj_close: 713},{ date: '08', adj_close: 1312},{ date: '09', adj_close: 2978},{ date: '10', adj_close: 5233},{ date: '11', adj_close: 5818},{ date: '12', adj_close: 5805},{ date: '13', adj_close: 5659},{ date: '14', adj_close: 5612},{ date: '15', adj_close: 5684},{ date: '16', adj_close: 4985},{ date: '17', adj_close: 5044},{ date: '18', adj_close: 5079},{ date: '19', adj_close: 4677},];
+     
+      $('#stock .chart_EVOL24_ZIMBABWE').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#0000f0',
+    fillColor: '#c0d0f0',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL24_ZIMBABWE').html(
+                  'Hora: ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min.:' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL24_ZIMBABWE').html('&nbsp;');
+            });
+  });
+    </script>
+
+  <script> $(function() {
+$('#PIE_ZIMBABWE').sparkline([58819.7,83.1,2.7,0.8], {type: 'pie',height: '50px',width : '50px',tooltipFormat: '{{offset:offset}} ({{percent.1}}%)',tooltipValueLookups: {'offset': {0 :'USA-Pinyin Communications',1 :'TIWS SIP TRUNK',2 :'MEX-Latino Comm.',3 :'TELEFONICA ARGENTINA SA'}}});
+}); </script> 
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '2015-10-14', adj_close: 153},{ date: '2015-10-15', adj_close: 162},{ date: '2015-10-16', adj_close: 863},{ date: '2015-10-17', adj_close: 103},{ date: '2015-10-18', adj_close: 112},{ date: '2015-10-19', adj_close: 3722},{ date: '2015-10-20', adj_close: 527},{ date: '2015-10-21', adj_close: 655},{ date: '2015-10-22', adj_close: 559},{ date: '2015-10-23', adj_close: 166},{ date: '2015-10-24', adj_close: 47},{ date: '2015-10-25', adj_close: 65},{ date: '2015-10-26', adj_close: 2756},{ date: '2015-10-27', adj_close: 222},{ date: '2015-10-28', adj_close: 233},{ date: '2015-10-29', adj_close: 2346},];
+     
+      $('#stock .chart_EVOL15_MARTINICA').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#bf0000',
+    fillColor: '#ffd4aa',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL15_MARTINICA').html(
+                  ' : ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min. :' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL15_MARTINICA').html('&nbsp;');
+            });
+  });
+    </script>
+
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '00', adj_close: 9},{ date: '01', adj_close: 1},{ date: '02', adj_close: 5},{ date: '03', adj_close: 4},{ date: '04', adj_close: 0},{ date: '11', adj_close: 0},{ date: '13', adj_close: 1},{ date: '14', adj_close: 1265},{ date: '15', adj_close: 111},{ date: '16', adj_close: 21},{ date: '17', adj_close: 523},{ date: '18', adj_close: 404},{ date: '19', adj_close: 2},];
+     
+      $('#stock .chart_EVOL24_MARTINICA').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#0000f0',
+    fillColor: '#c0d0f0',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL24_MARTINICA').html(
+                  'Hora: ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min.:' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL24_MARTINICA').html('&nbsp;');
+            });
+  });
+    </script>
+
+  <script> $(function() {
+$('#PIE_MARTINICA').sparkline([2265.1,26.9,24.7,15.3,13.8], {type: 'pie',height: '50px',width : '50px',tooltipFormat: '{{offset:offset}} ({{percent.1}}%)',tooltipValueLookups: {'offset': {0 :'GBR-ADEPTRA',1 :'COLOMBIA TELECOM',2 :'6 Carriers',3 :'TELECOM SAO PAULO-TELESP',4 :'CTC-MUNDO'}}});
+}); </script> 
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '2015-10-14', adj_close: 176},{ date: '2015-10-15', adj_close: 212},{ date: '2015-10-16', adj_close: 6984},{ date: '2015-10-17', adj_close: 353},{ date: '2015-10-18', adj_close: 274},{ date: '2015-10-19', adj_close: 3243},{ date: '2015-10-20', adj_close: 398},{ date: '2015-10-21', adj_close: 263},{ date: '2015-10-22', adj_close: 293},{ date: '2015-10-23', adj_close: 99},{ date: '2015-10-24', adj_close: 186},{ date: '2015-10-25', adj_close: 364},{ date: '2015-10-26', adj_close: 172},{ date: '2015-10-27', adj_close: 1239},{ date: '2015-10-28', adj_close: 98},{ date: '2015-10-29', adj_close: 1824},];
+     
+      $('#stock .chart_EVOL15_SIRIA').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#bf0000',
+    fillColor: '#ffd4aa',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL15_SIRIA').html(
+                  ' : ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min. :' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL15_SIRIA').html('&nbsp;');
+            });
+  });
+    </script>
+
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '01', adj_close: 0},{ date: '09', adj_close: 16},{ date: '10', adj_close: 297},{ date: '11', adj_close: 315},{ date: '12', adj_close: 238},{ date: '13', adj_close: 501},{ date: '14', adj_close: 411},{ date: '15', adj_close: 9},{ date: '16', adj_close: 18},{ date: '17', adj_close: 5},{ date: '18', adj_close: 15},];
+     
+      $('#stock .chart_EVOL24_SIRIA').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#0000f0',
+    fillColor: '#c0d0f0',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL24_SIRIA').html(
+                  'Hora: ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min.:' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL24_SIRIA').html('&nbsp;');
+            });
+  });
+    </script>
+
+  <script> $(function() {
+$('#PIE_SIRIA').sparkline([1719.7,66.3,35.5,2.7], {type: 'pie',height: '50px',width : '50px',tooltipFormat: '{{offset:offset}} ({{percent.1}}%)',tooltipValueLookups: {'offset': {0 :'TELECOM SAO PAULO-TELESP',1 :'TIWS SIP TRUNK',2 :'TELEFONICA ARGENTINA SA',3 :'CTC-MUNDO'}}});
+}); </script> 
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '2015-10-14', adj_close: 3134},{ date: '2015-10-15', adj_close: 5645},{ date: '2015-10-16', adj_close: 4496},{ date: '2015-10-17', adj_close: 3570},{ date: '2015-10-18', adj_close: 3285},{ date: '2015-10-19', adj_close: 3831},{ date: '2015-10-20', adj_close: 3873},{ date: '2015-10-21', adj_close: 3183},{ date: '2015-10-22', adj_close: 2549},{ date: '2015-10-23', adj_close: 2795},{ date: '2015-10-24', adj_close: 1896},{ date: '2015-10-25', adj_close: 2315},{ date: '2015-10-26', adj_close: 3540},{ date: '2015-10-27', adj_close: 13177},{ date: '2015-10-28', adj_close: 21398},{ date: '2015-10-29', adj_close: 10580},];
+     
+      $('#stock .chart_EVOL15_FILIPINAS').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#bf0000',
+    fillColor: '#ffd4aa',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL15_FILIPINAS').html(
+                  ' : ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min. :' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL15_FILIPINAS').html('&nbsp;');
+            });
+  });
+    </script>
+
+ 
+    <script>
+        $(function() {
+        var stock= [ { date: '00', adj_close: 536},{ date: '01', adj_close: 591},{ date: '02', adj_close: 747},{ date: '03', adj_close: 667},{ date: '04', adj_close: 554},{ date: '05', adj_close: 468},{ date: '06', adj_close: 483},{ date: '07', adj_close: 838},{ date: '08', adj_close: 758},{ date: '09', adj_close: 1250},{ date: '10', adj_close: 1016},{ date: '11', adj_close: 896},{ date: '12', adj_close: 661},{ date: '13', adj_close: 368},{ date: '14', adj_close: 400},{ date: '15', adj_close: 151},{ date: '16', adj_close: 92},{ date: '17', adj_close: 33},{ date: '18', adj_close: 55},{ date: '19', adj_close: 18},];
+     
+      $('#stock .chart_EVOL24_FILIPINAS').sparkline(
+            $.map(stock, function(wk) { return wk.adj_close; }),
+            {
+                height: 50,
+                width: 150,
+    lineColor: '#0000f0',
+    fillColor: '#c0d0f0',
+                spotColor: false,
+                disableTooltips: true
+            }
+            ).on('sparklineRegionChange', function(ev) {
+                var idx = ev.sparklines[0].getCurrentRegionFields().offset;
+                if (idx) { $('.info_EVOL24_FILIPINAS').html(
+                  'Hora: ' + stock[idx].date 
+                + '&nbsp;&nbsp;&nbsp; '
+                + 'Min.:' + stock[idx].adj_close);
+                }
+            }).on('mouseout', function() {
+                $('#.info_EVOL24_FILIPINAS').html('&nbsp;');
+            });
+  });
+    </script>
+
+  <script> $(function() {
+$('#PIE_FILIPINAS').sparkline([6332.6,1924.5,1913.0,232.0,178.0], {type: 'pie',height: '50px',width : '50px',tooltipFormat: '{{offset:offset}} ({{percent.1}}%)',tooltipValueLookups: {'offset': {0 :'CYP-Alrus',1 :'TIWS SIP TRUNK',2 :'ESP-TELEFONICA',3 :'TELEFONICA ARGENTINA SA',4 :'7 Carriers'}}});
+}); </script> 
+        <!-- }); </script> -->
+      
+
+
+  <div class="row">
+  <div class="col-md-12">
         <section class="widget">
-                <div id="demo-wrapper">
-                    <div id="mapBox">
-                        <div id="container"></div> 
-                    </div>
-                </div>
-  		</section>
-      <section class="widget">
             <header>
                   <h4>
-                      CONSULTA DE ALARMAS
-                      <small>...</small>
+                      LISTADO  :
+                      <small>Alarmas</small>
                   </h4>
                         <div class="widget-controls">
                             <a href="" title="Expand" data-widgster="expand" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
                             <a href="" title="Collapse" data-widgster="collapse"><i class="glyphicon glyphicon-chevron-down"></i></a>
                             <a href="" title="Close" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
                         </div>
-            </header>
-        <div class="widget-body">
-              <div ng-controller="riskcabLists" >
-               <table class="table table-hover" class="table-responsive" >
-                <thead>
-                <tr>
-                    <td><strong>Destino de Riesgo</strong></td>
-                    <td><strong>Avg</strong></td>
-                    <td><strong>Tráfico Día</strong></td>
-                    <td><strong>Rumbo Umbral</strong></td>
-                    <td><strong>Ratio Ayer</strong></td>
-                    <td><strong>Promo. Dias Anterior</strong></td>
-                    <td><strong>Ratio Dias Anterior</strong></td>
-                    <td><strong>Promo Dias Similares</strong></td>
-                    <td><strong>Ratio  Dias Similares</strong></td>
-                    <td><strong>Desv. Dias Anterior</strong></td>
-                    <td><strong>Ind. Desv Dias</strong></td>
-                    </tr>
-                  </thead>
-                 <tbody>        
-                 <tr ng-repeat="tasacion in names"> 
-                   <td>{{ $index + 1 }}</td>
-                   <td>{{ tasacion.Cod_dato }}</td>
-                   <td>{{ tasacion. Ind_avg_xdp_minutos}} </td>
-                   <td>{{ tasacion.Dia_minutos}}</td>
-                   <td>{{ tasacion.Ind_umb_minutos }}</td>
-                   <td>{{ tasacion.Avg_xda_minutos }}</td>
-                   <td>{{ tasacion.Ind_avg_xda_minutos }}</td>
-                   <td>{{ tasacion.Avg_xdp_minutos }}</td>
-                   <td>{{ tasacion.Ind_avg_xdp_minutos }}</td>
-                   <td>{{ tasacion.Dst_xda_minutos}}</td>
-                   <td>{{ tasacion.Ind_dst_xda_minutos }}</td>
-                   <td>{{ tasacion.Dst_xdp_minutos}}</td>
-                   <td>{{ tasacion.Ind_dst_xdp_minutos}}</td>
-                   <td>{{ tasacion.Dst_xdp_minutos}}</td>
-                   <td>{{ tasacion.Ind_dst_xdp_minutos}}</td>
-                 </tr>
-                </tbody>               
-              </table>
-               </div>
-            
-              </section>
-           			<section class="widget">
-           			 <div class="row">
-        	   			<ul class="nav nav-pills">
-            				  <li class="active"><a href="#">Reportes</a></li>
-        				      <li><a href="#">15 Días</a></li>
-        				      <li><a href="#">24 horas</a></li>
-        				    <li><a href="#">Exportación</a></li>
-        				  </ul>   				
-        			   <div>
-           		 </section>
-                 </div> 
-   </main>
+              </header>
+              <div class="widget-body">
+                 <div class="row"> 
+                         <div class="col-md-4">
+                           <div class="form-group">
+                               <label for="email" class="control-label col-sm-3">
+                                   Fecha Inicio
+                               </label>
+                                     <div class="container">
+                                         <div class='col-md-2'>
+                                             <div class="form-group">
+                                                <!-- <div ng-controller="DateController as dateCtrl">-->
+                                                 <div>
+                                                  <input type="date" id="exampleInput" name="input" ng-model="example.value"
+                                                      placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
+                                                 </div>
+                                            </div>
+                                         </div>
+                                    </div>
+                            </div>
+                         </div>
+                         <div class="col-md-4">
+                           <div class="form-group">
+                               <label for="email" class="control-label col-sm-3">
+                                   Fecha Final
+                               </label>
+                                  <div class="container">
+                                         <div class='col-md-2'>
+                                             <div class="form-group">
+                                                <!-- <div ng-controller="DateController as dateCtrl">-->
+                                                 <div>
+                                                  <input type="date" id="exampleInput2" name="input2" ng-model="example.value2"
+                                                      placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
+                                                 </div>
+                                            </div>
+                                         </div>
+                                    </div>
+                            </div>
+                         </div>
+                          <div class="col-md-4">
+                              <button type="button" class="btn btn-primary">Buscar</button>
+                              <button type="button" class="btn btn-danger">Exportar xls </button> 
+                         </div>
+                     </div>                   
+                      <div class="row">
+                              <label for="email" class="control-label col-sm-3">
+                                   Seleccione el grupo :
+                               </label>
+                         <div class="col-md-4">
+                          <select class="selectpicker">
+                            <option>Brasil</option>
+                            <option>Alaska</option>
+                          </select>    
+                          </div>
+                      </div>
+                     <div>
+<table class='table table-hover'> 
+    <thead> 
+      <tr>
+        <th>Numero</th>
+        <th> <strong> DESTINO </strong>  </th>
+        <th>EVOL-15D</th>
+        <th>EVOL-24H</th>
+        <th>O-CARR</th>
+        <th>DISP_CARRIER_ORIGEN</th>
+        <th>TIPO</th>
+        <th>PAIS</th>
+        <th>OBSERVACION</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+ 
+    <tr>
+        <td> 01 </td>
+        <td> <p style='font-size:0.8em'> ALASKA </p> <p style='font-size:0.6em'> LLA.: 568<BR>MIN.: 412.3<BR>AVG: 0.7</p> </td>
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL15_ALASKA"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL15_ALASKA" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL24_ALASKA"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL24_ALASKA" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td> <span id='PIE_ALASKA'></span>  </td> 
+        <td> <p style='font-size:0.6em'> 198/USAIV-USA-IT VOCAL = 303.2 m.<BR>198/PER01-PER-TELEFONICA DEL P = 44.3 m.<BR>198/ECU90-ECU-OTECEL, S.A.- MO = 41.4 m.<BR>198/BRA90-TELECOM SAO PAULO-TE = 14.9 m.<BR>198/ZZZZZZ-4 Carriers = 8.5 m.<BR> </p></td> 
+        <td>Trafico Atipico</td>
+        <td>Destino Blando</td>
+        <td> <p style='font-size:0.6em'>  Muy Alto DISI =  ,205  <BR> </p></td> 
+        <td> <button type="button" class="btn btn-default btn-xs">Ver</button> </td>
+
+    </tr>
+    
+ 
+    <tr>
+        <td> 02</td>
+        <td> <p style='font-size:0.8em'> ALASKA</p> <p style='font-size:0.6em'> LLA.: 114<BR>MIN.: 2,126.8<BR>AVG: 18.7</p> </td>
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL15_COREA_REP_POP_DEM"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL15_COREA_REP_POP_DEM" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL24_COREA_REP_POP_DEM"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL24_COREA_REP_POP_DEM" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td> <span id='PIE_COREA_REP_POP_DEM'></span>  </td> 
+        <td> <p style='font-size:0.6em'> 195/BRA90-TELECOM SAO PAULO-TE = 2,126.8 m.<BR> </p></td> 
+                <td>Trafico Atipico</td>
+        <td>Lista Negra</td>
+        <td> <p style='font-size:0.6em'>  Extremadamente Alto AVG(Min) =  18  <BR> </p></td> 
+        <td> <button type="button" class="btn btn-default btn-xs">Ver</button> </td>
+
+    </tr>
+    
+ 
+    <tr>
+        <td> 03 </td>
+        <td> <p style='font-size:0.8em'> ALASKA </p> <p style='font-size:0.6em'> LLA.: 927<BR>MIN.: 8,869.8<BR>AVG: 9.6</p> </td>
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL15_ARMENIA"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL15_ARMENIA" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL24_ARMENIA"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL24_ARMENIA" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td> <span id='PIE_ARMENIA'></span>  </td> 
+        <td> <p style='font-size:0.6em'> 202/BRA90-TELECOM SAO PAULO-TE = 8,767.6 m.<BR>202/USABS-USA- BTS = 65.5 m.<BR>202/ARG03-TELEFONICA ARGENTINA = 27.0 m.<BR>202/ZZZZZZ-2 Carriers = 5.1 m.<BR>202/TIWST-TIWS SIP TRUNK = 4.7 m.<BR> </p></td> 
+        <td>Trafico Fraude</td>
+        <td>Lista Blanca</td>
+        <td> <p style='font-size:0.6em'>  Alto AVG(Min) =  9  <BR> Extremo DISI =  2,704  <BR> </p></td> 
+        <td> <button type="button" class="btn btn-default btn-xs">Ver</button> </td>
+
+    </tr>
+    
+ 
+    <tr>
+        <td> 04</td>
+        <td> <p style='font-size:0.8em'> ALASKA </p> <p style='font-size:0.6em'> LLA.: 794<BR>MIN.: 4,241.7<BR>AVG: 5.3</p> </td>
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL15_TURQUIA"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL15_TURQUIA" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL24_TURQUIA"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL24_TURQUIA" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td> <span id='PIE_TURQUIA'></span>  </td> 
+        <td> <p style='font-size:0.6em'> 82/BRA90-TELECOM SAO PAULO-TE = 3,475.5 m.<BR>82/ZZZZZZ-6 Carriers = 263.1 m.<BR>82/CYPPR-CYP-Primetel = 236.1 m.<BR>82/TIWST-TIWS SIP TRUNK = 157.6 m.<BR>82/USALI-USA-CenturyLink = 109.4 m.<BR> </p></td> 
+        <td>Trafico Tipico</td>
+        <td>Lista Blanca</td>
+        <td> <p style='font-size:0.6em'>  Medio AYER =  70  <BR> </p></td> 
+        <td> <button type="button" class="btn btn-default btn-xs">Ver</button> </td>
+
+    </tr>
+    
+ 
+    <tr>
+        <td>05 </td>
+        <td> <p style='font-size:0.8em'> ALASKA </p> <p style='font-size:0.6em'> LLA.: 14,353<BR>MIN.: 58,906.3<BR>AVG: 4.1</p> </td>
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL15_ZIMBABWE"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL15_ZIMBABWE" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL24_ZIMBABWE"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL24_ZIMBABWE" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td> <span id='PIE_ZIMBABWE'></span>  </td> 
+        <td> <p style='font-size:0.6em'> 101/USAPY-USA-Pinyin Communica = 58,819.7 m.<BR>101/TIWST-TIWS SIP TRUNK = 83.1 m.<BR>101/MEXLC-MEX-Latino Comm. = 2.7 m.<BR>101/ARG03-TELEFONICA ARGENTINA = 0.8 m.<BR> </p></td> 
+        <td>Trafico Atipico</td>
+        <td>Lista Negra</td>
+        <td> <p style='font-size:0.6em'>  Extremo DISI =  1,133  <BR> </p></td> 
+        <td> <button type="button" class="btn btn-default btn-xs">Ver</button> </td>
+
+    </tr>
+    
+ 
+    <tr>
+        <td> 06 </td>
+        <td> <p style='font-size:0.8em'> BRASIL </p> <p style='font-size:0.6em'> LLA.: 5,517<BR>MIN.: 2,345.7<BR>AVG: 0.4</p> </td>
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL15_MARTINICA"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL15_MARTINICA" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL24_MARTINICA"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL24_MARTINICA" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td> <span id='PIE_MARTINICA'></span>  </td> 
+        <td> <p style='font-size:0.6em'> 169/GBRAD-GBR-ADEPTRA = 2,265.1 m.<BR>169/COL01-COLOMBIA TELECOM = 26.9 m.<BR>169/ZZZZZZ-6 Carriers = 24.7 m.<BR>169/BRA90-TELECOM SAO PAULO-TE = 15.3 m.<BR>169/CHL03-CTC-MUNDO = 13.8 m.<BR> </p></td> 
+        <td>Trafico Atipico</td>
+        <td>Lista Negra</td>
+
+        <td> <p style='font-size:0.6em'>  Extremo AYER =  ,906  <BR> Alto DIAN =  ,119  <BR> Muy Alto DISI =  ,275  <BR> </p></td> 
+        <td> <button type="button" class="btn btn-default btn-xs">Ver</button> </td>
+
+    </tr>
+    
+ 
+    <tr>
+        <td> 07 </td>
+        <td> <p style='font-size:0.8em'> BRASIL </p> <p style='font-size:0.6em'> LLA.: 147<BR>MIN.: 1,824.1<BR>AVG: 12.4</p> </td>
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL15_SIRIA"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL15_SIRIA" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL24_SIRIA"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL24_SIRIA" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td> <span id='PIE_SIRIA'></span>  </td> 
+        <td> <p style='font-size:0.6em'> 70/BRA90-TELECOM SAO PAULO-TE = 1,719.7 m.<BR>70/TIWST-TIWS SIP TRUNK = 66.3 m.<BR>70/ARG03-TELEFONICA ARGENTINA = 35.5 m.<BR>70/CHL03-CTC-MUNDO = 2.7 m.<BR> </p></td> 
+        <td>Trafico Atipico</td>
+        <td>Lista Negra</td>
+        <td> <p style='font-size:0.6em'>  Muy Alto AVG(Min) =  12  <BR> Extremo AYER =  1,768  <BR> Muy Alto DIAN =  ,262  <BR> Extremo DISI =  ,653  <BR> </p></td> 
+       <td> <button type="button" class="btn btn-default btn-xs">Ver</button> </td>
+
+    </tr>
+    
+ 
+    <tr>
+        <td>08 </td>
+        <td> <p style='font-size:0.8em'> ALASKA </p> <p style='font-size:0.6em'> LLA.: 2,772<BR>MIN.: 10,579.9<BR>AVG: 3.8</p> </td>
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL15_FILIPINAS"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL15_FILIPINAS" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td>
+            <div id="stock">
+                <div class="chart_EVOL24_FILIPINAS"  style="width:150px;height:50px"></div> 
+                <div class="info_EVOL24_FILIPINAS" style="font-size:0.7em" ></div>
+            </div> 
+        </td> 
+        <td> <span id='PIE_FILIPINAS'></span>  </td> 
+        <td> <p style='font-size:0.6em'> 190/CYPAL-CYP-Alrus = 6,332.6 m.<BR>190/TIWST-TIWS SIP TRUNK = 1,924.5 m.<BR>190/ESP02-ESP-TELEFONICA = 1,913.0 m.<BR>190/ARG03-TELEFONICA ARGENTINA = 232.0 m.<BR>190/ZZZZZZ-7 Carriers = 178.0 m.<BR> </p></td> 
+        <td>Trafico Atipico</td>
+        <td>Lista Negra</td>
+        <td> <p style='font-size:0.6em'>  Alto DISI =  ,155  <BR> </p></td> 
+        <td> <button type="button" class="btn btn-default btn-xs">Ver</button> </td>
+
+    </tr>
+    
+    </tbody></table>
+                    </div>
+              </div>
+            <div class="align-center">
+            <nav>
+              <ul class="pagination">
+                <li>
+                  <a href="" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                    <li><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">4</a></li>
+                    <li><a href="">5</a></li>
+                <a href="" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+                </li>
+              </ul>
+            </nav>    
+      </div>
+    </section>
+  </div>
+</div>
+</main>
