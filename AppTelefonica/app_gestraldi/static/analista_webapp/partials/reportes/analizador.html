@@ -2,10 +2,15 @@
   <div class="row">
   <div class="col-md-12">
         <section class="widget">
-            <header>
+            <header> 
                   <h4>
                       ANALIZADOR :
                       <small>ONLINE</small>
+                       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                       ULTIMO PROCESO: 2016/12/03
                   </h4>
                         <div class="widget-controls">
                             <a href="#" title="Expand" data-widgster="expand" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
@@ -15,10 +20,10 @@
               </header>
               <div class="widget-body">
                  <div class="row"> 
-                         <div class="col-md-4">
+                         <div class="col-md-3">
                            <div class="form-group">
                                <label for="email" class="control-label col-sm-3">
-                                   Fecha Inicio
+                                   DESDE:
                                </label>
                                      <div class="container">
                                          <div class='col-md-2'>
@@ -33,10 +38,10 @@
                                     </div>
                             </div>
                          </div>
-                         <div class="col-md-4">
+                         <div class="col-md-3">
                            <div class="form-group">
                                <label for="email" class="control-label col-sm-3">
-                                   Fecha Final
+                                   HASTA:
                                </label>
                                   <div class="container">
                                          <div class='col-md-2'>
@@ -51,43 +56,50 @@
                                     </div>
                             </div>
                          </div>
-                          <div class="col-md-4">
+
+                          <div class="col-md-3">
                             <button type="button" class="btn btn-primary">Buscar</button>
                             <button type="button" class="btn btn-danger">Exportar xls </button> 
                          </div>
                      </div>                   
-                     <div ng-controller="ctrlTasacion">
+                     <div ng-controller="ctrlAnalizadorOnline">
                           <table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
                            <thead>
                            <tr>
                                <td><strong>Items</strong></td>
-                               <td><strong>Orig.Telefono</strong></td>
-                               <td><strong>Dest.Telefono</strong></td>
-                               <td><strong>Orig.Ruta</strong></td>
-                               <td><strong>Orig.Carrier</strong></td>
-                               <td><strong>Orig.Pais</strong></td>
-                               <td><strong>Dest.Ruta</strong></td>
-                               <td><strong>Dest.Carrier</strong></td>
-                               <td><strong>Dest.Pais</strong></td>
-                               <td><strong>Orig.Area</strong></td>
-                               <td><strong>Dest.Area</strong></td>
-                               <td><strong>Segundos</strong></td>
+                               <td><strong>En revisión</strong></td>
+                               <td><strong>Avg</strong></td>
+                               <td><strong>Tráfico Día</strong></td>
+                               <td><strong>Ratio Umbral</strong></td>
+                               <td><strong>Tráfico Ayer</strong></td>
+                               <td><strong>Ratio Ayer</strong></td>
+                               <td><strong>Prom. dias Anterior</strong></td>
+                               <td><strong>Ratio Dias Anterior</strong></td>
+                               <td><strong>Prom. Dias Similares</strong></td>
+                               <td><strong>Ratio Dias Similares</strong></td>
+                               <td><strong>Desv. Dias Anterior</strong></td>
+                               <td><strong>Ind. Desv Dias</strong></td>
+                               <td><strong>Desv. Dias Similares</strong></td>
+                               <td><strong>Ind. Desv. Similares</strong></td>
                              </tr>
                              </thead>
                             <tbody>      
-                            <tr ng-repeat="tasacion in names  | filter:searchText">         
-                                 <td>{{ $index + 1 }}</td>
-                                 <td>{{ tasacion.Numeroorigen }}</td>
-                                 <td>{{ tasacion.Numerodestino }}</td>
-                                 <td>{{ tasacion.Rutaentradaa }}</td>
-                                 <td>{{ tasacion.Ruen_operadoraa }}</td>
-                                 <td>{{ tasacion.Nuor_paisa }}</td>
-                                 <td>{{ tasacion.Rutasalidaa }}</td>
-                                 <td>{{ tasacion.Ruta_operadoraa }}</td>
-                                 <td>{{ tasacion.Nude_paisa }}</td>
-                                 <td>{{ tasacion.Nude_ciudada }}</td>
-                                 <td>{{ tasacion.Nude_ciudada }}</td>                             
-                                 <td>{{ tasacion.Segundos }}</td>                   
+                            <tr ng-repeat="analizador in names  | filter:searchText">         
+                                 <td> {{ $index + 1 }} </td>
+                                 <td>{{ analizador.Cod_dato_descripcion }} </td>
+                                 <td>{{ analizador.Dia_llamadas }}</td>
+                                 <td>{{ analizador.Ind_umb_llamadas }} </td>
+                                 <td>{{ analizador.Aye_llamadas }}</td>
+                                 <td>{{ analizador.Numeroorigen }} <i class="fa fa-circle text-warning mr-xs"></i></td>
+                                 <td>{{ analizador.Ind_aye_llamadas }}  <i class="fa fa-circle text-gray mr-xs"></i></td>
+                                 <td>{{ analizador.Avg_xda_llamadas }} <i class="fa fa-circle text-danger mr-xs"></i></td>
+                                 <td>{{ analizador.Ind_avg_xda_llamadas }}</td>
+                                 <td>{{ analizador.Avg_xdp_llamadas }}</td>
+                                 <td>{{ analizador.Ind_avg_xdp_llamadas }}</td>
+                                 <td>{{ analizador.Dst_xda_llamadas }}</td>
+                                 <td>{{ analizador.Ind_dst_xda_llamadas }}</td>
+                                 <td>{{ analizador.Dst_xdp_llamadas }}</td>                        
+                                 <td>{{ analizador.Ind_dst_xdp_llamadas }}</td>               
                              </td>
                             </tr>       
                             </tbody>               
@@ -95,196 +107,16 @@
                     </div>
               </div>
         </section>
-
-       <div class="widget-body">
-          <div class="row">
-            <div class="col-md-4">
-             <div>  Paises Salida</div>
-               <div ng-controller="ctrlTasacion">
-                 <table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
-                  <thead>
-                    <tr>
-                      <td> <div class="checkbox"><input type="checkbox"></div></td>
-                      <td><strong>Items</strong></td>
-                      <td><strong>País</strong></td>
-                      <td><strong>Llamadas</strong></td>
-                      <td><strong>Minutos</strong></td>
-                      <td><strong>Avg</strong></td>
-
-                    </tr>
-                  </thead>
-                  <tbody>      
-                   <tr ng-repeat="tasacion in names  | filter:searchText">         
-                        <td><input type="checkbox" id="checkboxEnLinea2" value="opcion_2"> </td>
-                        <td>{{ $index + 1 }}</td>
-                        <td>{{ tasacion.Numeroorigen }}</td>
-                        <td>{{ tasacion.Numerodestino }}</td>
-                        <td>{{ tasacion.Rutaentradaa }}</td>
-              
-                    </td>
-                   </tr>       
-                  </tbody>               
-                </table>
-              </div>
-            </div>
-                        <div class="col-md-4">
-             <div>  Area SAlida</div>
-               <div ng-controller="ctrlTasacion">
-                 <table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
-                  <thead>
-                    <tr>
-                      <td> </td>
-                      <td><strong>Items</strong></td>
-                      <td><strong>País</strong></td>
-                      <td><strong>Llamadas</strong></td>
-                      <td><strong>Minutos</strong></td>
-                      <td><strong>Avg</strong></td>
-
-                    </tr>
-                  </thead>
-                  <tbody>      
-                   <tr ng-repeat="tasacion in names  | filter:searchText">         
-                        <td><input type="checkbox" id="checkboxEnLinea2" value="opcion_2"> </td>
-                        <td>{{ $index + 1 }}</td>
-                        <td>{{ tasacion.Nude_paisa }}</td>
-                        <td>{{ tasacion.Numerodestino }}</td>
-                        <td>{{ tasacion.Rutaentradaa }}</td>
-              
-                    </td>
-                   </tr>       
-                  </tbody>               
-                </table>
-              </div>
-            </div>
-                        <div class="col-md-4">
-             <div>  CArrier Salida</div>
-               <div ng-controller="ctrlTasacion">
-                 <table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
-                  <thead>
-                    <tr>
-                      <td><strong>Items</strong></td>
-                      <td><strong>País</strong></td>
-                      <td><strong>Llamadas</strong></td>
-                      <td><strong>Minutos</strong></td>
-                      <td><strong>Avg</strong></td>
-
-                    </tr>
-                  </thead>
-                  <tbody>      
-                   <tr ng-repeat="tasacion in names  | filter:searchText">         
-                        <td><input type="checkbox" id="checkboxEnLinea2" value="opcion_2"> </td>
-                        <td>{{ $index + 1 }}</td>
-                        <td>{{ tasacion.Nude_paisa }}</td>
-
-                        <td>{{ tasacion.Numerodestino }}</td>
-  
-                         <td>{{ tasacion.Rutaentradaa }}</td>
-              
-                    </td>
-                   </tr>       
-                  </tbody>               
-                </table>
-              </div>
-            </div>
-          </div> 
-          <div class="row">
-            <div class="col-md-4">
-             <div>  Paises Origen</div>
-               <div ng-controller="ctrlTasacion">
-                 <table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
-                  <thead>
-                    <tr>
-                      <td><strong>Items</strong></td>
-                      <td><strong>País</strong></td>
-                      <td><strong>Llamadas</strong></td>
-                      <td><strong>Minutos</strong></td>
-                      <td><strong>Avg</strong></td>
-
-                    </tr>
-                  </thead>
-                  <tbody>      
-                   <tr ng-repeat="tasacion in names  | filter:searchText">         
-                        <td><input type="checkbox" id="checkboxEnLinea2" value="opcion_2"> </td>
-                        <td>{{ $index + 1 }}</td>
-                        <td>{{ tasacion.Numeroorigen }}</td>
-                        <td>{{ tasacion.Numerodestino }}</td>
-                        <td>{{ tasacion.Rutaentradaa }}</td>
-              
-                    </td>
-                   </tr>       
-                  </tbody>               
-                </table>
-              </div>
-            </div>
-                        <div class="col-md-4">
-             <div>  Area Origen</div>
-               <div ng-controller="ctrlTasacion">
-                 <table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
-                  <thead>
-                    <tr>
-                      <td><strong>Items</strong></td>
-                      <td><strong>País</strong></td>
-                      <td><strong>Llamadas</strong></td>
-                      <td><strong>Minutos</strong></td>
-                      <td><strong>Avg</strong></td>
-
-                    </tr>
-                  </thead>
-                  <tbody>      
-                   <tr ng-repeat="tasacion in names  | filter:searchText">         
-                        <td><input type="checkbox" id="checkboxEnLinea2" value="opcion_2"> </td>
-                        <td>{{ $index + 1 }}</td>
-                        <td>{{ tasacion.Numeroorigen }}</td>
-                        <td>{{ tasacion.Numerodestino }}</td>
-                        <td>{{ tasacion.Rutaentradaa }}</td>
-              
-                    </td>
-                   </tr>       
-                  </tbody>               
-                </table>
-              </div>
-            </div>
-                        <div class="col-md-4">
-             <div>  CArrier Origen</div>
-               <div ng-controller="ctrlTasacion">
-                 <table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
-                  <thead>
-                    <tr>
-                      <td><strong>Items</strong></td>
-                      <td><strong>País</strong></td>
-                      <td><strong>Llamadas</strong></td>
-                      <td><strong>Minutos</strong></td>
-                      <td><strong>Avg</strong></td>
-
-                    </tr>
-                  </thead>
-                  <tbody>      
-                   <tr ng-repeat="tasacion in names  | filter:searchText">         
-                        <td><input type="checkbox" id="checkboxEnLinea2" value="opcion_2"> </td>
-
-                        <td>{{ $index + 1 }}</td>
-                        <td>{{ tasacion.Numeroorigen }}</td>
-                        <td>{{ tasacion.Numerodestino }}</td>
-                        <td>{{ tasacion.Rutaentradaa }}</td>
-              
-                    </td>
-                   </tr>       
-                  </tbody>               
-                </table>
-              </div>
-            </div>
-          </div> 
-
-      </div>  
-    
-
         <section class="widget">
           <div class="row">
             <ul class="nav nav-pills">
               <li class="active"><a href="#">Reportes</a></li>
-              <li><a href="">15 Días</a></li>
-              <li><a href="">24 horas</a></li>
-              <li><a href="">Exportación</a></li>
+              <li><a href="">24 horas && 15 Días</a></li>
+              <li><a href="">x Area Destino</a></li>
+              <li><a href="">x Area Origen</a></li>
+              <li><a href="">x Carrier Entrante</a></li>
+              <li><a href="">x CArrier Saliente</a></li>
+              <li><a href="">x Pais Destino</a></li>
             </ul>           
           <div>
         </section>

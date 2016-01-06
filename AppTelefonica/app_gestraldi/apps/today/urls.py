@@ -3,8 +3,8 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from .views import *
 
 today_urls = patterns('',
-    url(r'^riskhoy/$', RiskRatiosHoyList.as_view()),
-    url(r'^riskhoy/(?P<pk>\d+)/$', RiskRatiosHoyDetail.as_view()),
+    url(r'^analizadorOnline/$', analizadorHoyList.as_view()),
+    url(r'^analizadorOnline/(?P<pk>\d+)/$', analizadorHoyDetail.as_view()),
     url(r'^tasacion/$', TasacionSolohoyList.as_view()),
 
  )

@@ -35,7 +35,7 @@ App.config(['$stateProvider','$httpProvider',  function ($stateProvider, $httpPr
       url: '/reporte/analizador/',
       parent: 'root',
       views: {
-        '@': {templateUrl: "/static/analista_webapp/partials/reportes/analizador.html", controller: "riskcabLists"}
+        '@': {templateUrl: "/static/analista_webapp/partials/reportes/analizador.html", controller: "ctrlAnalizadorOnline"}
       }
     })
 
@@ -54,8 +54,8 @@ App.config(['$stateProvider','$httpProvider',  function ($stateProvider, $httpPr
         '@': {templateUrl: "/static/analista_webapp/partials/control/controlCarga.html", controller: "ctrlControlCarga"}
       }
     })
-
 }]);
+
 
 
 

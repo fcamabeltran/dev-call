@@ -1,4 +1,6 @@
 from .models import TasacionSolohoy,RiskRatiosHoy
+from apps.store.models import RiskTraficoCab
+from apps.store.serializers import RiskTraficoCabSerializer
 from .serializers import TasacionSolohoySerializer,RiskRatiosHoySerializer
 from rest_framework import generics
 
@@ -25,13 +27,13 @@ class tasacionsolohoyList(generics.ListAPIView):
       query = TasacionSolohoy.objects.filter().order_by('secuenciaproceso')[:10]
       return query
 
-class RiskRatiosHoyList(generics.ListCreateAPIView):
-    model = RiskRatiosHoy
-    queryset = RiskRatiosHoy.objects.all()
+class analizadorHoyList(generics.ListCreateAPIView):
+    model = RiskTraficoCab
+    queryset = RiskTraficoCabSerializer.objects.all()
     serializer_class = RiskRatiosHoySerializer
 
-class RiskRatiosHoyDetail(generics.RetrieveUpdateDestroyAPIView):
-    model = RiskRatiosHoy
-    queryset = RiskRatiosHoy.objects.all()
+class analizadorHoyDetail(generics.RetrieveUpdateDestroyAPIView):
+    model = RiskTraficoCabSerializer
+    queryset = RiskTraficoCabSerializer.objects.all()
     serializer_class = RiskRatiosHoySerializer
 

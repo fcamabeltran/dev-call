@@ -3,6 +3,7 @@ var gulp = require('gulp'),
 
 var paths = {
     scripts: [
+        //librerias del sistema
         'bower_components/angular/angular.js',
         'bower_components/angular-ui-router/release/angular-ui-router.js',        
         'bower_components/jquery/dist/jquery.min.js',
@@ -17,6 +18,9 @@ var paths = {
         'bower_components/widgster/widgster.js',
         'bower_components/pace.js/pace.js',
         'bower_components/angular-touch/angular-touch.min.js',
+        //librerias externas
+        'bower_components/angular-resource/angular-resource.js',
+        //Librerias locales
         'js/src/app.js'     ,
         'js/src/controllers.js',
         'js/src/utiles.js',
