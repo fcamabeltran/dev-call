@@ -1,5 +1,6 @@
 var app =angular.module('controllerCliente', []);
 
+
   app.controller("ctrlIndex", function ($scope, $http) {
       $http.get('/api/me/').success(function (data) {
         $scope.names = data;
@@ -24,5 +25,7 @@ var app =angular.module('controllerCliente', []);
         $scope.names = data;
       });
     });
+
+
 
 

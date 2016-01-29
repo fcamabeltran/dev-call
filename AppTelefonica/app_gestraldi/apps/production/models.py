@@ -97,23 +97,23 @@ class Ruta(models.Model):
         db_table = 'TIWS_RUTA'
 
 class ServiciosEspeciales(models.Model):
-    Numero      = models.CharField(primary_key=True,max_length=20,blank=False,db_column='ssee_numero' )
-    Pais = models.ForeignKey('Paises',db_column='ssee_pais')
-    TipoDestino      = models.CharField(max_length=10,db_column='ssee_tipodestino')
-    Servicio =   models.ForeignKey('Servicio',db_column='ssee_servicio')
-    Destino =models.ForeignKey('Destino',db_column='ssee_destino')
-    Operador  = models.CharField(max_length=5,db_column='ssee_operador')
-    FechaInicio      = models.DateField(primary_key=True,db_column='ssee_fechainicio')
-    FechaFinal     = models.DateField(db_column='ssee_fechafinal')
-    FechadeUso = models.DateField(db_column='ssee_fechadeuso')
-    FechaLoad = models.DateField(db_column='ssee_fechaload')
-    Fuente = models.CharField(max_length=50,db_column='ssee_fuente')
-    Observacion = models.CharField(max_length=100,db_column='ssee_observacion')
-    def __str__(self):
-      return self.Numero
-    class Meta:
-      managed = False
-      db_table = 'TIWS_SSEE'
+  Numero      = models.CharField(primary_key=True,max_length=20,blank=False,db_column='ssee_numero' )
+  Pais = models.ForeignKey('Paises',db_column='ssee_pais')
+  TipoDestino      = models.CharField(max_length=10,db_column='ssee_tipodestino')
+  Servicio =   models.ForeignKey('Servicio',db_column='ssee_servicio')
+  Destino =models.ForeignKey('Destino',db_column='ssee_destino')
+  Operador  = models.CharField(max_length=5,db_column='ssee_operador')
+  FechaInicio      = models.DateField(primary_key=True,db_column='ssee_fechainicio')
+  FechaFinal     = models.DateField(db_column='ssee_fechafinal')
+  FechadeUso = models.DateField(db_column='ssee_fechadeuso')
+  FechaLoad = models.DateField(db_column='ssee_fechaload')
+  Fuente = models.CharField(max_length=50,db_column='ssee_fuente')
+  Observacion = models.CharField(max_length=100,db_column='ssee_observacion')
+  def __str__(self):
+    return self.Numero
+  class Meta:
+    managed = False
+    db_table = 'TIWS_SSEE'
 
 class DestinoRiesgo(models.Model):
   Codigo = models.IntegerField(primary_key=True,db_column='drsk_codigo')

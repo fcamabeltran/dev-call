@@ -1,0 +1,162 @@
+<main id="content" class="content" role="main">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="row">
+				<div class="widget-body">
+					<section class="widget">
+						<section class="widget-body">
+							<table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
+								<thead>
+									<tr>
+										<td><strong>Items <strong> </td>
+										<td><strong>Descripcion</strong></td>
+										<td><strong>Llamadas</strong></td>
+										<td><strong>Minutos</strong></td>
+									</tr>
+								</thead>
+								<tbody>      
+									<tr ng-repeat="analizador in names  | filter:searchText">         
+										<td> {{ $index + 1 }} </td>
+										<td>{{ analizador.Cod_dato_descripcion }} </td>
+										<td>{{ analizador.Dia_llamadas }}</td>
+										<td>{{ analizador.Ind_umb_llamadas }} </td>
+									</td>
+								</tr>       
+							</tbody>               
+						</table>
+					</section>
+				</section>
+			</div>
+		</div>
+		<div class="row">
+			<div class="widget-body">
+				<section class="widget">
+					<section class="widget-body">
+						<table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
+							<thead>
+								<tr>
+									<td><strong>Items <strong> </td>
+									<td><strong>Descripcion</strong></td>
+									<td><strong>Llamadas</strong></td>
+									<td><strong>Minutos</strong></td>
+								</tr>
+							</thead>
+							<tbody>      
+								<tr ng-repeat="analizador in names  | filter:searchText">         
+									<td> {{ $index + 1 }} </td>
+									<td>{{ analizador.Cod_dato_descripcion }} </td>
+									<td>{{ analizador.Dia_llamadas }}</td>
+									<td>{{ analizador.Ind_umb_llamadas }} </td>
+								</tr>       
+							</tbody>               
+						</table>
+					</section>
+				</section>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-8">
+		<section class="widget">
+			<header>
+				<h4>
+					Analisis de Rechazo:
+					<small>Llamadas</small>
+				</h4>
+				<div class="widget-controls">
+					<a href="" title="Expand" data-widgster="expand" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
+					<a href="" title="Collapse" data-widgster="collapse"><i class="glyphicon glyphicon-chevron-down"></i></a>
+					<a href="" title="Close" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+				</div>
+			</header>
+			<div class="widget-body">
+				<div class="row"> 
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="email" class="control-label col-sm-3">
+
+								Desde :
+							</label>
+							<div class="container">
+								<div class='col-md-2'>
+									<div class="form-group">
+										<!-- <div ng-controller="DateController as dateCtrl">-->
+										<div>
+											<input type="date" id="exampleInput" name="input" ng-model="example.value"
+											placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="email" class="control-label col-sm-3">
+								Hasta :
+							</label>
+							<div class="container">
+								<div class='col-md-2'>
+									<div class="form-group">
+										<!-- <div ng-controller="DateController as dateCtrl">-->
+										<div>
+											<input type="date" id="exampleInput2" name="input2" ng-model="example.value2"
+											placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<button type="button" class="btn btn-primary">Buscar</button>
+						<button type="button" class="btn btn-danger">Exportar xls </button> 
+					</div>
+					<div ng-controller="ctrlControlRechazoDetalle">
+						<table datatable="ng" dt-options="dtOptions" class="table table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
+							<thead>
+								<tr>
+									<td><strong>Items</strong></td>
+									<td><strong>Fecha-Hora</strong></td>
+									<td><strong>Numero Origen</strong></td>
+									<td><strong>Numero Destino</strong></td>
+									<td><strong>Ruta In</strong></td>
+									<td><strong>Ruta Out.</strong></td>
+									<td><strong>Seg</strong></td>
+									<td><strong>Ip Salida</strong></td>
+									<td><strong>P</strong></td>
+									<td><strong>NRP</strong></td>
+									<td><strong>Error</strong></td>
+									<td><strong>Obs</strong></td>
+									<td><strong>Sec.Pro</strong></td>
+									<td><strong>Sec.Reg.</strong></td>
+									<td><strong>Id.Call</strong></td>
+								</tr>
+							</thead>
+							<tbody>        
+								<tr ng-repeat="rechazo in names | filter:searchText">         
+									<td>{{ $index + 1 }}</td>
+									<td>{{ rechazo.Fechahora }}</td>
+									<td>{{ rechazo.Numeroorigen }}</td>
+									<td>{{ rechazo.Numerodestino }}</td>
+									<td>{{ rechazo.Rutaentrada }}</td>
+									<td>{{ rechazo.Rutasalida }}</td>
+									<td>{{ rechazo.Segundos }}</td>              
+									<td>{{ rechazo.Ip_entrada }}</td>
+									<td>{{ rechazo.Ip_salida }}</td>
+									<td>{{ rechazo.Numregparcial }}</td>
+									<td>{{ rechazo.Error }}</td>
+									<td>{{ rechazo.Observacion }}</td>
+									<td>{{ rechazo.Secuenciaregistro }}</td>
+									<td>{{ rechazo.Secuenciaproceso }}</td>
+									<td>{{ rechazo.Id_call }}</td>
+								</tr>
+							</tbody>               
+						</table>
+					</div>
+				</div>
+			</div> 
+		</section>
+	</div>
+</div>
+</main>

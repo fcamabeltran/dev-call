@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import controlProceso,Prefijos,Parametros
+from .models import controlProceso,Prefijos,Parametros,Rechazos
+from apps.production.models import Errores
 
 class ControlCargaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -18,6 +19,10 @@ class PrefijosSerializer(serializers.HyperlinkedModelSerializer):
         fields=('Prefijo','Posicion','Longitud','Rutaentrada','Rutasalida','Estado','Agregar','Reemplazar','Quitar','Tipo')
 
 
-
+class RechazosSerializer(serializers.ModelSerializer):
+    DescripcionError= serializers.CharField(source="Error.Descripcion")
+    class Meta:
+        model = Rechazos
+        fields=('Secuenciaproceso','Secuenciaregistro','DescripcionError','Fechahora','Numeroorigen','Numerodestino','Rutaentrada','Rutasalida','Ip_entrada','Ip_salida','Segundos','Salidaparcial','Numregparcial','Error','Observacion','Id_call')
 
 

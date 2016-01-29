@@ -1,144 +1,164 @@
   <main id="content" class="content" role="main">
-  <div class="row">
-  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12">
         <section class="widget">
-            <header>
-                  <h4>
-                      CONSULTA DE :
-                      <small>Llamadas</small>
-                  </h4>
-                        <div class="widget-controls">
-                            <a href="#" title="Expand" data-widgster="expand" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
-                            <a href="#" title="Collapse" data-widgster="collapse"><i class="glyphicon glyphicon-chevron-down"></i></a>
-                            <a href="#" title="Close" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
-                        </div>
-              </header>
-              <div class="widget-body">
-                 <div class="row"> 
-                         <div class="col-md-4">
-                           <div class="form-group">
-                               <label for="email" class="control-label col-sm-3">
-                                   Fecha Inicio
-                               </label>
-                                     <div class="container">
-                                         <div class='col-md-2'>
-                                             <div class="form-group">
-                                                <!-- <div ng-controller="DateController as dateCtrl">-->
-                                                 <div>
-                                                  <input type="date" id="exampleInput" name="input" ng-model="example.value"
-                                                      placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
-                                                 </div>
-                                            </div>
-                                         </div>
-                                    </div>
-                            </div>
-                         </div>
-                         <div class="col-md-4">
-                           <div class="form-group">
-                               <label for="email" class="control-label col-sm-3">
-                                   Fecha Final
-                               </label>
-                                  <div class="container">
-                                         <div class='col-md-2'>
-                                             <div class="form-group">
-                                                <!-- <div ng-controller="DateController as dateCtrl">-->
-                                                 <div>
-                                                  <input type="date" id="exampleInput2" name="input2" ng-model="example.value2"
-                                                      placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
-                                                 </div>
-                                            </div>
-                                         </div>
-                                    </div>
-                            </div>
-                         </div>
-                     </div>                   
-                     <div class="row">
-                         <div class="col-md-4">
-                           <div class="form-group">
-                               <label for="number" class="control-label col-sm-3">
-                                   Número Origen
-                               </label>
-                               <div class="col-sm-9">
-                                   <input type="text" required="required" ng-model="searchText"></ul>
-                               </div>
-                           </div>
-                         </div>
-                         <div class="col-md-4">
-                           <div class="form-group">
-                               <label for="range" class="control-label col-sm-3">
-                                   Número Destino
-                               </label>
-                               <div class="col-sm-9">
-                                    <input type="text" required="required" ng-model="searchText"></ul>
-                               </div>
-                           </div>                    
-                         </div>
-                         <div class="col-md-4">
-                          <button type="button" class="btn btn-primary">Buscar</button>
-                          <button type="button" class="btn btn-danger">Exportar xls </button> 
-                         </div>
-                     </div>
-           
-                     <div ng-controller="ctrlTasacion">
-                          <table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
-                           <thead>
-                           <tr>
-                               <td><strong>Items</strong></td>
-                               <td><strong>Orig.Telefono</strong></td>
-                               <td><strong>Dest.Telefono</strong></td>
-                               <td><strong>Orig.Ruta</strong></td>
-                               <td><strong>Orig.Carrier</strong></td>
-                               <td><strong>Orig.Pais</strong></td>
-                               <td><strong>Dest.Ruta</strong></td>
-                               <td><strong>Dest.Carrier</strong></td>
-                               <td><strong>Dest.Pais</strong></td>
-                               <td><strong>Orig.Area</strong></td>
-                               <td><strong>Dest.Area</strong></td>
-                               <td><strong>Segundos</strong></td>
-                             </tr>
-                             </thead>
-                            <tbody>      
-                            <!-- -->       
-                            <tr ng-repeat="tasacion in names  | filter:searchText">         
-                                 <td>{{ $index + 1 }}</td>
-                                 <td>{{ tasacion.Numeroorigen }}</td>
-                                 <td>{{ tasacion.Numerodestino }}</td>
-                                 <td>{{ tasacion.Rutaentradaa }}</td>
-                                 <td>{{ tasacion.Ruen_operadoraa }}</td>
-                                 <td>{{ tasacion.Nuor_paisa }}</td>
-                                 <td>{{ tasacion.Rutasalidaa }}</td>
-                                 <td>{{ tasacion.Ruta_operadoraa }}</td>
-                                 <td>{{ tasacion.Nude_paisa }}</td>
-                                 <td>{{ tasacion.Nude_ciudada }}</td>
-                                 <td>{{ tasacion.Nude_ciudada }}</td>                             
-                                 <td>{{ tasacion.Segundos }}</td>                   
-                             </td>
-                            </tr>       
-                            </tbody>               
-                          </table>
+          <header>
+            <h4>
+              CONSULTA DE :
+              <small>Llamadas</small>
+            </h4>
+            <div class="widget-controls">
+              <a href="#" title="Expand" data-widgster="expand" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
+              <a href="#" title="Collapse" data-widgster="collapse"><i class="glyphicon glyphicon-chevron-down"></i></a>
+              <a href="#" title="Close" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+            </div>
+          </header>
+          <div class="widget-body">
+           <div class="row"> 
+             <div class="col-md-4">
+               <div class="form-group">
+                 <label for="email" class="control-label col-sm-3">
+                   Fecha Inicio
+                 </label>
+                 <div class="container">
+                   <div class='col-md-2'>
+                     <div class="form-group">
+                      <!-- <div ng-controller="DateController as dateCtrl">-->
+                      <div>
+                        <input type="date" id="exampleInput" name="input" ng-model="example.value"
+                        placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
+                      </div>
                     </div>
+                  </div>
+                </div>
               </div>
-            <div class="align-center">
-            <nav>
-              <ul class="pagination">
-                <li>
-                  <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                  </a>
+            </div>
+            <div class="col-md-4">
+             <div class="form-group">
+               <label for="email" class="control-label col-sm-3">
+                 Fecha Final
+               </label>
+               <div class="container">
+                 <div class='col-md-2'>
+                   <div class="form-group">
+                    <!-- <div ng-controller="DateController as dateCtrl">-->
+                    <div>
+                      <input type="date" id="exampleInput2" name="input2" ng-model="example.value2"
+                      placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>                   
+        <div class="row">
+         <div class="col-md-4">
+           <div class="form-group">
+             <label for="number" class="control-label col-sm-3">
+               Número Origen
+             </label>
+             <div class="col-sm-9">
+               <input type="text" required="required" ng-model="searchText"></ul>
+             </div>
+           </div>
+         </div>
+         <div class="col-md-4">
+           <div class="form-group">
+             <label for="range" class="control-label col-sm-3">
+               Número Destino
+             </label>
+             <div class="col-sm-9">
+              <input type="text" required="required" ng-model="searchText"></ul>
+            </div>
+          </div>                    
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-primary">Buscar</button>
+          <button type="button" class="btn btn-danger">Exportar xls </button> 
+        </div>
+      </div>
+      <div ng-controller="ctrlRead" > 
+        <div ng-controller="ctrlTasacion">                        
+          <table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
+
+           <thead>
+            <th class="Items" custom-sort order="Items" sort="sort">Items&nbsp;</th>
+            <th class="Orig.Telefono" custom-sort order="Orig.Telefono" sort="sort">Orig.Telefono&nbsp;</th>
+            <th class="Dest.Telefono" custom-sort order="Dest.Telefono" sort="sort">Evol-15D&nbsp;</th>
+            <th class="Orig.Ruta" custom-sort order="Orig.Ruta" sort="sort">Orig.Ruta&nbsp;</th>
+            <th class="Orig.Carrier" custom-sort order="Orig.Carrier" sort="sort">Orig.Carrier&nbsp;</th>
+            <th class="Orig.Pais" custom-sort order="Orig.Pais" sort="sort">Orig.Pais&nbsp;</th>
+            <th class="Dest.Ruta" custom-sort order="Dest.Ruta" sort="sort">Dest.Ruta&nbsp;</th>
+            <th class="Orig.Area" custom-sort order="Orig.Area" sort="sort">Orig.Area&nbsp;</th>
+            <th class="Dest.Area" custom-sort order="Dest.Area" sort="sort">Dest.Area&nbsp;</th>
+            <th class="Segundos" custom-sort order="Segundos" sort="sort">Segundos&nbsp;</th>
+
+          </thead>
+          <tfoot>
+            <td colspan="6">
+              <div class="pagination pull-right">
+                <ul>
+                  <li ng-class="{disabled: currentPage == 0}">
+                    <a href ng-click="prevPage()">« Prev</a>
+                  </li>
+
+                  <li ng-repeat="n in range(pagedItems.length, currentPage, currentPage + gap) "
+                  ng-class="{active: n == currentPage}"
+                  ng-click="setPage()">
+                  <a href ng-bind="n + 1">1</a>
                 </li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
+
+                <li ng-class="{disabled: (currentPage) == pagedItems.length - 1}">
+                  <a href ng-click="nextPage()">Next »</a>
                 </li>
               </ul>
-            </nav>    
-      </div>
-    </section>
-  </div>
+            </div>
+          </td>
+        </tfoot>
+
+        <tbody>
+          <tr ng-repeat="tasacion in names [currentPage| filter:searchText] | orderBy:sort.sortingOrder:sort.reverse  ">
+           <td>{{ $index + 1 }}</td>
+           <td>{{ tasacion.Numeroorigen }}</td>
+           <td>{{ tasacion.Numerodestino }}</td>
+           <td>{{ tasacion.Rutaentradaa }}</td>
+           <td>{{ tasacion.Ruen_operadoraa }}</td>
+           <td>{{ tasacion.Nuor_paisa }}</td>
+           <td>{{ tasacion.Rutasalidaa }}</td>
+           <td>{{ tasacion.Ruta_operadoraa }}</td>
+           <td>{{ tasacion.Nude_paisa }}</td>
+           <td>{{ tasacion.Nude_ciudada }}</td>
+           <td>{{ tasacion.Nude_ciudada }}</td>                             
+           <td>{{ tasacion.Segundos }}</td>    
+         </tr>
+       </tbody>
+
+     </table>
+   </div>
+ </div>
+</div>
+<div class="align-center">
+  <nav>
+    <ul class="pagination">
+      <li>
+        <a href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>    
+</div>
+</section>
+</div>
 </div>
 </main>

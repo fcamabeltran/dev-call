@@ -1,5 +1,5 @@
 'use strict';
-var App = angular.module("analista_webapp", ['ui.router','ngResource','controllerAnalista','controllerUtiles']); 
+var App = angular.module("analista_webapp", ['ui.router','ngResource','googlechart' ,'highcharts-ng','controllerAnalista','controllerUtiles','controllertable']); 
 
 App.config(['$stateProvider','$httpProvider',  function ($stateProvider, $httpProvider) {
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
@@ -31,7 +31,7 @@ App.config(['$stateProvider','$httpProvider',  function ($stateProvider, $httpPr
       }
     })
   
-     $stateProvider.state('analizador', {
+     $stateProvider.state('analizador',{
       url: '/reporte/analizador/',
       parent: 'root',
       views: {
@@ -39,11 +39,19 @@ App.config(['$stateProvider','$httpProvider',  function ($stateProvider, $httpPr
       }
     })
 
+    $stateProvider.state('rechazos', {
+      url: '/control/analisis/',
+      parent: 'root',
+      views: {
+        '@': {templateUrl: "/static/analista_webapp/partials/base/rechazoxDetalle.html",controller: "ctrlControlRechazoDetalle"}
+      }
+    })
+
     $stateProvider.state('reporte', {
       url: '/reporte/telefonoOrigenDestino/',
       parent: 'root',
       views: {
-        '@': {templateUrl: "/static/analista_webapp/partials/reportes/telefonoOrigenDestino.html",controller: ""}
+        '@': {templateUrl: "/static/analista_webapp/partials/reportes/telefonoOrigenDestino.html"}
       }
     })
 
@@ -55,7 +63,3 @@ App.config(['$stateProvider','$httpProvider',  function ($stateProvider, $httpPr
       }
     })
 }]);
-
-
-
-

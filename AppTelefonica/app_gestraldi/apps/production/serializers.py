@@ -12,10 +12,19 @@ class ServiciosSerializer(serializers.ModelSerializer):
         model = Servicio
         fields = ('Codigo','Descripcion','Sigla')
 
-class PaisesSerializer(serializers.ModelSerializer): 
-     class Meta:
+class PaisesSerializer(serializers.ModelSerializer):
+    Discado = serializers.SerializerMethodField()
+    Codigo = serializers.SerializerMethodField() 
+      
+    def get_Discado(self, obj):
+        return obj.Discado.strip()
+ 
+    def get_Codigo(self, obj):
+        return obj.Codigo.strip()
+    class Meta:
         model = Paises
         fields = ('Codigo', 'Descripcion', 'Imagen', 'Discado', 'Observacion','Flg','CodigoChart')
+
 
 class CarrierSerializer(serializers.ModelSerializer):
     class Meta:
@@ -35,6 +44,11 @@ class RutaSerializer(serializers.ModelSerializer):
 
 
 class ServiciosEspecialesSerializer(serializers.ModelSerializer):
+    Numero = serializers.SerializerMethodField()
+ 
+    def get_Numero(self, obj):
+        return obj.Numero.strip()
+ 
     class Meta:
         model = ServiciosEspeciales
         fields =  ('Numero', 'Pais', 'TipoDestino', 'Servicio', 'Destino', 'Operador', 'FechaInicio', 'FechaFinal', 'FechadeUso', 'FechaLoad', 'Fuente', 'Observacion')

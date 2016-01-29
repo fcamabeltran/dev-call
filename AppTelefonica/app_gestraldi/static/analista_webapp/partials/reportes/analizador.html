@@ -1,126 +1,168 @@
   <main id="content" class="content" role="main">
-  <div class="row">
-  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-12">
         <section class="widget">
-            <header> 
-                  <h4>
-                      ANALIZADOR :
-                      <small>ONLINE</small>
-                       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-                       ULTIMO PROCESO: 2016/12/03
-                  </h4>
-                        <div class="widget-controls">
-                            <a href="#" title="Expand" data-widgster="expand" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
-                            <a href="#" title="Collapse" data-widgster="collapse"><i class="glyphicon glyphicon-chevron-down"></i></a>
-                            <a href="#" title="Close" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
-                        </div>
-              </header>
-              <div class="widget-body">
-                 <div class="row"> 
-                         <div class="col-md-3">
-                           <div class="form-group">
-                               <label for="email" class="control-label col-sm-3">
-                                   DESDE:
-                               </label>
-                                     <div class="container">
-                                         <div class='col-md-2'>
-                                             <div class="form-group">
-                                                <!-- <div ng-controller="DateController as dateCtrl">-->
-                                                 <div>
-                                                  <input type="date" id="exampleInput" name="input" ng-model="example.value"
-                                                      placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
-                                                 </div>
-                                            </div>
-                                         </div>
-                                    </div>
-                            </div>
-                         </div>
-                         <div class="col-md-3">
-                           <div class="form-group">
-                               <label for="email" class="control-label col-sm-3">
-                                   HASTA:
-                               </label>
-                                  <div class="container">
-                                         <div class='col-md-2'>
-                                             <div class="form-group">
-                                                <!-- <div ng-controller="DateController as dateCtrl">-->
-                                                 <div>
-                                                  <input type="date" id="exampleInput2" name="input2" ng-model="example.value2"
-                                                      placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
-                                                 </div>
-                                            </div>
-                                         </div>
-                                    </div>
-                            </div>
-                         </div>
-
-                          <div class="col-md-3">
-                            <button type="button" class="btn btn-primary">Buscar</button>
-                            <button type="button" class="btn btn-danger">Exportar xls </button> 
-                         </div>
-                     </div>                   
-                     <div ng-controller="ctrlAnalizadorOnline">
-                          <table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
-                           <thead>
-                           <tr>
-                               <td><strong>Items</strong></td>
-                               <td><strong>En revisión</strong></td>
-                               <td><strong>Avg</strong></td>
-                               <td><strong>Tráfico Día</strong></td>
-                               <td><strong>Ratio Umbral</strong></td>
-                               <td><strong>Tráfico Ayer</strong></td>
-                               <td><strong>Ratio Ayer</strong></td>
-                               <td><strong>Prom. dias Anterior</strong></td>
-                               <td><strong>Ratio Dias Anterior</strong></td>
-                               <td><strong>Prom. Dias Similares</strong></td>
-                               <td><strong>Ratio Dias Similares</strong></td>
-                               <td><strong>Desv. Dias Anterior</strong></td>
-                               <td><strong>Ind. Desv Dias</strong></td>
-                               <td><strong>Desv. Dias Similares</strong></td>
-                               <td><strong>Ind. Desv. Similares</strong></td>
-                             </tr>
-                             </thead>
-                            <tbody>      
-                            <tr ng-repeat="analizador in names  | filter:searchText">         
-                                 <td> {{ $index + 1 }} </td>
-                                 <td>{{ analizador.Cod_dato_descripcion }} </td>
-                                 <td>{{ analizador.Dia_llamadas }}</td>
-                                 <td>{{ analizador.Ind_umb_llamadas }} </td>
-                                 <td>{{ analizador.Aye_llamadas }}</td>
-                                 <td>{{ analizador.Numeroorigen }} <i class="fa fa-circle text-warning mr-xs"></i></td>
-                                 <td>{{ analizador.Ind_aye_llamadas }}  <i class="fa fa-circle text-gray mr-xs"></i></td>
-                                 <td>{{ analizador.Avg_xda_llamadas }} <i class="fa fa-circle text-danger mr-xs"></i></td>
-                                 <td>{{ analizador.Ind_avg_xda_llamadas }}</td>
-                                 <td>{{ analizador.Avg_xdp_llamadas }}</td>
-                                 <td>{{ analizador.Ind_avg_xdp_llamadas }}</td>
-                                 <td>{{ analizador.Dst_xda_llamadas }}</td>
-                                 <td>{{ analizador.Ind_dst_xda_llamadas }}</td>
-                                 <td>{{ analizador.Dst_xdp_llamadas }}</td>                        
-                                 <td>{{ analizador.Ind_dst_xdp_llamadas }}</td>               
-                             </td>
-                            </tr>       
-                            </tbody>               
-                          </table>
+          <header> 
+            <h4>
+              ANALIZADOR :
+              <small>ONLINE</small>
+              &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+              &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+              &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+              &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+              ULTIMO PROCESO: 2016/12/03
+            </h4>
+            <div class="widget-controls">
+              <a href="#" title="Expand" data-widgster="expand" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
+              <a href="#" title="Collapse" data-widgster="collapse"><i class="glyphicon glyphicon-chevron-down"></i></a>
+              <a href="#" title="Close" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+            </div>
+          </header>
+          <div class="widget-body">
+           <div class="row"> 
+             <div class="col-md-3">
+               <div class="form-group">
+                 <label for="email" class="control-label col-sm-3">
+                   DESDE:
+                 </label>
+                 <div class="container">
+                   <div class='col-md-2'>
+                     <div class="form-group">
+                      <!-- <div ng-controller="DateController as dateCtrl">-->
+                      <div>
+                        <input type="date" id="exampleInput" name="input" ng-model="example.value"
+                        placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
+                      </div>
                     </div>
+                  </div>
+                </div>
               </div>
-        </section>
-        <section class="widget">
-          <div class="row">
-            <ul class="nav nav-pills">
-              <li class="active"><a href="#">Reportes</a></li>
-              <li><a href="">24 horas && 15 Días</a></li>
-              <li><a href="">x Area Destino</a></li>
-              <li><a href="">x Area Origen</a></li>
-              <li><a href="">x Carrier Entrante</a></li>
-              <li><a href="">x CArrier Saliente</a></li>
-              <li><a href="">x Pais Destino</a></li>
-            </ul>           
-          <div>
-        </section>
+            </div>
+            <div class="col-md-3">
+             <div class="form-group">
+               <label for="email" class="control-label col-sm-3">
+                 HASTA:
+               </label>
+               <div class="container">
+                 <div class='col-md-2'>
+                   <div class="form-group">
+                    <!-- <div ng-controller="DateController as dateCtrl">-->
+                    <div>
+                      <input type="date" id="exampleInput2" name="input2" ng-model="example.value2"
+                      placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <button type="button" class="btn btn-primary">Buscar</button>
+            <button type="button" class="btn btn-danger">Exportar xls </button> 
+          </div>
+        </div>                   
+        <div ng-controller="ctrlAnalizadorOnline">
+          <table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
+           <thead>
+             <tr>
+               <td><strong>Items</strong></td>
+               <td><strong>En revisión</strong></td>
+               <td><strong>Avg</strong></td>
+               <td><strong>Tráfico Día</strong></td>
+               <td><strong>Ratio Umbral</strong></td>
+               <td><strong>Tráfico Ayer</strong></td>
+               <td><strong>Ratio Ayer</strong></td>
+               <td><strong>Prom. dias Anterior</strong></td>
+               <td><strong>Ratio Dias Anterior</strong></td>
+               <td><strong>Prom. Dias Similares</strong></td>
+               <td><strong>Ratio Dias Similares</strong></td>
+               <td><strong>Desv. Dias Anterior</strong></td>
+               <td><strong>Ind. Desv Dias</strong></td>
+               <td><strong>Desv. Dias Similares</strong></td>
+               <td><strong>Ind. Desv. Similares</strong></td>
+               <td><strong>Acción</strong></td>
+             </tr>
+           </thead>
+           <tbody>      
+            <tr ng-repeat="analizador in names  | filter:searchText">         
+             <td> {{ $index + 1 }} </td>
+             <td>{{ analizador.Cod_dato_descripcion }} </td>
+             <td>{{ analizador.Dia_llamadas }}</td>
+             <td>{{ analizador.Ind_umb_llamadas }} </td>
+             <td>{{ analizador.Aye_llamadas }}</td>
+             <td>{{ analizador.Numeroorigen }} <i class="fa fa-circle text-warning mr-xs"></i></td>
+             <td>{{ analizador.Ind_aye_llamadas }}  <i class="fa fa-circle text-gray mr-xs"></i></td>
+             <td>{{ analizador.Avg_xda_llamadas }} <i class="fa fa-circle text-danger mr-xs"></i></td>
+             <td>{{ analizador.Ind_avg_xda_llamadas }}</td>
+             <td>{{ analizador.Avg_xdp_llamadas }}</td>
+             <td>{{ analizador.Ind_avg_xdp_llamadas }}</td>
+             <td>{{ analizador.Dst_xda_llamadas }}</td>
+             <td>{{ analizador.Ind_dst_xda_llamadas }}</td>
+             <td>{{ analizador.Dst_xdp_llamadas }}</td>                        
+             <td>{{ analizador.Ind_dst_xdp_llamadas }}</td>               
+            <td> <button type="button" class="btn btn-default btn-xs">Ver</button> </td>
+           </td>
+         </tr>       
+       </tbody>               
+     </table>
    </div>
+ </div>
+</section>
+<section>
+  <div ng-controller="TabController as tab">
+    <ul class="nav nav-pills">
+      <li ng-class="{active:tab.isSet(1)}"><a href ng-click="tab.setTab(1)">Reportes</a></li>
+      <li ng-class="{active:tab.isSet(2)}"><a href ng-click="tab.setTab(2)">24 horas && 15 Días</a></li>
+      <li ng-class="{active:tab.isSet(3)}"><a href ng-click="tab.setTab(3)">x Area Destino</a></li>
+      <li ng-class="{active:tab.isSet(4)}"><a href ng-click="tab.setTab(4)">x Area Origen</a></li>
+      <li ng-class="{active:tab.isSet(5)}"><a href ng-click="tab.setTab(5)">x Carrier Entrante</a></li>
+      <li ng-class="{active:tab.isSet(6)}"><a href ng-click="tab.setTab(6)">x Carrier Saliente</a></li>
+      <li ng-class="{active:tab.isSet(7)}"><a href ng-click="tab.setTab(7)">x x Pais Destino</a></li>
+    </ul>        
+    <div ng-show="tab.isSet(1)">
+      <div ng-controller="analizadorLineal">
+        <div class="span12">
+          <button ng-click="addSeries()">Add Series</button>
+          <button ng-click="addPoints()">Add Points to Random Series</button>
+          <button ng-click="removeRandomSeries()">Remove Random Series</button>
+          <button ng-click="swapChartType()">Line/Bar</button>
+        </div>
+        <div class="row">
+          <highchart id="chart1" config="chartConfig" class="span10"></highchart>                                      
+        </div>
+    </div>
+  </div>
+  <div ng-show="tab.isSet(2)">
+   <div ng-controller="analizadorGrafico">
+    <div google-chart chart="chart" style="border:1px inset black;padding:0;width:400px">
+        <!--</div>
+            <pre style='clear:both; background-color: lightgray;'>{{chart|json}}</pre>
+          </div> -->
+        </div>
+        <div ng-show="tab.isSet(3)">
+         <h4>Tab 4</h4>
+        </div>
+        <div ng-show="tab.isSet(4)">
+           <h4>Tab 5</h4>
+        </div>
+        <div ng-show="tab.isSet(5)">
+           <h4>Tab 6</h4>
+         </div>
+        <div ng-show="tab  .isSet(6)">
+           <h4>Tab 7</h4>
+        </div>
+        <div ng-show="tab.isSet(7)">
+           <h4>Tab 8</h4>
+         </div>
+       </div>
+     </section>
+</div>
 </div>
 </main>
+
+
+
+
+
 

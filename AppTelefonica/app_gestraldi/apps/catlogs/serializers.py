@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import RiskCatalogo
 
-
 class RiskCatalogoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model =RiskCatalogo

@@ -23,6 +23,7 @@ var paths = {
         //controladores básicos
         'js/src/app.js'     ,
         'js/src/controllers.js',
+        'js/src/table.js',
         'js/src/utiles.js',
     ]
 };

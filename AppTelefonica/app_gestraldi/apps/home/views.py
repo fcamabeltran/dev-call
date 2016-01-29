@@ -11,12 +11,10 @@ from rest_framework.response import Response
 from .serializers import UserSerializer
 from .forms import LoginWithEmailForm
 
-
 class IndexView(LoginRequiredMixin, TemplateView):
     @method_decorator(ensure_csrf_cookie)
     def dispatch(self, request, *args, **kwargs):
         return super(IndexView, self).dispatch(request, *args, **kwargs)
-
     def get_template_names(self):
         if self.request.user.groups.filter(name="analistas").exists():
             return ["layout_analista.html"]
@@ -24,7 +22,6 @@ class IndexView(LoginRequiredMixin, TemplateView):
             return ["layout_cliente.html"]
         else:
             return ["403.html"]
-
 
 class MyLoginView(LoginView):
     template_name = "users/login.html"

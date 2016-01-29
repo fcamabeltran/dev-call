@@ -1,5 +1,5 @@
 'use strict';
-var App = angular.module("cliente_webapp", ['ui.router','controllerCliente','controllerUtiles']); 
+var App = angular.module("cliente_webapp", ['ui.router','controllerCliente','controllerUtiles','controllertable']); 
 
 App.config(['$stateProvider','$httpProvider',  function ($stateProvider, $httpProvider) {
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';

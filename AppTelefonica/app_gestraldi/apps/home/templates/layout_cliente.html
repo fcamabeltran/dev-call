@@ -10,17 +10,13 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery-ui.css" rel="stylesheet">        
         <!-- CSS-->
-        <link href="{{ STATIC_URL }}cliente_webapp/bower_components/css/application.min.css"  rel="stylesheet">
+        <link href="{{ STATIC_URL }}lib/css/application.min.css"  rel="stylesheet">
         <!--Librerias externas-->
         <script src="{{ STATIC_URL }}cliente_webapp/js/dist/main.min.js"></script>
         <script src="{{ STATIC_URL }}cliente_webapp/bower_components/jquery-pjax/jquery.pjax.js"></script> 
-        <script type='text/javascript' src='http://omnipotent.net/jquery.sparkline/2.0/jquery.sparkline.js'></script>         
         <!--javascripts delicación -->
-        
-        <script src="{{ STATIC_URL }}cliente_webapp/bower_components/js/settings.js"></script>
-        <script src="{{ STATIC_URL }}cliente_webapp/bower_components/js/app.js"></script>
-
-
+        <script src="{{ STATIC_URL }}lib/js/settings.js"></script>
+        <script src="{{ STATIC_URL }}lib/js/app.js"></script>
   </head>
   <body>
 
@@ -234,8 +230,6 @@
                           <li><a type="submit" value="Logout"><i class="fa fa-sign-out"></i> &nbsp; Salir</a></li>
                              {% csrf_token %}
                           </form>
-
-
                       <!--   <li><a href="/"><i class="fa fa-sign-out"></i> &nbsp; Salir</a></li>-->
                     </ul>
                 </li>

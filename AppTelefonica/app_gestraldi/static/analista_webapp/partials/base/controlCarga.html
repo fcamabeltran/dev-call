@@ -1,0 +1,108 @@
+<main id="content" class="content" role="main">
+  <div class="row">
+    <div class="col-md-12">
+      <section class="widget">
+        <header>
+          <h4>
+            Control de Carga :
+            <small>Llamadas</small>
+          </h4>
+          <div class="widget-controls">
+            <a href="" title="Expand" data-widgster="expand" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
+            <a href="" title="Collapse" data-widgster="collapse"><i class="glyphicon glyphicon-chevron-down"></i></a>
+            <a href="" title="Close" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
+          </div>
+        </header>
+        <div class="widget-body">
+          <div class="row"> 
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="email" class="control-label col-sm-3">
+                  Fecha Inicio
+                </label>
+                <div class="container">
+                  <div class='col-md-2'>
+                    <div class="form-group">
+                     <!-- <div ng-controller="DateController as dateCtrl">-->
+                     <div>
+                       <input type="date" id="exampleInput" name="input" ng-model="example.value"
+                       placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="col-md-4">
+            <div class="form-group">
+              <label for="email" class="control-label col-sm-3">
+                Fecha Inicio
+              </label>
+              <div class="container">
+                <div class='col-md-2'>
+                  <div class="form-group">
+                   <!-- <div ng-controller="DateController as dateCtrl">-->
+                   <div>
+                     <input type="date" id="exampleInput2" name="input2" ng-model="example.value2"
+                     placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="col-md-4">
+           <button type="button" class="btn btn-primary">Buscar</button>
+           <button type="button" class="btn btn-danger">Exportar xls </button> 
+         </div>
+       </div>
+       <div ng-controller="ctrlControlCarga">
+        <table datatable="ng" dt-options="dtOptions" class="table table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
+          <thead>
+            <tr>
+              <td><strong>Items</strong></td>
+              <td><strong>Central</strong></td>
+              <td><strong>Re-</strong></td>
+              <td><strong>Secuencia</strong></td>
+              <td><strong>TT-file</strong></td>
+              <td><strong>Tot.Reg.</strong></td>
+              <td><strong>Est</strong></td>
+              <td><strong>Proceso INI</strong></td>
+              <td><strong>Proceso FIN</strong></td>
+              <td><strong>TASA</strong></td>
+              <td><strong>Ctrp Priregfecha</strong></td>
+              <td><strong>Ctrp Ultreffecha</strong></td>
+              <td><strong>Error</strong></td>
+              <td><strong>Intr</strong></td>
+              <td><strong>Desb</strong></td>
+              <td><strong>Parc</strong></td>
+            </tr>
+          </thead>
+          <tbody>        
+            <tr ng-repeat="control in names | filter:searchText">         
+              <td>{{ $index + 1 }}</td>
+              <td>{{ control.Central }}</td>
+              <td>{{ control.Resecuencia }}</td>
+              <td>{{ control.Secuncia }}</td>
+              <td>{{ control.Ttfilenombre }}</td>
+              <td>{{ control.Ttfiletotalregistros }}</td>
+              <td>{{ control.Proc_estado }}</td>
+              <td>{{ control.Prisecregistro }}</td>
+              <td>{{ control.Ultsecregistro }}</td>
+              <td>{{ control.Totaltasacion }}</td>      
+              <td>{{ control.Proc_fechorini }}</td>                 
+              <td>{{ control.Proc_fechorfin }}</td>
+              <td>{{ control.Error }}</td>   
+              <td>{{ control.Totalinternacional }}</td>
+              <td>{{ control.Totaldesbordes }}</td>          
+              <td>{{ control.Totalparciales }}</td>           
+            </td>
+          </tr>
+        </tbody>               
+      </table>
+    </div>
+  </div> 
+</section>
+</div>
+</div>
+</main>

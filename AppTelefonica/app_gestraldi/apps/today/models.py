@@ -2,43 +2,42 @@ from django.db import models
 from apps.production.models import Paises,Carrier,Destino,Ruta,DestinoRiesgo
 
 class RiskRatiosHoy(models.Model):
- Cod_Riesgo = models.IntegerField(primary_key=True,db_column='raho_cod_riesgo')
- #Cod_dato = models.IntegerField(db_column='raho_cod_dato')
- Cod_dato = models.ForeignKey(DestinoRiesgo,db_column='raho_cod_dato',related_name='cod_dato')
- Fec_riesgo = models.DateField(blank=True, null=True,db_column='raho_fec_riesgo')
- Cat_dato = models.CharField(max_length=6,db_column='raho_cat_dato')
- Dia_llamadas = models.IntegerField(blank=True, null=True,db_column='raho_dia_llamadas')
- Dia_minutos = models.IntegerField(blank=True,null=True,db_column='raho_dia_minutos')
- Ind_umb_llamadas = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_ind_umb_llamadas')
- Ind_umb_minutos = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_ind_umb_minutos')
- Aye_llamadas = models.IntegerField(blank=True, null=True,db_column='raho_aye_llamadas')
- Aye_minutos = models.IntegerField(blank=True, null=True,db_column='raho_aye_minutos')
- Ind_aye_llamadas = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_ind_aye_llamadas')
- Ind_aye_minutos = models.DecimalField(blank=True,max_digits=19, decimal_places=2,null=True,db_column='raho_ind_aye_minutos')
- Avg_xda_llamadas = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_avg_xda_llamadas')
- Avg_xda_minutos = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_avg_xda_minutos')
- Ind_avg_xda_llamadas = models.DecimalField(blank=True, max_digits=19,decimal_places=2,null=True,db_column='raho_ind_avg_xda_llamadas')
- Ind_avg_xda_minutos = models.DecimalField(blank=True,max_digits=19, decimal_places=2,null=True,db_column='raho_ind_avg_xda_minutos')
- Avg_xdp_llamadas = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_avg_xdp_llamadas')
- Avg_xdp_minutos = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_avg_xdp_minutos')
- Ind_avg_xdp_llamadas = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_ind_avg_xdp_llamadas')
- Ind_avg_xdp_minutos = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_ind_avg_xdp_minutos')
- Dst_xda_llamadas = models.DecimalField(blank=True, max_digits=19, decimal_places=2,null=True,db_column='raho_dst_xda_llamadas')
- Dst_xda_minutos = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_dst_xda_minutos')
- Ind_dst_xda_llamadas = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_ind_dst_xda_llamadas')
- Ind_dst_xda_minutos = models.DecimalField(blank=True,max_digits=19, decimal_places=2,null=True,db_column='raho_ind_dst_xda_minutos')
- Dst_xdp_llamadas = models.DecimalField(blank=True, max_digits=19,decimal_places=2,null=True,db_column='raho_dst_xdp_llamadas')
- Dst_xdp_minutos = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_dst_xdp_minutos')
- Ind_dst_xdp_llamadas = models.DecimalField(blank=True,max_digits=19, decimal_places=2,null=True,db_column='raho_ind_dst_xdp_llamadas')
- Ind_dst_xdp_minutos = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_ind_dst_xdp_minutos')
- Where_coho = models.CharField(max_length=250, blank=True, null=True,db_column='raho_where_coho')
- Where_codi = models.CharField(max_length=250, blank=True, null=True,db_column='raho_where_codi')
- Where_tasa = models.CharField(max_length=250, blank=True, null=True,db_column='raho_where_tasa')
- def __str__(self):
-   return self.Cat_dato
- class Meta:
-     managed = False
-     db_table = 'tiws_risk_ratios_hoy'
+  Cod_Riesgo         = models.IntegerField(primary_key=True,db_column='raho_cod_riesgo')
+  Cod_dato           = models.ForeignKey(DestinoRiesgo,db_column='raho_cod_dato',related_name='cod_dato')
+  Fec_riesgo         = models.DateField(blank=True, null=True,db_column='raho_fec_riesgo')
+  Cat_dato           = models.CharField(max_length=6,db_column='raho_cat_dato')
+  Dia_llamadas       = models.IntegerField(blank=True, null=True,db_column='raho_dia_llamadas')
+  Dia_minutos        = models.IntegerField(blank=True,null=True,db_column='raho_dia_minutos')
+  Ind_umb_llamadas   = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_ind_umb_llamadas')
+  Ind_umb_minutos    = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_ind_umb_minutos')
+  Aye_llamadas       = models.IntegerField(blank=True, null=True,db_column='raho_aye_llamadas')
+  Aye_minutos        = models.IntegerField(blank=True, null=True,db_column='raho_aye_minutos')
+  Ind_aye_llamadas   = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_ind_aye_llamadas')
+  Ind_aye_minutos    = models.DecimalField(blank=True,max_digits=19, decimal_places=2,null=True,db_column='raho_ind_aye_minutos')
+  Avg_xda_llamadas   = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_avg_xda_llamadas')
+  Avg_xda_minutos    = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_avg_xda_minutos')
+  Ind_avg_xda_llamadas= models.DecimalField(blank=True, max_digits=19,decimal_places=2,null=True,db_column='raho_ind_avg_xda_llamadas')
+  Ind_avg_xda_minutos = models.DecimalField(blank=True,max_digits=19, decimal_places=2,null=True,db_column='raho_ind_avg_xda_minutos')
+  Avg_xdp_llamadas    = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_avg_xdp_llamadas')
+  Avg_xdp_minutos     = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_avg_xdp_minutos')
+  Ind_avg_xdp_llamadas= models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_ind_avg_xdp_llamadas')
+  Ind_avg_xdp_minutos = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_ind_avg_xdp_minutos')
+  Dst_xda_llamadas    = models.DecimalField(blank=True, max_digits=19, decimal_places=2,null=True,db_column='raho_dst_xda_llamadas')
+  Dst_xda_minutos     = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_dst_xda_minutos')
+  Ind_dst_xda_llamadas= models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_ind_dst_xda_llamadas')
+  Ind_dst_xda_minutos = models.DecimalField(blank=True,max_digits=19, decimal_places=2,null=True,db_column='raho_ind_dst_xda_minutos')
+  Dst_xdp_llamadas    = models.DecimalField(blank=True, max_digits=19,decimal_places=2,null=True,db_column='raho_dst_xdp_llamadas')
+  Dst_xdp_minutos     = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_dst_xdp_minutos')
+  Ind_dst_xdp_llamadas= models.DecimalField(blank=True,max_digits=19, decimal_places=2,null=True,db_column='raho_ind_dst_xdp_llamadas')
+  Ind_dst_xdp_minutos = models.DecimalField(blank=True,max_digits=19,decimal_places=2, null=True,db_column='raho_ind_dst_xdp_minutos')
+  Where_coho            = models.CharField(max_length=250, blank=True, null=True,db_column='raho_where_coho')
+  Where_codi            = models.CharField(max_length=250, blank=True, null=True,db_column='raho_where_codi')
+  Where_tasa            = models.CharField(max_length=250, blank=True, null=True,db_column='raho_where_tasa')
+  def __str__(self):
+    return self.Cat_dato
+  class Meta:
+    managed = False
+    db_table = 'tiws_risk_ratios_hoy'
      
 class SumbaseCabXnrodestHoy(models.Model):
   Nume_proceso = models.IntegerField(primary_key=True,db_column='sndh_cab_nume_proceso')
@@ -54,10 +53,11 @@ class SumbaseCabXnrodestHoy(models.Model):
   Suma_minutos = models.BigIntegerField(blank=True, null=True,db_column='sndh_cab_suma_minutos')
   Flag_conservar = models.CharField(max_length=1, blank=True, null=True,db_column='sndh_cab_flag_conservar')  
   def __str__(self):
-      return self.Nume_destino
+    return self.Nume_destino
   class Meta:
-      managed = False
-      db_table = 'tiws_sumbase_cab_xnrodest_hoy'###
+    managed = False
+    db_table = 'tiws_sumbase_cab_xnrodest_hoy'
+
 class SumbaseCabXnroorigHoy(models.Model):
   Nume_proceso = models.IntegerField(primary_key=True,db_column='snoh_cab_nume_proceso')
   Fecha = models.DateField(db_column='snoh_cab_fecha')
@@ -72,10 +72,11 @@ class SumbaseCabXnroorigHoy(models.Model):
   Suma_minutos = models.BigIntegerField(blank=True, null=True,db_column='snoh_cab_suma_minutos')
   Flag_conservar = models.CharField(max_length=1, blank=True, null=True,db_column='snoh_cab_flag_conservar')
   def __str__(self):
-      return self.Nume_origen
+    return self.Nume_origen
   class Meta:
-      managed = False
-      db_table = 'tiws_sumbase_cab_xnroorig_hoy'##
+    managed = False
+    db_table = 'tiws_sumbase_cab_xnroorig_hoy'
+
 class SumbaseDetXnumorigHoy(models.Model):
   Nume_proceso = models.IntegerField(primary_key=True,db_column='snoh_nume_proceso')
   Fecha = models.DateField(db_column='snoh_fecha')
@@ -94,10 +95,11 @@ class SumbaseDetXnumorigHoy(models.Model):
   Clave = models.CharField(max_length=50, blank=True, null=True,db_column='snoh_clave')
   Flag_conservar = models.CharField(max_length=1, blank=True, null=True,db_column='snoh_flag_conservar')
   def __str__(self):
-      return self.Numeroorigen
+    return self.Numeroorigen
   class Meta:
-      managed = False
-      db_table = 'tiws_sumbase_det_xnumorig_hoy'##
+    managed = False
+    db_table = 'tiws_sumbase_det_xnumorig_hoy'
+
 class SumbaseDetXnumrdestHoy(models.Model):
   Nume_proceso = models.IntegerField(primary_key=True,db_column=' sndh_nume_proceso')
   Fecha = models.DateField(db_column=' sndh_fecha')
@@ -118,8 +120,9 @@ class SumbaseDetXnumrdestHoy(models.Model):
   def __str__(self):
     return self.Numerodestino
   class Meta:
-      managed = False
-      db_table = 'tiws_sumbase_det_xnumrdest_hoy'#
+    managed = False
+    db_table = 'tiws_sumbase_det_xnumrdest_hoy'#
+
 class consolidadoHoy(models.Model):
   Proceso = models.DateField(primary_key=True,db_column='COHO_PROCESO')
   Orig_pais = models.CharField(max_length=5, null=True,db_column='COHO_ORIG_PAIS')
@@ -141,8 +144,9 @@ class consolidadoHoy(models.Model):
   def __str__(self):
     return self.Orig_pais
   class Meta:
-       managed = False
-       db_table = 'tiws_consolidado_hoy'##       
+    managed = False
+    db_table = 'tiws_consolidado_hoy'##       
+
 class TasacionSolohoy(models.Model):  
   Secuenciaproceso = models.BigIntegerField(primary_key=True,db_column='tasa_secuenciaproceso')
   Secuenciaregistro = models.BigIntegerField(db_column='tasa_secuenciaregistro')
@@ -188,5 +192,5 @@ class TasacionSolohoy(models.Model):
   def __str__(self):
     return self.Numeroorigen
   class Meta:
-       managed = False
-       db_table = 'tiws_tasacion_solohoy'
+    managed = False
+    db_table = 'tiws_tasacion_solohoy'

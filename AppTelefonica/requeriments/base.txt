@@ -1,0 +1,11 @@
+cx-Oracle==5.2
+Django==1.8
+django-angular==0.7.15
+django-braces==1.8.1
+django-class-based-auth-views==0.3
+django-suit==0.2.14
+djangorestframework==3.2.2
+djoser==0.3.1
+docutils==0.12
+Pillow==2.9.0
+six==1.9.0
