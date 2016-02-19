@@ -3,11 +3,10 @@ from .serializers import PaisesSerializer,ServiciosEspecialesSerializer,CentralS
 from datetime import datetime, timedelta, time
 from rest_framework import generics
   
-class PaisesList(generics.ListAPIView):
+class PaisesList(generics.ListCreateAPIView):
     model = Paises
     serializer_class = PaisesSerializer
-    def get_queryset(self):
-        return Paises.objects.values("Descripcion","Observacion")
+    queryset = Paises.objects.all()
 
 class PaisesDetail(generics.RetrieveUpdateDestroyAPIView):
     model = Paises
@@ -17,12 +16,11 @@ class PaisesDetail(generics.RetrieveUpdateDestroyAPIView):
 class PaisDetalle(generics.ListAPIView):
     model = Paises
     serializer_class=PaisesSerializer
-    def get_queryset(self,  **kwargs):    
+    def get_queryset(self, **kwargs):    
         discado=self.kwargs.get("discado")
         codigo=self.kwargs.get("codigo")
         print(Paises.objects.filter(Discado__icontains=discado,Codigo__icontains=codigo))
         return Paises.objects.filter(Discado__icontains=discado,Codigo__icontains=codigo)
-
 
 class ServiciosList(generics.ListCreateAPIView):
     model = Servicio

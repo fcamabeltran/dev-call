@@ -5,7 +5,7 @@ from .views import *
 today_urls = patterns('',
 	url(r'^analizadorOnline/$', analizadorHoyList.as_view()),
     url(r'^analizadorOnline/(?P<pk>\d+)/$', analizadorHoyDetail.as_view()),
-    url(r'^tasacion/$', TasacionSolohoyList.as_view()),
+    url(r'^tasacion/?$', TasacionSolohoyList.as_view()),
 )
 
 urlpatterns = patterns('',

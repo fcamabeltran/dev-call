@@ -3,8 +3,9 @@ from rest_framework.urlpatterns import format_suffix_patterns
 from .views import *
 
 production_urls = patterns('',
-    url(r'^fraudePais/$', PaisesList.as_view()),
-    url(r'^fraudePais/(?P<pk>[0-9a-zA-Z_-]+)/$', PaisesDetail.as_view()),
+
+    url(r'^fraudePais/?$', PaisesList.as_view()),
+    url(r'^fraudePais/(?P<pk>[0-9a-zA-Z_-]+)/?$', PaisesDetail.as_view()),
     #url(r'^fraudeDetalle/(\d+)/(\D+)/$', PaisDetalle.as_view()),
     url(r'^fraudeServicios/$', ServiciosDetail.as_view()), 
     url(r'^fraudeServicios/(?P<pk>\d+)/$', ServiciosDetail.as_view()),
@@ -24,4 +25,3 @@ urlpatterns = patterns('',
     url(r'^', include(production_urls)),
 )
 urlpatterns = format_suffix_patterns(urlpatterns)
-

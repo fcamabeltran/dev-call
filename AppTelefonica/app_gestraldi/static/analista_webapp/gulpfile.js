@@ -16,15 +16,23 @@ var paths = {
         'bower_components/widgster/widgster.js',
         'bower_components/pace.js/pace.js',
         'bower_components/angular-touch/angular-touch.min.js',
-     
+
+        'bower_components/angular-ui-bootstrap-bower/ui-bootstrap.js',
         'bower_components/angular-resource/angular-resource.js',
         'bower_components/angular-ui-router/release/angular-ui-router.js',
 
+        'bower_components/ng-table/dist/ng-table.js',
         'bower_components/angular-google-chart/ng-google-chart.js',
         'bower_components/highcharts-ng/src/highcharts-ng.js',
         
         'js/src/app.js',
         'js/src/controllers.js',
+        'js/src/prod_paisController.js',
+        'js/src/repo_detalleLlamadaController.js',
+
+        'js/src/prod_paisService.js',
+        'js/src/repo_detalleLlamadaService.js',
+
         'js/src/table.js',
         'js/src/utiles.js',
                 

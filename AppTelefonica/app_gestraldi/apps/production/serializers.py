@@ -1,3 +1,4 @@
+
 from rest_framework import serializers
 from .models import Central,Servicio,Paises,Carrier,Destino,Ruta,ServiciosEspeciales,DestinoRiesgo,RiskUmbrales
 
@@ -13,9 +14,21 @@ class ServiciosSerializer(serializers.ModelSerializer):
         fields = ('Codigo','Descripcion','Sigla')
 
 class PaisesSerializer(serializers.ModelSerializer):
-    Discado = serializers.SerializerMethodField()
     Codigo = serializers.SerializerMethodField() 
-      
+    Descripcion = serializers.SerializerMethodField()
+    Discado = serializers.SerializerMethodField()
+    Observacion = serializers.SerializerMethodField()
+    CodigoChart = serializers.SerializerMethodField()
+
+    def get_Observacion(self,obj):
+        return obj.Observacion.strip()
+    
+    def get_CodigoChart(self,obj):
+        return obj.CodigoChart.strip()
+
+    def get_Descripcion(self,obj):
+        return obj.Descripcion.strip()
+
     def get_Discado(self, obj):
         return obj.Discado.strip()
  

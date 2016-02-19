@@ -12,11 +12,13 @@ var app =angular.module('controllerAnalista', []);
     });
   });
   
+
   app.controller("ctrlAnalizadorOnline", function ($scope, $http) {
     $http.get('/today/analizadorOnline/').success(function (data) {
       $scope.names = data;
     });
   });
+  
 
   app.controller("ctrlAnalizadorRechazo", function ($scope, $http) {
     $http.get('/today/analizadorOnline/').success(function (data) {
@@ -29,6 +31,9 @@ var app =angular.module('controllerAnalista', []);
       $scope.names = data;
     });
   });
+
+
+  
 
   app.controller("ctrlControlCarga", function ($scope, $http , DTOptionsBuilder) {
     $scope.dtOptions = DTOptionsBuilder.newOptions()
@@ -86,7 +91,7 @@ var app =angular.module('controllerAnalista', []);
       this.chartConfig.loading = !this.chartConfig.loading
     }
 
-    $scope.chartConfig = {
+    $scope.chartConfig = {  
       options: {
         chart: {
           type: 'bar'

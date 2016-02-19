@@ -6,7 +6,7 @@ class TasacionSolohoyList(generics.ListCreateAPIView):
   models = TasacionSolohoy
   serializer_class = TasacionSolohoySerializer
   def get_queryset(self):
-    query = TasacionSolohoy.objects.filter().order_by('Secuenciaproceso')[:10]
+    query = TasacionSolohoy.objects.filter().order_by('Secuenciaproceso')[:30]
     return query
 
 class consultaLlamada(generics.ListAPIView):
@@ -21,7 +21,7 @@ class consultaLlamada(generics.ListAPIView):
 class tasacionsolohoyList(generics.ListAPIView):
   model = TasacionSolohoy
   def get_queryset(self):
-    query = TasacionSolohoy.objects.filter().order_by('secuenciaproceso')[:10]
+    query = TasacionSolohoy.objects.filter().order_by('secuenciaproceso')[:30]
     return query
 
 class analizadorHoyList(generics.ListCreateAPIView):

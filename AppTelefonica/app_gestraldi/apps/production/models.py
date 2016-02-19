@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import RegexValidator
 
 #***************************************************************************************
 # MODELS: PRODUCTION
@@ -45,7 +46,11 @@ class Servicio(models.Model):
 
 class Paises(models.Model):
     Codigo       =models.CharField(primary_key=True, max_length=5, blank=False,db_column='pais_codigo')
-    Descripcion  =models.CharField(max_length=30,null=True,db_column='pais_descripcion')
+    Descripcion  =models.CharField(max_length=30,null=True,db_column='pais_descripcion', validators=[
+      RegexValidator(
+            regex= '^[a-zA-z]*$',
+            message='Este campo no debe contener numeros'
+        )])
     Imagen       =models.ImageField(upload_to='archivos/',db_column='pais_imagen')
     Discado      =models.CharField(max_length=10,null=True,db_column='pais_discado')
     Observacion  =models.CharField(max_length=60,null=True,db_column='pais_observacion')
