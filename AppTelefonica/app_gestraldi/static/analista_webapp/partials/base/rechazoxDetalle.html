@@ -5,7 +5,7 @@
 				<div class="widget-body">
 					<section class="widget">
 						<section class="widget-body">
-							<table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
+							<table ng-table="tableParams"  class="table table-bordered table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:11px">
 								<thead>
 									<tr>
 										<td><strong>Items <strong> </td>
@@ -15,7 +15,7 @@
 									</tr>
 								</thead>
 								<tbody>      
-									<tr ng-repeat="analizador in names  | filter:searchText">         
+									<tr ng-repeat="analizador in $data">         
 										<td> {{ $index + 1 }} </td>
 										<td>{{ analizador.Cod_dato_descripcion }} </td>
 										<td>{{ analizador.Dia_llamadas }}</td>
@@ -32,7 +32,7 @@
 			<div class="widget-body">
 				<section class="widget">
 					<section class="widget-body">
-						<table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
+							<table ng-table="tableParams"  class="table table-bordered table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:11px">
 							<thead>
 								<tr>
 									<td><strong>Items <strong> </td>
@@ -42,7 +42,7 @@
 								</tr>
 							</thead>
 							<tbody>      
-								<tr ng-repeat="analizador in names  | filter:searchText">         
+								<tr ng-repeat="analizador in $data">         
 									<td> {{ $index + 1 }} </td>
 									<td>{{ analizador.Cod_dato_descripcion }} </td>
 									<td>{{ analizador.Dia_llamadas }}</td>
@@ -80,7 +80,6 @@
 							<div class="container">
 								<div class='col-md-2'>
 									<div class="form-group">
-										<!-- <div ng-controller="DateController as dateCtrl">-->
 										<div>
 											<input type="date" id="exampleInput" name="input" ng-model="example.value"
 											placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
@@ -98,7 +97,6 @@
 							<div class="container">
 								<div class='col-md-2'>
 									<div class="form-group">
-										<!-- <div ng-controller="DateController as dateCtrl">-->
 										<div>
 											<input type="date" id="exampleInput2" name="input2" ng-model="example.value2"
 											placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
@@ -112,11 +110,10 @@
 						<button type="button" class="btn btn-primary">Buscar</button>
 						<button type="button" class="btn btn-danger">Exportar xls </button> 
 					</div>
-					<div ng-controller="ctrlControlRechazoDetalle">
-						<table datatable="ng" dt-options="dtOptions" class="table table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
+					<div ng-controller="queryAnalisisxRechazo">
+							<table ng-table="tableParams"  class="table table-bordered table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:10px">
 							<thead>
 								<tr>
-									<td><strong>Items</strong></td>
 									<td><strong>Fecha-Hora</strong></td>
 									<td><strong>Numero Origen</strong></td>
 									<td><strong>Numero Destino</strong></td>
@@ -134,8 +131,7 @@
 								</tr>
 							</thead>
 							<tbody>        
-								<tr ng-repeat="rechazo in names | filter:searchText">         
-									<td>{{ $index + 1 }}</td>
+								<tr ng-repeat="rechazo in $data">         
 									<td>{{ rechazo.Fechahora }}</td>
 									<td>{{ rechazo.Numeroorigen }}</td>
 									<td>{{ rechazo.Numerodestino }}</td>

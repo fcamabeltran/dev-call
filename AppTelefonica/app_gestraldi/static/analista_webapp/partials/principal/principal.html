@@ -1,115 +1,30 @@
-{% extends "base.html" %}
-
-{% block content %}
-
- <!--Librerias anexadas -->
-<script type="text/javascript">
-    $(function () {
-
-    $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=world-population-density.json&callback=?', function (data) {
-
-        // Add lower case codes to the data set for inclusion in the tooltip.pointFormat
-        $.each(data, function () {
-            this.flag = this.code.replace('UK', 'GB').toLowerCase();
-        });
-
-        // Initiate the chart
-        $('#container').highcharts('Map', {
-
-            title: {
-                text: 'Paises con Fraude'
-            },
-
-            legend: {
-                title: {
-                    text: 'Nivel de Fraude %',
-                    style: {
-                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
-                    }
-                }
-            },
-
-            mapNavigation: {
-                enabled: true,
-                buttonOptions: {
-                    verticalAlign: 'bottom'
-                }
-            },
-
-            tooltip: {
-                backgroundColor: 'none',
-                borderWidth: 0,
-                shadow: false,
-                useHTML: true,
-                padding: 0,
-                pointFormat: '<span class="f32"><span class="flag {point.flag}"></span></span>'
-                    + ' {point.name}: <b>{point.value}</b>/%fraude',
-                positioner: function () {
-                    return { x: 0, y: 250 };
-                }
-            },
-
-            colorAxis: {
-                min: 1,
-                max: 1000,
-                type: 'logarithmic'
-            },
-
-            series : [{
-                data : data,
-                mapData: Highcharts.maps['custom/world'],
-                joinBy: ['iso-a2', 'code'],
-                name: 'Population density',
-                states: {
-                    hover: {
-                        color: '#BADA55'
-                    }
-                }
-            }]
-        });
-    });
-});
-</script>
-<style type="text/css">
-    #container {
-      height: 500px; 
-      width: 800px; 
-      margin: 0 auto; 
-    }   
-    .highcharts-tooltip>span {
-      padding: 10px;
-      white-space: normal !important;
-      width: 200px;
-    }   
-    .loading {
-        margin-top: 10em;
-        text-align: center;
-        color: gray;
-    }   
-    .f32 .flag {
-        vertical-align: middle !important;
-    }
-</style>
-
-   <!-- main page content. the place to put widgets in. usually consists of .row > .col-md-* > .widget.  -->
-    <main id="content" class="content" role="main">
-        <h1 class="page-title">PAÍS <small><small>Argelia</small></small></h1>
+  <main id="content" class="content" role="main">
+        <h1 class="page-title">Dashboard <small><small>The Lucky One</small></small></h1>
         <div class="row">
             <div class="col-md-8">
-               <section class="widget">
-                       <div id="demo-wrapper">
-                           <div id="mapBox">
-                               <div id="container"></div> 
-                           </div>
-                       </div>
-               </section>
+                <!-- minimal widget consist of .widget class. note bg-transparent - it can be any background like bg-gray,
+                bg-primary, bg-white -->
+                <section class="widget bg-transparent">
+                    <!-- .widget-body is a mostly semantic class. may be a sibling to .widget>header or .widget>footer -->
+                    <div class="widget-body">
+                        <div id="map" class="mapael">
+                            <div class="stats">
+                                <h5 class="text-white">GEO-LOCATIONS</h5>
+                                <p class="h3 text-warning no-margin"><strong id="geo-locations-number">1 656 843</strong> <i class="fa fa-map-marker"></i></p>
+                            </div>
+                            <div class="map">
+                                <span>Alternative content for the map</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
             <div class="col-md-4">
                 <section class="widget bg-transparent">
                     <header>
                         <h4>
                             Map
-                            <span class="fw-semi-bold">Estadistca</span>
+                            <span class="fw-semi-bold">Statistics</span>
                         </h4>
                         <div class="widget-controls widget-controls-hover">
                             <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
@@ -118,15 +33,15 @@
                         </div>
                     </header>
                     <div class="widget-body">
-                        <p>Estado: <strong>...</strong></p>
+                        <p>Status: <strong>Live</strong></p>
                         <p>
                             <span class="circle bg-warning"><i class="fa fa-map-marker"></i></span>
-                            253 Paises, 2759 Ciudades
+                            146 Countries, 2759 Cities
                         </p>
                         <div class="row progress-stats">
                             <div class="col-sm-9">
-                                <h5 class="name">Minutos</h5>
-                                <p class="description deemphasize">Min</p>
+                                <h5 class="name">Foreign Visits</h5>
+                                <p class="description deemphasize">Some Cool Text</p>
                                 <div class="progress progress-sm js-progress-animate bg-white">
                                     <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
                                          data-width="60%"
@@ -142,8 +57,8 @@
                         </div>
                         <div class="row progress-stats">
                             <div class="col-sm-9">
-                                <h5 class="name">%AVG</h5>
-                                <p class="description deemphasize">AVG</p>
+                                <h5 class="name">Local Visits</h5>
+                                <p class="description deemphasize">P. to C. Conversion</p>
                                 <div class="progress progress-sm js-progress-animate bg-white">
                                     <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="39"
                                          data-width="39%"
@@ -159,8 +74,8 @@
                         </div>
                         <div class="row progress-stats">
                             <div class="col-sm-9">
-                                <h5 class="name">LLamadas</h5>
-                                <p class="description deemphasize">LLam</p>
+                                <h5 class="name">Sound Frequencies</h5>
+                                <p class="description deemphasize">Average Bitrate</p>
                                 <div class="progress progress-sm js-progress-animate bg-white">
                                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80"
                                          data-width="80%"
@@ -315,7 +230,7 @@
             <div class="col-md-4">
                 <section class="widget">
                     <header>
-                        <h5><span class="label label-danger">Nuevo</span> Mensajes</h5>
+                        <h5><span class="label label-danger">New</span> Messages</h5>
                         <div class="widget-controls">
                             <a href="#"><i class="fa fa-refresh"></i></a>
                             <a href="#" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
@@ -448,4 +363,3 @@
             </div>
         </div>
     </main>
-{%	endblock	%}

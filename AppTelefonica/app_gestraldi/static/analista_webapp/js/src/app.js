@@ -1,6 +1,7 @@
 'use strict';
 
-var App = angular.module("analista_webapp", ['ui.router',
+var App = angular.module("analista_webapp", [
+    'ui.router',
     'ui.bootstrap',
     'ngResource',
     'ngTable',
@@ -10,14 +11,20 @@ var App = angular.module("analista_webapp", ['ui.router',
     'paisController',
     'paisService',
     'detalleLlamadaController',
-    'detalleLlamadaService']); 
+    'detalleLlamadaService',
+    'controlCargaController',
+    'controlCargaService',
+    'analisisxRechazoController',
+    'analisisxRechazoService'
+    ]); 
 
 
-App.config(['$stateProvider','$httpProvider',  function ($stateProvider, $httpProvider) {
+App.config(['$stateProvider','$httpProvider','$resourceProvider',  function ($stateProvider, $httpProvider,$resourceProvider) {
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';
     $httpProvider.defaults.useXDomain = true;
     $httpProvider.defaults.withCredentials = true;
+     $resourceProvider.defaults.stripTrailingSlashes = false;
 
     $stateProvider.state('root', {
       abstract: true,
@@ -31,10 +38,24 @@ App.config(['$stateProvider','$httpProvider',  function ($stateProvider, $httpPr
       url: '',
       parent: 'root',
       views: {
-        '@': {templateUrl: "/static/analista_webapp/partials/reportes/detalleLlamadas.html"}
+        '@': {templateUrl: "/static/analista_webapp/partials/principal/principal.html"}
       }
     })
-
+    
+    $stateProvider.state('extra', {
+      url: '/extra/datosPersonales/',
+      parent: 'root',
+      views: {
+        '@': {templateUrl: "/static/analista_webapp/partials/extra/datosPersonales.html"}
+      }
+    })
+    $stateProvider.state('extra.inbox', {
+      url: '/extra/inbox/',
+      parent: 'root',
+      views: {
+        '@': {templateUrl: "/static/analista_webapp/partials/extra/inbox.html"}
+      }
+    })
     $stateProvider.state('consulta', {
       url: '/reporte/detalleLlamadas/',
       parent: 'root',
@@ -43,6 +64,7 @@ App.config(['$stateProvider','$httpProvider',  function ($stateProvider, $httpPr
         controller:"queryLLamada" }
       }
     })
+
     $stateProvider.state('anlizQuery', {
       url: '/reporte/detalleLlamadas/',
       parent: 'root',
@@ -63,7 +85,7 @@ App.config(['$stateProvider','$httpProvider',  function ($stateProvider, $httpPr
       url: '/control/analisis/',
       parent: 'root',
       views: {
-        '@': {templateUrl: "/static/analista_webapp/partials/base/rechazoxDetalle.html",controller: "ctrlControlRechazoDetalle"}
+        '@': {templateUrl: "/static/analista_webapp/partials/base/rechazoxDetalle.html",controller: "queryAnalisisxRechazo"}
       }
     })
 
@@ -74,12 +96,19 @@ App.config(['$stateProvider','$httpProvider',  function ($stateProvider, $httpPr
         '@': {templateUrl: "/static/analista_webapp/partials/reportes/telefonoOrigenDestino.html",controller:"qc_pais"}
       }
     })
-
-    $stateProvider.state('control', {
-      url: '/control/controlCarga/',
+    $stateProvider.state('reporteComercial', {
+      url: '/reporte/vistaComercial/',
       parent: 'root',
       views: {
-        '@': {templateUrl: "/static/analista_webapp/partials/control/controlCarga.html", controller: "ctrlControlCarga"}
+        '@': {templateUrl: "/static/analista_webapp/partials/reportes/vistaComercial.html"}
       }
     })
+    $stateProvider.state('base', {
+      url: '/base/controlCarga/',
+      parent: 'root',
+      views: {
+        '@': {templateUrl: "/static/analista_webapp/partials/base/controlCarga.html", controller: "queryControlCarga"}
+      }
+    })
+
 }]);

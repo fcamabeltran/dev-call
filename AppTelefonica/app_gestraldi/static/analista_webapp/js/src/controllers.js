@@ -6,13 +6,6 @@ var app =angular.module('controllerAnalista', []);
     });
   });
 
-  app.controller("ctrlTasacion", function ($scope, $http) {
-    $http.get('/today/tasacion/').success(function (data) {
-      $scope.names = data;
-    });
-  });
-  
-
   app.controller("ctrlAnalizadorOnline", function ($scope, $http) {
     $http.get('/today/analizadorOnline/').success(function (data) {
       $scope.names = data;
@@ -31,20 +24,7 @@ var app =angular.module('controllerAnalista', []);
       $scope.names = data;
     });
   });
-
-
-  
-
-  app.controller("ctrlControlCarga", function ($scope, $http , DTOptionsBuilder) {
-    $scope.dtOptions = DTOptionsBuilder.newOptions()
-    .withDisplayLength(10)
-    .withOPtion('blengh'),True
-    .withOption('bLengthChange', true);
-    $http.get('/control/carga/').success(function (data) {
-      $scope.names = data;
-    });
-  });
-
+ 
   app.controller('riskcabLists', function($scope, $http) {
     $http.get("/fraude/diario/riskcab/")
     .success(function (data) {

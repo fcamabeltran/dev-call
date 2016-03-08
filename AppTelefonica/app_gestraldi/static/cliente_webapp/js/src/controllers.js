@@ -13,11 +13,6 @@ var app =angular.module('controllerCliente', []);
       });
   });
 
-  app.controller("ctrlControlCarga", function ($scope, $http) {
-      $http.get('/fraude/control/carga/').success(function (data) {
-        $scope.names = data;
-      });
-  });
 
   app.controller('riskcabLists', function($scope, $http) {
       $http.get("/fraude/diario/riskcab/")

@@ -29,13 +29,17 @@ var paths = {
         'js/src/controllers.js',
         'js/src/prod_paisController.js',
         'js/src/repo_detalleLlamadaController.js',
+        'js/src/base_controlCargaController.js',
+        'js/src/base_analisisxRechazoController.js',
+
 
         'js/src/prod_paisService.js',
+        'js/src/base_controlCargaService.js',
+        'js/src/base_analisisxRechazoService.js',
         'js/src/repo_detalleLlamadaService.js',
 
-        'js/src/table.js',
-        'js/src/utiles.js',
-                
+
+               
     ]
 };
 

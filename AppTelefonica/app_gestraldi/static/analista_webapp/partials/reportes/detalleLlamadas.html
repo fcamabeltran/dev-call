@@ -13,7 +13,7 @@
               <a href="#" title="Close" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
             </div>
           </header>
-
+           
           <div class="widget-body">
            <div class="row"> 
              <div class="col-md-4">
@@ -79,16 +79,19 @@
             </div>
         </div>
         <div ng-controller="queryLLamada" >                        
-          <table ng-table="tableParams"  class="table table-bordered table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:13px">
+          <table ng-table="tableParams"  class="table table-bordered table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:11px">
             <tbody>
               <tr>
                 <th class="Items" >  <a ng-click="sort_by('Items')">Items <i class="fa fa-sort"></i></a></th>    
+                <th class="Items" >  <a ng-click="sort_by('Items')">Fecha <i class="fa fa-sort"></i></a></th>    
                 <th class="Orig.Telefono">  <a ng-click="sort_by('Orig.Telefono')">Orig.Telefono <i class="fa fa-sort"></i></a></th>   
                 <th class="Dest.Telefono">  <a ng-click="sort_by('Dest.Telefono')">Dest.Telefono <i class="fa fa-sort"></i></a></th>   
                 <th class="Orig.Ruta"  title="non-sortable" > Orig.Ruta <i class="fa fa-sort"></i></a></th>   
                 <th class="Orig.Carrier">  <a ng-click="sort_by('Orig.Carrier')">Orig.Carrier <i class="fa fa-sort"></i></a></th>   
                 <th class="Orig.Pais" ><a ng-click="sort_by('Orig.Pais')">Orig.Pais<i class="fa fa-sort"></i></a></th>   
                 <th class="Dest.Ruta"> <a ng-click="sort_by('Dest.Ruta')">Dest.Ruta <i class="fa fa-sort"></i></a></th>   
+                <th class="Dest.Carrier"> <a ng-click="sort_by('Dest.Carrier')">Dest.Carrier <i class="fa fa-sort"></i></a></th>   
+                <th class="Dest.Pais"> <a ng-click="sort_by('Dest.Pais')">Dest.Pais <i class="fa fa-sort"></i></a></th>
                 <th class="Orig.Area" ><a ng-click="sort_by('Orig.Area')">Orig.Area <i class="fa fa-sort"></i></a></th>   
                 <th class="Dest.Area" ><a ng-click="sort_by('Dest.Area')">Dest.Area <i class="fa fa-sort"></i></a></th>   
                 <th class="Segundos" ><a ng-click="sort_by('Segundos')">Segundos <i class="fa fa-sort"></i></a></th>
@@ -97,6 +100,7 @@
             <tbody>
               <tr ng-repeat="tasacion in $data">
                 <td>{{ $index + 1 }}</td>
+                <td>{{ tasacion.Fechahora }}</td>
                 <td>{{ tasacion.Numeroorigen }}</td>
                 <td>{{ tasacion.Numerodestino }}</td>
                 <td>{{ tasacion.Rutaentradaa }}</td>
@@ -105,9 +109,9 @@
                 <td>{{ tasacion.Rutasalidaa }}</td>
                 <td>{{ tasacion.Ruta_operadoraa }}</td>
                 <td>{{ tasacion.Nude_paisa }}</td>
+                <td>{{ tasacion.Nuor_ciudada }}</td>
                 <td>{{ tasacion.Nude_ciudada }}</td>
-                <td>{{ tasacion.Segundos }}</td>   
-                <td><a href="#" ng-click="deleteItem($index)">x</a></td>
+                <td>{{ tasacion.Segundos }}</td>                   
               </tr>
             </tbody>
           </table>

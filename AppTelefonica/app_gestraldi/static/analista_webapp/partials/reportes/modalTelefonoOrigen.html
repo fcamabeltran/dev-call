@@ -1,4 +1,5 @@
  	<!-- Modal para agregar  -->
+   
          <div class="modal-header">
          	<h3 class="modal-title">País</h3>         
          </div>        
@@ -11,7 +12,7 @@
          			<div class="col-sm-9">
          				<input type="text" required="required" class="form-control" id="Codigo" ng-model="paises.Codigo">
          			</div>
-         		</div>
+         		</div> 
          		<div class="form-group">
          			<label for="number" class="control-label col-sm-3">
          				Descripción
@@ -20,7 +21,6 @@
          				<input type="text" required="required" class="form-control" id="Descripcion" ng-model="paises.Descripcion">
          			</div>
          		</div>
-
          		<div class="form-group">
          			<label for="range" class="control-label col-sm-3">
          				Imagen
@@ -36,7 +36,8 @@
          			<div class="col-sm-9">
          				<input type="text" required="required" class="form-control" id="Discado" ng-model="paises.Discado">
          			</div>
-         		</div>
+         		</div>             
+
          		<div class="form-group">
          			<label for="range" class="control-label col-sm-3">
          				Observación
@@ -55,7 +56,6 @@
          		</div>
          	</form>
          </div>
-
          <div class="modal-footer">
          	<button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
          	<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>

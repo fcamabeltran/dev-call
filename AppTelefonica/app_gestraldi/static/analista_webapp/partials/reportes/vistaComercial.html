@@ -1,144 +1,480 @@
   <main id="content" class="content" role="main">
   <div class="row">
-  <div class="col-md-12">
-        <section class="widget">
-            <header>
-                  <h4>
-                      CONSULTA DE :
-                      <small>Llamadas</small>
-                  </h4>
-                        <div class="widget-controls">
-                            <a href="#" title="Expand" data-widgster="expand" style="display: none;"><i class="glyphicon glyphicon-chevron-up"></i></a>
-                            <a href="#" title="Collapse" data-widgster="collapse"><i class="glyphicon glyphicon-chevron-down"></i></a>
-                            <a href="#" title="Close" data-widgster="close"><i class="glyphicon glyphicon-remove"></i></a>
-                        </div>
-              </header>
-              <div class="widget-body">
-                 <div class="row"> 
-                         <div class="col-md-4">
-                           <div class="form-group">
-                               <label for="email" class="control-label col-sm-3">
-                                   Fecha Inicio
-                               </label>
-                                     <div class="container">
-                                         <div class='col-md-2'>
-                                             <div class="form-group">
-                                                <!-- <div ng-controller="DateController as dateCtrl">-->
-                                                 <div>
-                                                  <input type="date" id="exampleInput" name="input" ng-model="example.value"
-                                                      placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
-                                                 </div>
-                                            </div>
-                                         </div>
-                                    </div>
-                            </div>
-                         </div>
-                         <div class="col-md-4">
-                           <div class="form-group">
-                               <label for="email" class="control-label col-sm-3">
-                                   Fecha Final
-                               </label>
-                                  <div class="container">
-                                         <div class='col-md-2'>
-                                             <div class="form-group">
-                                                <!-- <div ng-controller="DateController as dateCtrl">-->
-                                                 <div>
-                                                  <input type="date" id="exampleInput2" name="input2" ng-model="example.value2"
-                                                      placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
-                                                 </div>
-                                            </div>
-                                         </div>
-                                    </div>
-                            </div>
-                         </div>
-                     </div>                   
-                     <div class="row">
-                         <div class="col-md-4">
-                           <div class="form-group">
-                               <label for="number" class="control-label col-sm-3">
-                                   Número Origen
-                               </label>
-                               <div class="col-sm-9">
-                                   <input type="text" required="required" ng-model="searchText"></ul>
-                               </div>
-                           </div>
-                         </div>
-                         <div class="col-md-4">
-                           <div class="form-group">
-                               <label for="range" class="control-label col-sm-3">
-                                   Número Destino
-                               </label>
-                               <div class="col-sm-9">
-                                    <input type="text" required="required" ng-model="searchText"></ul>
-                               </div>
-                           </div>                    
-                         </div>
-                         <div class="col-md-4">
-                          <button type="button" class="btn btn-primary">Buscar</button>
-                          <button type="button" class="btn btn-danger">Exportar xls </button> 
-                         </div>
-                     </div>
-           
-                     <div ng-controller="ctrlTasacion">
-                          <table class="table table-hover"  width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:9px">
-                           <thead>
-                           <tr>
-                               <td><strong>Items</strong></td>
-                               <td><strong>Orig.Telefono</strong></td>
-                               <td><strong>Dest.Telefono</strong></td>
-                               <td><strong>Orig.Ruta</strong></td>
-                               <td><strong>Orig.Carrier</strong></td>
-                               <td><strong>Orig.Pais</strong></td>
-                               <td><strong>Dest.Ruta</strong></td>
-                               <td><strong>Dest.Carrier</strong></td>
-                               <td><strong>Dest.Pais</strong></td>
-                               <td><strong>Orig.Area</strong></td>
-                               <td><strong>Dest.Area</strong></td>
-                               <td><strong>Segundos</strong></td>
-                             </tr>
-                             </thead>
-                            <tbody>      
-                            <!-- -->       
-                            <tr ng-repeat="tasacion in names  | filter:searchText">         
-                                 <td>{{ $index + 1 }}</td>
-                                 <td>{{ tasacion.Numeroorigen }}</td>
-                                 <td>{{ tasacion.Numerodestino }}</td>
-                                 <td>{{ tasacion.Rutaentradaa }}</td>
-                                 <td>{{ tasacion.Ruen_operadoraa }}</td>
-                                 <td>{{ tasacion.Nuor_paisa }}</td>
-                                 <td>{{ tasacion.Rutasalidaa }}</td>
-                                 <td>{{ tasacion.Ruta_operadoraa }}</td>
-                                 <td>{{ tasacion.Nude_paisa }}</td>
-                                 <td>{{ tasacion.Nude_ciudada }}</td>
-                                 <td>{{ tasacion.Nude_ciudada }}</td>                             
-                                 <td>{{ tasacion.Segundos }}</td>                   
-                             </td>
-                            </tr>       
-                            </tbody>               
-                          </table>
-                    </div>
+    <div class="col-md-12">
+      <section class="widget-body">
+        <div class="col-md-4">
+         <div class="form-group">
+           <label for="email" class="control-label col-sm-3">
+             Fecha Final
+           </label>
+           <div class="container">
+             <div class='col-md-2'>
+               <div class="form-group">
+                <div>
+                  <input type="date" id="exampleInput1" name="input1" ng-model="example.value1"
+                  placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
+                </div>
               </div>
-            <div class="align-center">
-            <nav>
-              <ul class="pagination">
-                <li>
-                  <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                  </a>
-                </li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                <a href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-                </li>
-              </ul>
-            </nav>    
+            </div>
+          </div>
+        </div>    
       </div>
-    </section>
-  </div>
+      <div class="col-md-4">
+       <div class="form-group">
+         <label for="email" class="control-label col-sm-3">
+           Fecha Final
+         </label>
+         <div class="container">
+           <div class='col-md-2'>
+             <div class="form-group">
+              <div>
+                <input type="date" id="exampleInput2" name="input2" ng-model="example.value2"
+                placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </div>
+    <div class="col-md-4">
+      <p>Ultimo Proceso ... </p>
+    </div>
+  </section>
 </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <section class="widget">
+      <header>
+        <h5>ANALIZADOR  <span class="fw-semi-bold">Tráfico</span></h5>
+        <div class="widget-controls">
+          <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+          <a data-widgster="close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="widget-body">
+        <select name="singleSelect" id="singleSelect" ng-model="data.singleSelect">
+          <option value="">---Please select---</option> <!-- not selected / blank option -->
+          <option >Option 1</option> <!-- interpolation -->
+          <option >Option 2</option>
+        </select>
+
+        <table class="table table-bordered table-lg mt-lg mb-0" width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:11px">
+          <thead>
+            <tr>
+              <th>
+                <div class="checkbox">
+                  <input id="checkbox10" type="checkbox" data-check-all>
+                  <label for="checkbox10"></label>
+                </div>
+              </th>
+              <th>Descripcion</th>
+              <th class="text-align-right">Llamadas</th>
+              <th class="text-align-center">Minutos</th>
+              <th class="text-align-center">%</th>
+              <th class="text-align-center">AVG</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="checkbox">
+                  <input id="checkbox11" type="checkbox" data-check-all>
+                  <label for="checkbox11"></label>
+                </div>
+              </td>
+              <td>Estados Unidos</td>
+              <td class="text-align-right">25 224.2</td>
+              <td class="text-align-center">
+                <div class="sparkline" data-type="bar" data-bar-color="#618fb0">13</div>
+              </td>
+              <td class="text-align-right"> 85</td>
+              <td class="text-align-right">72</td>
+            </tr>
+            <tr>
+              <td>
+               <div class="checkbox">
+                <input id="checkbox12" type="checkbox" data-check-all>
+                <label for="checkbox12"></label>
+              </div>
+            </td>
+            <td>Colombia</td>
+            <td class="text-align-right">87 346.1</td>
+            <td class="text-align-center">
+              <div class="sparkline" data-type="bar" data-bar-color="#999">14</div>
+            </td>
+            <td class="text-align-right"> 85</td>
+            <td class="text-align-right">72</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox">
+                <input id="checkbox13" type="checkbox" data-check-all>
+                <label for="checkbox13"></label>
+              </div>
+            </td>
+            <td>Peru</td>
+            <td class="text-align-right">57 944.6</td>
+            <td class="text-align-center">
+              <div class="sparkline" data-type="bar" data-bar-color="#f0b518">17</div>
+            </td>
+            <td class="text-align-right">72</td>
+            <td class="text-align-right">72</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox">
+                <input id="checkbox14" type="checkbox" data-check-all>
+                <label for="checkbox14"></label>
+              </div>
+            </td>
+            <td>Italia</td>
+            <td class="text-align-right">118 533.1</td>
+            <td class="text-align-center">
+              <div class="sparkline" data-type="bar" data-bar-color="#e5603b">14</div>
+            </td>
+            <td class="text-align-right">72</td>
+            <td class="text-align-right">72</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox">
+                <input id="checkbox15" type="checkbox" data-check-all>
+                <label for="checkbox15"></label>
+              </div>
+            </td>
+            <td>Panama</td>
+            <td class="text-align-right">72 854.5</td>
+            <td class="text-align-center">
+              <div class="sparkline" data-type="bar" data-bar-color="#618fb0">20</div>
+            </td>
+            <td class="text-align-right">72</td>
+            <td class="text-align-right">72</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<div class="col-md-4">
+  <section class="widget">
+    <header>
+      <h5>ANALIZADOR  <span class="fw-semi-bold">Tráfico</span></h5>
+      <div class="widget-controls">
+        <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+        <a data-widgster="close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+      </div>
+    </header>
+    <div class="widget-body">
+      <select name="singleSelect2" id="singleSelect2" ng-model="data.singleSelect2">
+        <option value="">---Please select---</option> <!-- not selected / blank option -->
+        <option >Option 1</option> <!-- interpolation -->
+        <option >Option 2</option>
+      </select>
+      <table class="table table-bordered table-lg mt-lg mb-0" width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:11px">
+        <thead>
+          <tr>
+            <th>
+              <div class="checkbox">
+                <input id="checkbox10" type="checkbox" data-check-all>
+                <label for="checkbox10"></label>
+              </div>
+            </th>
+            <th>Descripcion</th>
+            <th class="text-align-right">Llamadas</th>
+            <th class="text-align-center">Minutos</th>
+            <th class="text-align-center">%</th>
+            <th class="text-align-center">AVG</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="checkbox">
+                <input id="checkbox11" type="checkbox" data-check-all>
+                <label for="checkbox11"></label>
+              </div>
+            </td>
+            <td>Estados Unidos</td>
+            <td class="text-align-right">25 224.2</td>
+            <td class="text-align-center">
+              <div class="sparkline" data-type="bar" data-bar-color="#618fb0">13</div>
+            </td>
+            <td class="text-align-right"> 85</td>
+            <td class="text-align-right">72</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox">
+                <input id="checkbox12" type="checkbox" data-check-all>
+                <label for="checkbox12"></label>
+              </div>
+            </td>
+            <td>Colombia</td>
+            <td class="text-align-right">87 346.1</td>
+            <td class="text-align-center">
+              <div class="sparkline" data-type="bar" data-bar-color="#999">14</div>
+            </td>
+            <td class="text-align-right"> 85</td>
+            <td class="text-align-right">72</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox">
+                <input id="checkbox13" type="checkbox" data-check-all>
+                <label for="checkbox13"></label>
+              </div>
+            </td>
+            <td>Peru</td>
+            <td class="text-align-right">57 944.6</td>
+            <td class="text-align-center">
+              <div class="sparkline" data-type="bar" data-bar-color="#f0b518">17</div>
+            </td>
+            <td class="text-align-right">72</td>
+            <td class="text-align-right">72</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox">
+                <input id="checkbox14" type="checkbox" data-check-all>
+                <label for="checkbox14"></label>
+              </div>
+            </td>
+            <td>Italia</td>
+            <td class="text-align-right">118 533.1</td>
+            <td class="text-align-center">
+              <div class="sparkline" data-type="bar" data-bar-color="#e5603b">14</div>
+            </td>
+            <td class="text-align-right">72</td>
+            <td class="text-align-right">72</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox">
+                <input id="checkbox15" type="checkbox" data-check-all>
+                <label for="checkbox15"></label>
+              </div>
+            </td>
+            <td>Panama</td>
+            <td class="text-align-right">72 854.5</td>
+            <td class="text-align-center">
+              <div class="sparkline" data-type="bar" data-bar-color="#618fb0">20</div>
+            </td>
+            <td class="text-align-right">72</td>
+            <td class="text-align-right">72</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+<div class="col-md-4">
+  <section class="widget">
+    <header>
+      <h5>ANALIZADOR  <span class="fw-semi-bold">Tráfico</span></h5>
+      <div class="widget-controls">
+        <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+        <a data-widgster="close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+      </div>
+    </header>
+    <div class="widget-body">
+      <select name="singleSelect3" id="singleSelect3" ng-model="data.singleSelect3">
+        <option value="">---Please select---</option> <!-- not selected / blank option -->
+        <option >Option 1</option> <!-- interpolation -->
+        <option >Option 2</option>
+      </select>
+      <table class="table table-bordered table-lg mt-lg mb-0" width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:10px">
+        <thead>
+          <tr>
+            <th>
+              <div class="checkbox">
+                <input id="checkbox10" type="checkbox" data-check-all>
+                <label for="checkbox10"></label>
+              </div>
+            </th>
+            <th>Descripcion</th>
+            <th class="text-align-right">Llamadas</th>
+            <th class="text-align-center">Minutos</th>
+            <th class="text-align-center">%</th>
+            <th class="text-align-center">AVG</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="checkbox">
+                <input id="checkbox11" type="checkbox" data-check-all>
+                <label for="checkbox11"></label>
+              </div>
+            </td>
+            <td>Estados Unidos</td>
+            <td class="text-align-right">25 224.2</td>
+            <td class="text-align-center">
+              <div class="sparkline" data-type="bar" data-bar-color="#618fb0">13</div>
+            </td>
+            <td class="text-align-right"> 85</td>
+            <td class="text-align-right">72</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox">
+                <input id="checkbox12" type="checkbox" data-check-all>
+                <label for="checkbox12"></label>
+              </div>
+            </td>
+            <td>Colombia</td>
+            <td class="text-align-right">87 346.1</td>
+            <td class="text-align-center">
+              <div class="sparkline" data-type="bar" data-bar-color="#999">14</div>
+            </td>
+            <td class="text-align-right"> 85</td>
+            <td class="text-align-right">72</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox">
+                <input id="checkbox13" type="checkbox" data-check-all>
+                <label for="checkbox13"></label>
+              </div>
+            </td>
+            <td>Peru</td>
+            <td class="text-align-right">57 944.6</td>
+            <td class="text-align-center">
+              <div class="sparkline" data-type="bar" data-bar-color="#f0b518">17</div>
+            </td>
+            <td class="text-align-right">72</td>
+            <td class="text-align-right">72</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox">
+                <input id="checkbox14" type="checkbox" data-check-all>
+                <label for="checkbox14"></label>
+              </div>
+            </td>
+            <td>Italia</td>
+            <td class="text-align-right">118 533.1</td>
+            <td class="text-align-center">
+              <div class="sparkline" data-type="bar" data-bar-color="#e5603b">14</div>
+            </td>
+            <td class="text-align-right">72</td>
+            <td class="text-align-right">72</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="checkbox">
+                <input id="checkbox15" type="checkbox" data-check-all>
+                <label for="checkbox15"></label>
+              </div>
+            </td>
+            <td>Panama</td>
+            <td class="text-align-right">72 854.5</td>
+            <td class="text-align-center">
+              <div class="sparkline" data-type="bar" data-bar-color="#618fb0">20</div>
+            </td>
+            <td class="text-align-right">72</td>
+            <td class="text-align-right">72</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+</div>
+
+<div class="row"> 
+  <div class = "col-md-12">
+    <section class="widget">
+      <header>
+        <h5>Exportación de  <span class="fw-semi-bold">DATA</span></h5>
+        <div class="widget-controls">
+          <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+          <a data-widgster="close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="widget-body">                   
+        <div ng-controller="TabController as tab">                      
+          <ul class="nav nav-pills">
+            <li ng-class="{active:tab.isSet(1)}"><a href ng-click="tab.setTab(1)">Grafico</a></li>
+            <li ng-class="{active:tab.isSet(2)}"><a href ng-click="tab.setTab(2)">Detalle</a></li>
+          </ul>        
+          <div ng-show="tab.isSet(1)">
+            <select name="singleSelect3" id="singleSelect4" ng-model="data.singleSelect4">
+              <option value="">---Please select---</option> <!-- not selected / blank option -->
+              <option >Lineal</option> <!-- interpolation -->
+              <option >Area Chartjs</option>
+              <option >Bar Charts</option>
+              <option >Column Charts</option>
+              <option >Geo Charts</option>
+              <option >Line Charts</option>
+              <option >Pie Chars</option>
+            </select>
+            <button type="button" class="btn btn-default">Pais Origen </button> 
+            <button type="button" class="btn btn-primary">Area Origen </button> 
+            <button type="button" class="btn btn-success">Carrier Origen </button> 
+            <button type="button" class="btn btn-default">Pais Destino </button> 
+            <button type="button" class="btn btn-primary">Area Destino </button> 
+            <button type="button" class="btn btn-success">Carrier Destino </button> 
+            <div ng-controller="analizadorGrafico">
+              <div google-chart chart="chart" style="width:900px height=400px"> </div>
+            </div>
+          </div>
+          <div ng-show="tab.isSet(2)">                      
+            <div class="row">
+              <div class="col-md-12">
+                 <div class="btn-group pull-right">
+                    <a href="#" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-share"></span> Generar</a>
+                    <a href="#" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-download-alt"></span> Descargar XLS</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div ng-controller="queryLLamada" >                        
+                    <table ng-table="tableParams"  class="table table-bordered table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:11px">
+                      <tbody>
+                        <tr>
+                          <th class="Items" >  <a ng-click="sort_by('Items')">Items <i class="fa fa-sort"></i></a></th>    
+                          <th class="Items" >  <a ng-click="sort_by('Items')">Fecha <i class="fa fa-sort"></i></a></th>    
+                          <th class="Orig.Telefono">  <a ng-click="sort_by('Orig.Telefono')">Orig.Telefono <i class="fa fa-sort"></i></a></th>   
+                          <th class="Dest.Telefono">  <a ng-click="sort_by('Dest.Telefono')">Dest.Telefono <i class="fa fa-sort"></i></a></th>   
+                          <th class="Orig.Ruta"  title="non-sortable" > Orig.Ruta <i class="fa fa-sort"></i></a></th>   
+                          <th class="Orig.Carrier">  <a ng-click="sort_by('Orig.Carrier')">Orig.Carrier <i class="fa fa-sort"></i></a></th>   
+                          <th class="Orig.Pais" ><a ng-click="sort_by('Orig.Pais')">Orig.Pais<i class="fa fa-sort"></i></a></th>   
+                          <th class="Dest.Ruta"> <a ng-click="sort_by('Dest.Ruta')">Dest.Ruta <i class="fa fa-sort"></i></a></th>   
+                          <th class="Dest.Carrier"> <a ng-click="sort_by('Dest.Carrier')">Dest.Carrier <i class="fa fa-sort"></i></a></th>   
+                          <th class="Dest.Pais"> <a ng-click="sort_by('Dest.Pais')">Dest.Pais <i class="fa fa-sort"></i></a></th>
+                          <th class="Orig.Area" ><a ng-click="sort_by('Orig.Area')">Orig.Area <i class="fa fa-sort"></i></a></th>   
+                          <th class="Dest.Area" ><a ng-click="sort_by('Dest.Area')">Dest.Area <i class="fa fa-sort"></i></a></th>   
+                          <th class="Segundos" ><a ng-click="sort_by('Segundos')">Segundos <i class="fa fa-sort"></i></a></th>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <tr ng-repeat="tasacion in $data">
+                          <td>{{ $index + 1 }}</td>
+                          <td>{{ tasacion.Fechahora }}</td>
+                          <td>{{ tasacion.Numeroorigen }}</td>
+                          <td>{{ tasacion.Numerodestino }}</td>
+                          <td>{{ tasacion.Rutaentradaa }}</td>
+                          <td>{{ tasacion.Ruen_operadoraa }}</td>
+                          <td>{{ tasacion.Nuor_paisa }}</td>
+                          <td>{{ tasacion.Rutasalidaa }}</td>
+                          <td>{{ tasacion.Ruta_operadoraa }}</td>
+                          <td>{{ tasacion.Nude_paisa }}</td>
+                          <td>{{ tasacion.Nuor_ciudada }}</td>
+                          <td>{{ tasacion.Nude_ciudada }}</td>
+                          <td>{{ tasacion.Segundos }}</td>                   
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>                   
+        </div>                     
+      </section>
+    </div>
+  </div>
+  
 </main>

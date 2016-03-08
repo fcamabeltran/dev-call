@@ -1,5 +1,5 @@
 "use strict";
-
+    
 var app =angular.module('paisController',[]);
 	//con dataResource inyectamos la factoría  
 
@@ -21,6 +21,7 @@ var app =angular.module('paisController',[]);
             qc_paisFactory.delete(id);
         };
 
+        
         $scope.dataPais = qc_paisFactory.query();  
 
         $scope.tableParams = new NgTableParams({
@@ -32,6 +33,9 @@ var app =angular.module('paisController',[]);
                 $defer.resolve($scope.dataPais);
          }
     });
+
+     //this.defaultConfigTableParams = new NgTableParams({}, { dataset: qc_paisFactory.query() });
+
 
        $scope.open = function (size) {
             var modalInstance = $uibModal.open({
@@ -54,4 +58,3 @@ var app =angular.module('paisController',[]);
         $uibModalInstance.dismiss('cancel');
     };
 }]);
-

@@ -22,13 +22,10 @@
            <div class="row"> 
              <div class="col-md-3">
                <div class="form-group">
-                 <label for="email" class="control-label col-sm-3">
-                   DESDE:
-                 </label>
+                 <label for="email" class="control-label col-sm-3">  DESDE:   </label>
                  <div class="container">
                    <div class='col-md-2'>
                      <div class="form-group">
-                      <!-- <div ng-controller="DateController as dateCtrl">-->
                       <div>
                         <input type="date" id="exampleInput" name="input" ng-model="example.value"
                         placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
@@ -38,6 +35,7 @@
                 </div>
               </div>
             </div>
+
             <div class="col-md-3">
              <div class="form-group">
                <label for="email" class="control-label col-sm-3">
@@ -46,7 +44,6 @@
                <div class="container">
                  <div class='col-md-2'>
                    <div class="form-group">
-                    <!-- <div ng-controller="DateController as dateCtrl">-->
                     <div>
                       <input type="date" id="exampleInput2" name="input2" ng-model="example.value2"
                       placeholder="yyyy-MM-dd" min="1999-01-01" max="2030-12-31" required />
@@ -100,64 +97,111 @@
              <td>{{ analizador.Ind_dst_xda_llamadas }}</td>
              <td>{{ analizador.Dst_xdp_llamadas }}</td>                        
              <td>{{ analizador.Ind_dst_xdp_llamadas }}</td>               
-            <td> <button type="button" class="btn btn-default btn-xs">Ver</button> </td>
+             <td> <button type="button" class="btn btn-default btn-xs">Ver</button> </td>
            </td>
-         </tr>       
-       </tbody>               
-     </table>
-   </div>
- </div>
-</section>
-<section>
-  <div ng-controller="TabController as tab">
-    <ul class="nav nav-pills">
-      <li ng-class="{active:tab.isSet(1)}"><a href ng-click="tab.setTab(1)">Reportes</a></li>
-      <li ng-class="{active:tab.isSet(2)}"><a href ng-click="tab.setTab(2)">24 horas && 15 Días</a></li>
-      <li ng-class="{active:tab.isSet(3)}"><a href ng-click="tab.setTab(3)">x Area Destino</a></li>
-      <li ng-class="{active:tab.isSet(4)}"><a href ng-click="tab.setTab(4)">x Area Origen</a></li>
-      <li ng-class="{active:tab.isSet(5)}"><a href ng-click="tab.setTab(5)">x Carrier Entrante</a></li>
-      <li ng-class="{active:tab.isSet(6)}"><a href ng-click="tab.setTab(6)">x Carrier Saliente</a></li>
-      <li ng-class="{active:tab.isSet(7)}"><a href ng-click="tab.setTab(7)">x x Pais Destino</a></li>
-    </ul>        
-    <div ng-show="tab.isSet(1)">
-      <div ng-controller="analizadorLineal">
-        <div class="span12">
-          <button ng-click="addSeries()">Add Series</button>
-          <button ng-click="addPoints()">Add Points to Random Series</button>
-          <button ng-click="removeRandomSeries()">Remove Random Series</button>
-          <button ng-click="swapChartType()">Line/Bar</button>
-        </div>
-        <div class="row">
-          <highchart id="chart1" config="chartConfig" class="span10"></highchart>                                      
+              </tr>       
+            </tbody>               
+          </table>
         </div>
     </div>
+</section>
+</div>
+</div>
+
+<div class="row"> 
+  <div class = "col-md-12">
+    <section class="widget">
+      <header>
+        <h5>Exportación de  <span class="fw-semi-bold">DATA</span></h5>
+        <div class="widget-controls">
+          <a href="#"><i class="glyphicon glyphicon-cog"></i></a>
+          <a data-widgster="close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="widget-body">                   
+        <div ng-controller="TabController as tab">                      
+          <ul class="nav nav-pills">
+            <li ng-class="{active:tab.isSet(1)}"><a href ng-click="tab.setTab(1)">Grafico</a></li>
+            <li ng-class="{active:tab.isSet(2)}"><a href ng-click="tab.setTab(2)">Detalle</a></li>
+          </ul>        
+          <div ng-show="tab.isSet(1)">
+            <select name="singleSelect3" id="singleSelect4" ng-model="data.singleSelect4">
+              <option value="">---Please select---</option> <!-- not selected / blank option -->
+              <option >Lineal</option> <!-- interpolation -->
+              <option >Area Chartjs</option>
+              <option >Bar Charts</option>
+              <option >Column Charts</option>
+              <option >Geo Charts</option>
+              <option >Line Charts</option>
+              <option >Pie Chars</option>
+            </select>
+            <button type="button" class="btn btn-default">Pais Origen </button> 
+            <button type="button" class="btn btn-primary">Area Origen </button> 
+            <button type="button" class="btn btn-success">Carrier Origen </button> 
+            <button type="button" class="btn btn-default">Pais Destino </button> 
+            <button type="button" class="btn btn-primary">Area Destino </button> 
+            <button type="button" class="btn btn-success">Carrier Destino </button> 
+            <div ng-controller="analizadorGrafico">
+              <div google-chart chart="chart" style="width:900px height=400px"> </div>
+            </div>
+          </div>
+          <div ng-show="tab.isSet(2)">                      
+            <div class="row">
+              <div class="col-md-12">
+                 <div class="btn-group pull-right">
+                    <a href="#" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-share"></span> Generar</a>
+                    <a href="#" class="btn btn-warning btn-sm"><span class="glyphicon glyphicon-download-alt"></span> Descargar XLS</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div ng-controller="queryLLamada" >                        
+                    <table ng-table="tableParams"  class="table table-bordered table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0" style="font-size:11px">
+                      <tbody>
+                        <tr>
+                          <th class="Items" >  <a ng-click="sort_by('Items')">Items <i class="fa fa-sort"></i></a></th>    
+                          <th class="Items" >  <a ng-click="sort_by('Items')">Fecha <i class="fa fa-sort"></i></a></th>    
+                          <th class="Orig.Telefono">  <a ng-click="sort_by('Orig.Telefono')">Orig.Telefono <i class="fa fa-sort"></i></a></th>   
+                          <th class="Dest.Telefono">  <a ng-click="sort_by('Dest.Telefono')">Dest.Telefono <i class="fa fa-sort"></i></a></th>   
+                          <th class="Orig.Ruta"  title="non-sortable" > Orig.Ruta <i class="fa fa-sort"></i></a></th>   
+                          <th class="Orig.Carrier">  <a ng-click="sort_by('Orig.Carrier')">Orig.Carrier <i class="fa fa-sort"></i></a></th>   
+                          <th class="Orig.Pais" ><a ng-click="sort_by('Orig.Pais')">Orig.Pais<i class="fa fa-sort"></i></a></th>   
+                          <th class="Dest.Ruta"> <a ng-click="sort_by('Dest.Ruta')">Dest.Ruta <i class="fa fa-sort"></i></a></th>   
+                          <th class="Dest.Carrier"> <a ng-click="sort_by('Dest.Carrier')">Dest.Carrier <i class="fa fa-sort"></i></a></th>   
+                          <th class="Dest.Pais"> <a ng-click="sort_by('Dest.Pais')">Dest.Pais <i class="fa fa-sort"></i></a></th>
+                          <th class="Orig.Area" ><a ng-click="sort_by('Orig.Area')">Orig.Area <i class="fa fa-sort"></i></a></th>   
+                          <th class="Dest.Area" ><a ng-click="sort_by('Dest.Area')">Dest.Area <i class="fa fa-sort"></i></a></th>   
+                          <th class="Segundos" ><a ng-click="sort_by('Segundos')">Segundos <i class="fa fa-sort"></i></a></th>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <tr ng-repeat="tasacion in $data">
+                          <td>{{ $index + 1 }}</td>
+                          <td>{{ tasacion.Fechahora }}</td>
+                          <td>{{ tasacion.Numeroorigen }}</td>
+                          <td>{{ tasacion.Numerodestino }}</td>
+                          <td>{{ tasacion.Rutaentradaa }}</td>
+                          <td>{{ tasacion.Ruen_operadoraa }}</td>
+                          <td>{{ tasacion.Nuor_paisa }}</td>
+                          <td>{{ tasacion.Rutasalidaa }}</td>
+                          <td>{{ tasacion.Ruta_operadoraa }}</td>
+                          <td>{{ tasacion.Nude_paisa }}</td>
+                          <td>{{ tasacion.Nuor_ciudada }}</td>
+                          <td>{{ tasacion.Nude_ciudada }}</td>
+                          <td>{{ tasacion.Segundos }}</td>                   
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>                   
+        </div>                     
+      </section>
+    </div>
   </div>
-  <div ng-show="tab.isSet(2)">
-   <div ng-controller="analizadorGrafico">
-    <div google-chart chart="chart" style="border:1px inset black;padding:0;width:400px">
-        <!--</div>
-            <pre style='clear:both; background-color: lightgray;'>{{chart|json}}</pre>
-          </div> -->
-        </div>
-        <div ng-show="tab.isSet(3)">
-         <h4>Tab 4</h4>
-        </div>
-        <div ng-show="tab.isSet(4)">
-           <h4>Tab 5</h4>
-        </div>
-        <div ng-show="tab.isSet(5)">
-           <h4>Tab 6</h4>
-         </div>
-        <div ng-show="tab  .isSet(6)">
-           <h4>Tab 7</h4>
-        </div>
-        <div ng-show="tab.isSet(7)">
-           <h4>Tab 8</h4>
-         </div>
-       </div>
-     </section>
-</div>
-</div>
+
 </main>
 
 

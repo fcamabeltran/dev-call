@@ -13,27 +13,27 @@ class ServiciosSerializer(serializers.ModelSerializer):
         model = Servicio
         fields = ('Codigo','Descripcion','Sigla')
 
+class ServicioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Servicio
+        fields = ('Codigo','Descripcion','S')
+
 class PaisesSerializer(serializers.ModelSerializer):
-    Codigo = serializers.SerializerMethodField() 
-    Descripcion = serializers.SerializerMethodField()
-    Discado = serializers.SerializerMethodField()
-    Observacion = serializers.SerializerMethodField()
-    CodigoChart = serializers.SerializerMethodField()
-
-    def get_Observacion(self,obj):
-        return obj.Observacion.strip()
-    
-    def get_CodigoChart(self,obj):
-        return obj.CodigoChart.strip()
-
-    def get_Descripcion(self,obj):
-        return obj.Descripcion.strip()
-
-    def get_Discado(self, obj):
-        return obj.Discado.strip()
- 
-    def get_Codigo(self, obj):
-        return obj.Codigo.strip()
+#    Codigo = serializers.SerializerMethodField() 
+    #    Descripcion = serializers.SerializerMethodField()
+#    Discado = serializers.SerializerMethodField()
+#    Observacion = serializers.SerializerMethodField()
+#    CodigoChart = serializers.SerializerMethodField()
+#    def get_Observacion(self,obj):
+#        return obj.Observacion.strip()    
+#    def get_CodigoChart(self,obj):
+#        return obj.CodigoChart.strip()
+#    def get_Descripcion(self,obj):
+#        return obj.Descripcion.strip()
+#    def get_Discado(self, obj):
+#        return obj.Discado.strip() 
+#    def get_Codigo(self, obj):
+#        return obj.Codigo.strip()
     class Meta:
         model = Paises
         fields = ('Codigo', 'Descripcion', 'Imagen', 'Discado', 'Observacion','Flg','CodigoChart')
@@ -54,7 +54,6 @@ class RutaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ruta
         fields = ('Codigo','Descripcion','Central','TipoTrafico','FechaInicio','FechaFinal','Grupo','Carrier','Observacion')
-
 
 class ServiciosEspecialesSerializer(serializers.ModelSerializer):
     Numero = serializers.SerializerMethodField()

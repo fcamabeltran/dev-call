@@ -6,7 +6,7 @@ from rest_framework import generics
 class PaisesList(generics.ListCreateAPIView):
     model = Paises
     serializer_class = PaisesSerializer
-    queryset = Paises.objects.all()
+    queryset = Paises.objects.all()[:30]
 
 class PaisesDetail(generics.RetrieveUpdateDestroyAPIView):
     model = Paises
