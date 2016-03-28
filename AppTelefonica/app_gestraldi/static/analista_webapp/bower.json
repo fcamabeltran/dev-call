@@ -33,9 +33,8 @@
     
     "angular-ui-router": "0.2.13",
     "angular-resource": "1.4.x",
-    "angular-ui-confirm": "0.0.1",
+    "angular-daterangepicker":" 0.2.2",
 
-    
     "ng-table": "0.8.3",
     "angular-google-chart" : "0.1.0",
     "highcharts-ng": "0.0.6"

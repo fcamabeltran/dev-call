@@ -18,7 +18,6 @@ var App = angular.module("analista_webapp", [
     'analisisxRechazoService'
     ]); 
 
-
 App.config(['$stateProvider','$httpProvider','$resourceProvider',  function ($stateProvider, $httpProvider,$resourceProvider) {
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
     $httpProvider.defaults.xsrfCookieName = 'csrftoken';
@@ -103,6 +102,7 @@ App.config(['$stateProvider','$httpProvider','$resourceProvider',  function ($st
         '@': {templateUrl: "/static/analista_webapp/partials/reportes/vistaComercial.html"}
       }
     })
+
     $stateProvider.state('base', {
       url: '/base/controlCarga/',
       parent: 'root',
